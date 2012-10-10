@@ -1,2 +1,2 @@
 name, email, github, twitter, hipchat
-Renee D, renee@nird.us, reneedv, @gigglegirl4e, renee.devoursney@gmail.com
+Kelli, kellimohr@gmail.com, kellimohr, @gimmesamohr, kellimohr@gmail.com
