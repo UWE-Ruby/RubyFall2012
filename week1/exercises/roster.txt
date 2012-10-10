@@ -1,2 +1,2 @@
-name, email, github, twitter, hipchat
+Karen Keasler, keaslk@gmail.com, github.com/irissilvermoon, irissilvermoon, keaslk@gmail.com
 Renee D, renee@nird.us, reneedv, @gigglegirl4e, renee.devoursney@gmail.com
