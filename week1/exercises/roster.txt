@@ -1,2 +1,3 @@
 name, email, github, twitter, hipchat
 Renee D, renee@nird.us, reneedv, @gigglegirl4e, renee.devoursney@gmail.com
+Kris L, kris.luminar@gmail.com, kris-luminar, nil, nil
