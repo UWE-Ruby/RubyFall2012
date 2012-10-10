@@ -1,4 +1,7 @@
 name, email, github, twitter, hipchat
+
 Renee D, renee@nird.us, reneedv, @gigglegirl4e, renee.devoursney@gmail.com
 
+
 Nell Shamrell, nellshamrell@gmail.com, nellshamrell, @nellshamrell
+Price Hardman, PriceHardman@gmail.com, PriceHardman, @PLHardman
