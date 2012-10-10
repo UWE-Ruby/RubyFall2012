@@ -1,2 +1,3 @@
 name, email, github, twitter, hipchat
 Renee D, renee@nird.us, reneedv, @gigglegirl4e, renee.devoursney@gmail.com
+Nikky Southerland, nikky@uw.edu, allynfolksjr, @allynfolksjr, nikky@uw.edu
