@@ -1,2 +1,2 @@
-name, email, github, twitter, hipchat
-Renee D, renee@nird.us, reneedv, @gigglegirl4e, renee.devoursney@gmail.com
+Nicholas Palaniuk, npalaniuk@gmail.com, npalaniuk,
+@npalaniuk, npalaniuk@gmail.com
