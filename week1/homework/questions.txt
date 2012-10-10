@@ -1,6 +1,13 @@
 1. What is an object?
+Objects are instances of Classes.
 2. What is a variable?
+A variable is a storage location and place holder for a piece of information.
 3. What is the difference between an object and a class?
+A class defines the state and behavior of an object, and an object is an instance of a class.
 4. What is a String?
+A String object holds and manipulates a sequence of bytes that typically represent characters.
 5. What are three messages that I can send to a string object? Hint: think methods
+#slice, #size, #chomp!
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+"Hello World" # which allows for String interpolation
+%q(hello world) # which is equivalent to a single quoted String and is not interpolated
