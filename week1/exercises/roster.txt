@@ -1,2 +1,3 @@
 name, email, github, twitter, hipchat
 Renee D, renee@nird.us, reneedv, @gigglegirl4e, renee.devoursney@gmail.com
+Yan Li, leeyeon0307@gmail.com, YanLi0307, nil, nil
