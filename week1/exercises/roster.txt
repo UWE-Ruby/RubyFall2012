@@ -1,3 +1,4 @@
 name, email, github, twitter, hipchat
 Renee D, renee@nird.us, reneedv, @gigglegirl5e, renee.devoursney@gmail.com
 Ben Woodall, mail@benwoodall.com, benwoody, @benwoodall
+Nell Shamrell, nellshamrell@gmail.com, nellshamrell, @nellshamrell
