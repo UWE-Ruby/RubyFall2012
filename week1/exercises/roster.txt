@@ -1,2 +1,3 @@
 name, email, github, twitter, hipchat
 Renee D, renee@nird.us, reneedv, @gigglegirl4e, renee.devoursney@gmail.com
+Eddie L, eddielee@email.com, patternchef, @patternchef, eddielee@email.com
