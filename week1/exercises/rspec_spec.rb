@@ -73,6 +73,7 @@ describe "The Rspec ruby gem" do
   end
 
   context "Examples for in-class test exploration" do
+
   	it "should know order of operations" do
   		# Fix the Failing Test
   		# Order of Operations is Please Excuse My Dear Aunt Sally:
