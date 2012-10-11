@@ -10,4 +10,4 @@ A String object holds and manipulates a sequence of bytes that typically represe
 #slice, #size, #chomp!
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
 "Hello World" # which allows for String interpolation
-%q(hello world) # which is equivalent to a single quoted String and is not interpolated
+'hello world' # which is equivalent to a single quoted String and is not interpolated
