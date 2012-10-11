@@ -1,3 +1,7 @@
+Please read: 
+Chapter 3 Classes, Objects, and Variables 
+p.90-94 Strings
+
 1. What is an object?
 2. What is a variable?
 3. What is the difference between an object and a class?
