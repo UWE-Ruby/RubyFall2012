@@ -53,6 +53,7 @@ describe "The Rspec ruby gem" do
 
       # The following expression is false.
       # However, this example PASSES because no expectation was created.
+      true.should == false
       true == false
 
       # The following line of code is correct, and would cause the example to fail:
