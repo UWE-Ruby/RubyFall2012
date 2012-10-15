@@ -3,8 +3,26 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
+
+An object is an instance of a class, a common way of modeling information in programs. It can contain lots of information about a particular thing. For instance, in a Bookstore application one might have a book class which models books in the store by tracking the isbn, price, location, and available copies. A Book object would have the exact isbn, price, location, and  
+number of copies.
+
 2. What is a variable?
+
+A variable is the name of a stored value in a program. In the bookstore example given in the previous answer, isbn is a variable within the Book class.
+
 3. What is the difference between an object and a class?
+
+A class models the object, so a class will define what attributes an object might have, but the object itself has those attributes. A class is an abstract idea, like a book (which has specific attributes, say isbn, page_count, price, title…) while an object is a specific instance, like my copy of Programming Ruby 1.9 (aka, The pickax).
+
 4. What is a String?
+
+A sequence of (typically printable) characters.
+
 5. What are three messages that I can send to a string object? Hint: think methods
+
+split, squeeze, scan, and pretty much any method listed [here](http://www.ruby-doc.org/core-1.9.3/String.html).
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+
+Single-quotes and double-quotes are the two common ways of defining a string. A single quoted string supports fewer escape sequences and will not allow you to perform string interpolation.
