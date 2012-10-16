@@ -1,0 +1,2 @@
+Slides: http://www.slideshare.net/reneedv/week2-14757511
+Ruby Docs: http://www.ruby-doc.org/core-1.9.3/String.html
