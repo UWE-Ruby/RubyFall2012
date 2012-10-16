@@ -1,6 +1,17 @@
-1. What is an object?
+1. What is an object? 
+
+	An object is a construct in ruby which has state and behaviors which usually 	models a thing or a concept in which behaviors are methods and state is represented by instance variables.
+
 2. What is a variable?
-3. What is the difference between an object and a class?
+	a name that points to a value
+3. What is the difference between an object and a class? 
+	an object is an instance of a class, a class defines the attributes of the objects
 4. What is a String?
-5. What are three messages that I can send to a string object? Hint: think methods
-6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+	 An object containing a sequence of characters
+5. What are three messages that I can send to a string object? 
+	insert, squeeze, clone
+6. What are two ways of defining a String literal? 
+	single quoted '', double quoted ""
+
+Bonus: What is the difference between the two?
+	Double quoted support more escape sequences and allows string interpolation
