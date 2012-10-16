@@ -3,8 +3,21 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
+    Anything that is manipulated in Ruby
+
 2. What is a variable?
+    A reference to an object
+
 3. What is the difference between an object and a class?
+    classes create all objects
+
 4. What is a String?
+    It's a sequence of characters
+
 5. What are three messages that I can send to a string object? Hint: think methods
+    .chomp
+    .split
+    .squeeze
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+    with single quotes(') or double quotes("). There are many more escape sequences and code substitution with "
