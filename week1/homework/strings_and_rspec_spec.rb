@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 encoding: utf-8
+=======
+# encoding: utf-8
+
+# Please make these examples all pass
+# You will need to change the 3 pending tests
+# You will need to write a passing test for the first example 
+# 	(Hint: If you need help refer to the in-class exercises)
+# The two tests with the pending keyword, require some ruby code to be written
+# 	(Hint: You should do the reading on Strings first)
+
+>>>>>>> a00f5073fc6c191d7113ad9100ce994cb2154297
 describe String do
 	context "When a string is defined" do
 		before(:all) do

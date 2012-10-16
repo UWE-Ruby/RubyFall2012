@@ -1,6 +1,11 @@
 1. What is an object?
+
 2. What is a variable?
+
 3. What is the difference between an object and a class?
+
 4. What is a String?
+
 5. What are three messages that I can send to a string object? Hint: think methods
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
