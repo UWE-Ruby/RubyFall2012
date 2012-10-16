@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-encoding: utf-8
-=======
-# encoding: utf-8
+#encoding: utf-8
 
 # Please make these examples all pass
 # You will need to change the 3 pending tests
@@ -10,23 +7,20 @@ encoding: utf-8
 # The two tests with the pending keyword, require some ruby code to be written
 # 	(Hint: You should do the reading on Strings first)
 
->>>>>>> a00f5073fc6c191d7113ad9100ce994cb2154297
 describe String do
 	context "When a string is defined" do
 		before(:all) do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
 		end
-		it "should be able to count the charaters"
-			@my_string.should have(5).characters
-
+		it "should be able to count the charaters" do
+			@my_string.should have(66).characters
+		end
 		it "should be able to split on the . charater" do
-			pending
-			result = #do something with @my_string here
+			result = @my_string.split(/\./)
 			result.should have(2).items	
 		end
 		it "should be able to give the encoding of the string" do
-			
-			should eq (Encoding.find("UTF-8"))
+			#{@my_string.encoding} should eq (Encoding.find("UTF-8"))
 		end
 	end
 end
