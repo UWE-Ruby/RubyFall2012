@@ -1,4 +1,5 @@
 name, email, github, twitter, hipchat
+Nicole Lewis, lewis.nicole@gmail.com, nelewis, nil, lewis.nicole@gmail.com
 Brian Ward, brianmatthewward@gmail.com, brianward, mrbrianward, brianmatthewward@gmail.com
 Renee D, renee@nird.us, reneedv, @gigglegirl4e, renee.devoursney@gmail.com
 Yan Li, leeyeon0307@gmail.com, YanLi0307, nil, leeyeon0307@gmail.com
