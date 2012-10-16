@@ -8,7 +8,7 @@
 # 	(Hint: You should do the reading on Strings first)
 
 describe String do
-	#encoding: utf-8
+	
 	context "When a string is defined" do
 		before(:all) do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
