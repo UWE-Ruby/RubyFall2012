@@ -77,19 +77,27 @@ describe "The Rspec ruby gem" do
 		# Fix the Failing Test
 		# Order of Operations is Please Excuse My Dear Aunt Sally:
 		# Parentheses, Exponents, Multiplication, Division, Addition, Subtraction
-		(1+2-5*6/2).should eq -12
-	end
-	it "should count the charaters in your name" do
-		"Nell".should have(4).characters
-	end
-	
-	it "should check basic math" do
-		(1+2+3+4+5).should eq 15
+		# (1+2-5*6/2).should eq -10
+		((1+2-5)*(6/2)).should eq -6
 	end
 
-	it "should check basic spelling" do
-		"Field".should include('ie')
-	end
+	it "should count the charaters in your name" do
+	    "Peter E. Granger".should have(16).characters
+    end
+
+	it "should check basic math, like Pythagorean triples" do
+        (3*3 + 4*4).should eq(5*5)
+        (5*5 + 12*12).should eq(13*13)
+        (7*7 + 24*24).should eq(25*25)
+    end
+
+	it "should check basic spelling, but knows nothing about pronunciaton" do
+        "Cough".should include("ough")
+        "Tough".should include("ough")
+        "Though".should include("ough")
+        "Bough".should include("ough")
+    end
   end
 
 end
+
