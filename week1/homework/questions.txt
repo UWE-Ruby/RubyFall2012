@@ -1,11 +1,23 @@
 1. What is an object?
+	
+	Object is the root of Ruby's class hierarchy. Its methods are available to all classes unless explicitly overridden. 
 
 2. What is a variable?
 
+	A variable is a reference to an object.
+
 3. What is the difference between an object and a class?
+
+	All objects are instances of a class.  
 
 4. What is a String?
 
+	A string is a sequence of characters.  Strings are objects of class String.
+
 5. What are three messages that I can send to a string object? Hint: think methods
 
+	downcase, upcase, strip
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+
+	Two ways to define a String literal are single quoted string and double quoted string.  A double quoted string can undergo additional subsitutions such as Tab, Space, Return, Escape or Backspace.
