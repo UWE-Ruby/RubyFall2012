@@ -79,7 +79,7 @@ describe "The Rspec ruby gem" do
       # Parentheses, Exponents, Multiplication, Division, Addition, Subtraction
       (1+2-5*6/2).should eq -12
     end
-    it "should count the charaters in your name" do
+    it "should count the characters in your name" do
       "Kris".should have(4).characters
     end
     it "should check basic math" do
