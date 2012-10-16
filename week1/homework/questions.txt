@@ -1,10 +1,23 @@
-Please read: 
-Chapter 3 Classes, Objects, and Variables 
-p.90-94 Strings
+Tim Piele - Homework 1 Questions
 
-1. What is an object?
+
+1. What is an object? 
+	An object is an instance of a class.
+
 2. What is a variable?
+	A symbolic name, identifier or pointer that stores a value/object
+
 3. What is the difference between an object and a class?
+	An object is an instance of a class, it is created and defined by a class.
+
 4. What is a String?
-5. What are three messages that I can send to a string object? Hint: think methods
-6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+	A sequence of characters and an object of class String.
+
+5. What are three messages that I can send to a string object?
+	squeeze, split, scan
+
+6. What are two ways of defining a String literal? 
+Bonus: What is the difference between the two?
+	Delimted by 'single quotes' or by "double quotes" (or %q, %Q)
+	Double quoted strings do more string interpolation so there
+	are more escape characters that you can use with double quotes.

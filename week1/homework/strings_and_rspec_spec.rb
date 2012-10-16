@@ -1,3 +1,5 @@
+# Tim Piele - Homework 1 Exercises
+
 # encoding: utf-8
 
 # Please make these examples all pass
@@ -9,6 +11,7 @@
 
 describe String do
 	context "When a string is defined" do
+
 		before(:all) do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
 		end
@@ -17,10 +20,12 @@ describe String do
 			result = @my_string.length
 			result.should eq 66
 		end
+
 		it "should be able to split on the . character" do
 			result = @my_string.split('.')
 			result.should have(2).items	
 		end
+
 		it "should be able to give the encoding of the string" do
 			@my_string.encoding.should eq (Encoding.find("UTF-8"))
 		end
