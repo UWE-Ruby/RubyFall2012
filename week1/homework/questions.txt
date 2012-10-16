@@ -11,5 +11,4 @@ dup, freeze,  [](0)
 6. What are two ways of defining a String literal? 
 with single quotations and with double quotations
 Bonus: What is the difference between the two? 
-double quotations allow for interpolation and escape character interpretations
-
+double quotations allow for interpolation and more escape sequences
