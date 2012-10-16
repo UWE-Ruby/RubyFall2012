@@ -1,6 +1,15 @@
-1. What is an object?
-2. What is a variable?
-3. What is the difference between an object and a class?
-4. What is a String?
-5. What are three messages that I can send to a string object? Hint: think methods
-6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+1. What is an object? 
+An object is an instance of a class
+2. What is a variable? 
+With Ruby, it is a reference to an object
+3. What is the difference between an object and a class? 
+an object is a specific creation of related state and behavior created with the blueprint, or its class
+4. What is a String? 
+String is a class so a string is an instance of String. A string represents text.
+5. What are three messages that I can send to a string object? Hint: think methods  
+dup, freeze,  [](0)
+6. What are two ways of defining a String literal? 
+with single quotations and with double quotations
+Bonus: What is the difference between the two? 
+double quotations allow for interpolation and escape character interpretations
+
