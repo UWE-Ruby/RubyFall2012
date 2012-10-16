@@ -11,16 +11,17 @@ describe String do
 	context "When a string is defined" do
 		before(:all) do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
+			p @my_string.encoding.name
 		end
-		it "should be able to count the charaters"
+		it "should be able to count the charaters" do
+			@my_string.should have(66).characters
+		end
 		it "should be able to split on the . charater" do
-			pending
-			result = #do something with @my_string here
+			result = @my_string.split('. ')
 			result.should have(2).items	
 		end
 		it "should be able to give the encoding of the string" do
-			pending
-			#should eq (Encoding.find("UTF-8"))
+			@my_string.encoding.should eq (Encoding.find("UTF-8"))
 		end
 	end
 end
