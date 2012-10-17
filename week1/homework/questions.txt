@@ -3,8 +3,14 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
+	- an instance of a class
 2. What is a variable?
+	- it holds/points to an object
 3. What is the difference between an object and a class?
+	- a class is like a blueprint for an object; it groups code into discreet, well-categorized areas. an object is an occurrence/instance of a class 
 4. What is a String?
+	- a sequence of characters
 5. What are three messages that I can send to a string object? Hint: think methods
+	- reverse, capitalized, and length
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+	- double and single quotes. double quotes will do extra evaluation (escape characters, evaluate variables, and run ruby expressions)
