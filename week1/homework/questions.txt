@@ -3,7 +3,6 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
-<<<<<<< HEAD
 Everything that you can manipulate in Ruby is an object and every object in Ruby was generated directly or indirectly from a class. [Thomas p.29]
 Therefore, all variables reference objects. An object typically holds some type of data or state. Each object in Ruby has a unique identifier.
 
