@@ -3,8 +3,17 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
+	An object is an instance of a class that can be uniquely identified in which can be given it's own properties and actions.
 2. What is a variable?
+	Variables are references to objects in memory.
+	 blocks of memory used to store data of different types. Depending the variables location in the code it can be seen by classes, objects, methods, and/or globally.
 3. What is the difference between an object and a class?
+	Objects are instances of classes
 4. What is a String?
+	In Ruby, Strings are objects of the class String that hold sequences of characters.
 5. What are three messages that I can send to a string object? Hint: think methods
+	myString.split()
+	myString.casecmp("someString")
+	myString.chomp
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+	Two ways of defining a String literal are to use %q for delimited single quote Strings and %Q for double-quoted Strings.
