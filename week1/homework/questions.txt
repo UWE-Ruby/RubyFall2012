@@ -1,10 +1,25 @@
 Please read: 
+Nicholas Palaniuk
+10/16/2012
 Chapter 3 Classes, Objects, and Variables 
 p.90-94 Strings
 
 1. What is an object?
+instantiation of a class
+
 2. What is a variable?
+variables are used to keep track of objects
+
 3. What is the difference between an object and a class?
+a class is a blueprint for making an object
+
 4. What is a String?
+a group of characters
+
 5. What are three messages that I can send to a string object? Hint: think methods
+#length
+#split
+#upcase
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+with single quotes and double quotes
