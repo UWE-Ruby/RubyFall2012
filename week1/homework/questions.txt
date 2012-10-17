@@ -3,8 +3,20 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
+An object is a thing with certain behaviours.  In effect an Object is an instance of a Class.
+
 2. What is a variable?
+Variables hold a reference to an object ie they point to an Object.
+
 3. What is the difference between an object and a class?
+The difference is that there can be many objects but just the one class.  An Object is an instantiated Class with methods which define how it will behave. A Class is the description of an Object and its states.
+
 4. What is a String?
+In ruby a String is a sequence of characters. Strings are objects of class String.
+
 5. What are three messages that I can send to a string object? Hint: think methods
+I have only seen the following so far (in strings_ and_rspec_spec.rb) A) length, B)encoding
+C) split
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+I am not entirely clear on this one as there are #{expr} and here documents!  However, String literals are sequences of characters between delimiters.  The 2 ways of defining a String literal are: A) single quotes or %q or B) double quotes or %Q.  The difference between the single/double quotes is the degree of substitition performed. EG a single quote will replace 2 consequtive backslashes by a single backlash. A double quote will undergo additional substitutions.
