@@ -1,8 +1,9 @@
-puts "Please enter a noun"
+#!/usr/bin/env ruby
+puts "Please enter a ballin' noun"
 noun = gets.chomp
-puts "Please enter an adjective"
+puts "Please enter a slammin' adjective"
 adjective = gets.chomp
-puts "Please enter a past tense action verb"
+puts "Please enter a past tense action-y verb"
 verb_past_tense = gets.chomp
-story = "The #{adjective} #{noun} #{verb_past_tense} past the graveyard"
+story = "The #{adjective} #{noun} #{verb_past_tense} around champville, home of the awesome squad."
 puts story
