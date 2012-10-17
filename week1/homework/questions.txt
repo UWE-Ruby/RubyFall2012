@@ -1,6 +1,16 @@
 1. What is an object?
+    An object is an instantiated class.
 2. What is a variable?
+    A variable is a reference to a stored value or object.
 3. What is the difference between an object and a class?
+    A class is the definition of a type of object - basically, a blueprint.  Many objects can be created from
+    one class, that will all share the same structure and functionality, but can hold discrete states and values.
 4. What is a String?
+    A string is simply a chain of characters (or... a 'string' of characters... clever).  In the simplest of terms,
+    it is a representation of small chunks of text (or binary data).
 5. What are three messages that I can send to a string object? Hint: think methods
+    If I understand the question correctly, three string methods are Split, Scan, and Squeeze.
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+    The two most common ways of defining a string literal are with single and double quotes.  Text wrapped in single quotes
+    supports only the most basic escape sequence, the backslash.  Double quoted text supports a wide range of escape sequences,
+    most notably newline characters (carriage returns).
