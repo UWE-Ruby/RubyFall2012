@@ -7,7 +7,7 @@ describe String do
 		it "should be able to count the charaters"
 		it "should be able to split on the . charater" do
 			pending
-			result = #do something with @my_string here
+			result = @mystring.split(".") #do something with @my_string here
 			result.should have(2).items	
 		end
 		it "should be able to give the encoding of the string" do
