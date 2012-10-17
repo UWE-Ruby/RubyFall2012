@@ -2,9 +2,18 @@ Please read:
 Chapter 3 Classes, Objects, and Variables 
 p.90-94 Strings
 
+
 1. What is an object?
+     An object is a single instance of a class.
 2. What is a variable?
+     A variable is a placeholder for a single object.
 3. What is the difference between an object and a class?
+     The class is the category that holds all of the objects. Objects are the things that make up a class.
 4. What is a String?
+     A string is a collection of characters.
 5. What are three messages that I can send to a string object? Hint: think methods
-6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+     "String".captialize
+     "String".downcase
+     "String".reverse
+6. What are two ways of defining a String literal? Bonus: What is the difference between the two?     - A string literal is when a string is directly embedded into code, using quotation marks or using single quotation marks.
+- The difference is the amount of processing that Ruby does. In the double-quoted instances, interpolation occurs and substitutions occur.
