@@ -1,6 +1,14 @@
 1. What is an object?
+  Objects are subgroups of a class.
 2. What is a variable?
+Variables are the memory location that holds data.
 3. What is the difference between an object and a class?
+And object is just a instance of a class.  Objects are just a subgroup of a class.  Classes are defined and used as
+a blueprint for creating and object.
 4. What is a String?
+Strings are a sequences of characters.
 5. What are three messages that I can send to a string object? Hint: think methods
+split, length, puts
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+Using single ' ' or double " " quote delimiters.  The difference is that single quotes takes anything inside the quotes
+as literals while double quotes allows for interpolations.
