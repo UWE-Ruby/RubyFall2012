@@ -1,3 +1,7 @@
+Please read: 
+Chapter 3 Classes, Objects, and Variables 
+p.90-94 Strings
+
 1. What is an object?
 => An object is an abstract data structure combined with functionality (in the form of methods) that allows the data structure to interact and be interacted with. 
 
@@ -5,7 +9,7 @@
 => A variable is a named location in memory whose value can be changed. In Ruby, a variable is named reference to an object.
 
 3. What is the difference between an object and a class?
-=> Classes are essentially templates for objects. All of the attributes and properties of an object are determined by the class of which it is an instance. The difference between classes and objects is that a class defines the form and functionality of an object while an object (or class instance) is an entity that actually posseses the form and functionality described in the  class.
+=> Classes are essentially templates for objects. All of the attributes and properties of an object are determined by the class of which it is an instance. The difference between classes and objects is that a class defines the form and functionality of an object, while an object (or class instance) is an entity that actually posseses the form and functionality described in the  class.
 
 4. What is a String?
 => A string is a sequence of characters, usually in the form of readable text. In Ruby, string objects are instances of the String class.
@@ -17,3 +21,4 @@
 
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
 => The two ways of creating string literals are enclosing the desired text in either double or single quotes. The difference between the two is the amount of processing Ruby does on the string. With double quotes, more processing is done, such as expression interpolation (e.g. #{name}) and interpreting control characters  (e.g. In, "Hello, \nWorld!" \n forces a line break). String literals created with single quotes are treated essentially as-is. For instance, a newline character placed in a string in single quotes would literally be treated as a backslash and an n, rather than forcing a line break.
+
