@@ -4,15 +4,16 @@ describe String do
 		before(:all) do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
 		end
-		it "should be able to count the charaters"
+		it "should be able to count the charaters" do
+			@my_string.length
+		end
 		it "should be able to split on the . charater" do
-			pending
-			result = #do something with @my_string here
-			result.should have(2).items	
+			result = @my_string.split(/\s*\.\s*/)
+			result.should have(2).items
 		end
 		it "should be able to give the encoding of the string" do
-			pending
-			#should eq (Encoding.find("UTF-8"))
+			results = @my_string.encoding
+			results.should eq(Encoding.find("UTF-8"))
 		end
 	end
 end

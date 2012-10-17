@@ -1,6 +1,17 @@
 1. What is an object?
+An object is everything that is manipulated, object start as instances of classes
+
 2. What is a variable?
+A variable is a reference to an object, used to track objects
+
 3. What is the difference between an object and a class?
+A class is an object but contains methods, object of class Class
+
 4. What is a String?
+simple sequence of characters, normally holds printable data but not required. Object of class String
+
 5. What are three messages that I can send to a string object? Hint: think methods
+squish, chomp, first
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+single and double quoted, double quoted supports more escape sequences (such as \n)
