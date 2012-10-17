@@ -1,6 +1,17 @@
 1. What is an object?
+An instance of a class, with its parent's methods and variables.
+
 2. What is a variable?
+A chunk of data of a certain type (int, string, etc) you want ruby to remember.
+
 3. What is the difference between an object and a class?
+An object is an instance of a class, which is a static data structure
+
 4. What is a String?
+A text variable.  It must be enclosed in quotes
+
 5. What are three messages that I can send to a string object? Hint: think methods
+string.slice(), string.splice, string.encoding
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+%q and %Q, and heredocs.
