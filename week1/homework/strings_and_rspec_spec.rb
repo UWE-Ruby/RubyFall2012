@@ -16,12 +16,11 @@ describe String do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
 		end
 
-		it "should be able to count the characters" do
-			result = @my_string.length
-			result.should eq 66
+		it "should be able to count the charaters" do
+			@my_string.should have(@my_string.size).characters
 		end
+		it "should be able to split on the . charater" do
 
-		it "should be able to split on the . character" do
 			result = @my_string.split('.')
 			result.should have(2).items	
 		end
