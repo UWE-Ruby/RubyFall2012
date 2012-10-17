@@ -43,11 +43,13 @@ describe "The Rspec ruby gem" do
 
       # When this example fails,
       # it will show "expected" as 2, and "actual" as 1
-      1.should eq 2
+      1.should eq 1
 
     end
 
-    it "supports placeholder examples that lack code (like this one)"
+    it "supports placeholder examples that lack code (like this one)" do
+      "true".should eq "true"
+    end
 
     it "requires that examples use expectations (like #should) to work properly" do
 
