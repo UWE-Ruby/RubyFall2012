@@ -3,8 +3,30 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
+A is something created from a class constructor code.   myObj = object.new 
+
 2. What is a variable?
+A var is a container for a value ie, var = 1.
+
 3. What is the difference between an object and a class?
-4. What is a String?
+Objects are created from a class and inherit the class properties.
+
+4. What is a String?  
+A set of chars in sequence or can also be a binary sequence.
+
 5. What are three messages that I can send to a string object? Hint: think methods
-6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+a.puts
+b.spilt
+c.concat
+d.include
+
+6. What are two ways of defining a String literal? 
+a. using a delimiter like % . 
+b. using a multiline delimiter such as 
+string = <<END_OF_STRING
+line 1 of my string
+line 2 of my string
+line 3 of my string
+<<END_OF_STRING
+
+Bonus: What is the difference between the two? 
