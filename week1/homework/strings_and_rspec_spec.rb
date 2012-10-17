@@ -11,7 +11,7 @@ describe String do
 		before(:all) do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
 		end
-
+		
 		it "should be able to count the charaters" do
 			@my_string.should respond_to(:length)
 			#I should be able to do @my_string.length
