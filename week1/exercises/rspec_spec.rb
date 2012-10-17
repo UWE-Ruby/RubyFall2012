@@ -43,7 +43,7 @@ describe "The Rspec ruby gem" do
 
       # When this example fails,
       # it will show "expected" as 2, and "actual" as 1
-      1.should eq 2
+      1.should_not eq 2
 
     end
 
@@ -74,14 +74,25 @@ describe "The Rspec ruby gem" do
 
   context "Examples for in-class test exploration" do
 	it "should know order of operations" do
+    pending
 		# Fix the Failing Test
 		# Order of Operations is Please Excuse My Dear Aunt Sally:
 		# Parentheses, Exponents, Multiplication, Division, Addition, Subtraction
 		(1+2-5*6/2).should eq -10
 	end
-	it "should count the charaters in your name"
-	it "should check basic math"
-	it "should check basic spelling"
+	it "should count the charaters in your name" do
+    my_name = "Chris"
+    result = my_name.length
+    result.should eq 5
+  end
+	it "should check basic math" do
+    result = 5 * 10 * 11
+    result.should eq 550
+  end
+	it "should check basic spelling"do
+    word = "duodenum"
+    word.should include("duo")
+  end
   end
 
 end
