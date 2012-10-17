@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 describe "The Rspec ruby gem" do
-  
+
   context "Domain Specific Language" do
 
     it "creates examples with the #it keyword" do
@@ -43,11 +43,13 @@ describe "The Rspec ruby gem" do
 
       # When this example fails,
       # it will show "expected" as 2, and "actual" as 1
-      1.should eq 2
+      2.should eq 2
 
     end
 
-    it "supports placeholder examples that lack code (like this one)"
+    it "supports placeholder examples that lack code (like this one)" do
+      %w(Cheese Chester Sandwich).count.should eq 3
+    end
 
     it "requires that examples use expectations (like #should) to work properly" do
 
@@ -63,33 +65,30 @@ describe "The Rspec ruby gem" do
     end
 
     it "should count the characters in my name" do
-	    "Renée".should have(5).characters
+      "Renée".should have(5).characters
     end
 
     it "should check how to spell my name" do
-	    "Renée".should include("ée") 
+      "Renée".should include("ée")
     end
 
   end
 
   context "Examples for in-class test exploration" do
-	it "should know order of operations" do
-		# Fix the Failing Test
-		# Order of Operations is Please Excuse My Dear Aunt Sally:
-		# Parentheses, Exponents, Multiplication, Division, Addition, Subtraction
-		(1+2-5*6/2).should eq -12
-	end
-	it "should count the charaters in your name" do
-		"Nell".should have(4).characters
-	end
-	
-	it "should check basic math" do
-		(1+2+3+4+5).should eq 15
-	end
-
-	it "should check basic spelling" do
-		"Field".should include('ie')
-	end
+    it "should know order of operations" do
+      # Fix the Failing Test
+      # Order of Operations is Please Excuse My Dear Aunt Sally:
+      # Parentheses, Exponents, Multiplication, Division, Addition, Subtraction
+      (1+4-5*6/2).should eq -10
+    end
+    it "should count the charaters in your name" do
+      "Nikky".should have(5).characters
+    end
+    it "should check basic math" do
+      (20*20).should eq 400
+    end
+    it "should check basic spelling" do
+      "discombobulation".should eq "discombobulation"
+    end
   end
-
 end
