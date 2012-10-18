@@ -12,18 +12,19 @@ describe String do
 		before(:all) do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
 		end
+
 		it "should be able to count the characters" do
 			@my_string.length.should eq 66
 	    end
-		it "should be able to split on the . character" do
-			result = @my_string.split(".")
+		it "should be able to split on the . charater" do
+			result = @my_string.split('.')
 			result.should have(2).items	
 		end
 		it "should be able to give the encoding of the string" do
 			@my_string.encoding.should eq (Encoding.find("UTF-8"))
 		end
 		#it "what should be tested" do
-		#	pending
+		#	pending (this tells rspec that the test hasn't been written yet)
 		#end
 	end
 end
