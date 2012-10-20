@@ -3,6 +3,7 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
+<<<<<<< HEAD
 A: An object is a collection of data and behaviours associated with that data. Objects created in a programming language like Ruby often model real world objects sunch as a Car object.
 2. What is a variable?
 A: A variable is a named placeholder that points to a Ruby object. Which object it points to can be changed over time (thus the name variable).
