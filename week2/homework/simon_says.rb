@@ -12,6 +12,8 @@ module SimonSays
 		([text] * n).join(' ')
 	end
 
+	# I could have used the #first() method here, but this seemed cleaner.  Mostly becuase this is
+	# pretty much what the actual #first() method does to begin with.  Why reinvent the wheel :)
 	def start_of_word(text,n=0)
 		text[0,n]
 	end
