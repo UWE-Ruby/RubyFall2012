@@ -1,4 +1,6 @@
 require './book.rb'
+require './spec_helper.rb'
+
 describe Book do
 	before :each do
 		@book = Book.new("Harry Potter", 200)
