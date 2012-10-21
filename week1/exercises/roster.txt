@@ -31,7 +31,3 @@ Price Hardman, PriceHardman@gmail.com, PriceHardman
 Will Sugg, sugg.will@gmail.com, wsugg, , sugg.will@gmail.com
 Nicole Lewis, lewis.nicole@gmail.com, nelewis, nil, lewis.nicole@gmail.com
 Sol Wagner, capnsol@gmail.com, Soladin, n/a, capnsol@gmail.com
-Price Hardman, PriceHardman@gmail.com, PriceHardman
-Will Sugg, sugg.will@gmail.com, wsugg, , sugg.will@gmail.com
-Nicole Lewis, lewis.nicole@gmail.com, nelewis, nil, lewis.nicole@gmail.com
-Sol Wagner, capnsol@gmail.com, Soladin, n/a, capnsol@gmail.com
