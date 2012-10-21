@@ -1,12 +1,12 @@
 class Book
-	attr_accessor :title
-
-	def initialize(title,page_count ="page_count") 
-	  #accessible by instance methods
-          @title = title
+	attr_accessor :title, :pages
+	#  make it optional with following syntax: page_count ="page_count"
+	def initialize(title, pages)
+		@title = title
+		@pages = pages
 	end
-	
+
 	def page_count
-         @page_count = "Page count is 200"
+		"Page count is #{@pages}"
 	end
 end
