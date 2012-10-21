@@ -1,3 +1,5 @@
+.
+
 # encoding: utf-8
 
 # Please make these examples all pass
@@ -14,10 +16,17 @@ describe String do
 			p @my_string.encoding.name
 		end
 		it "should be able to count the charaters" do
+<<<<<<< HEAD
 			@my_string.should have(@my_string.size).characters
 		end
 		it "should be able to split on the . charater" do
 			result = @my_string.split('.')
+=======
+			@my_string.should have(66).characters
+		end
+		it "should be able to split on the . charater" do
+			result = @my_string.split('. ')
+>>>>>>> 19191e085c5cd8e019d93533ce03287bce3aa361
 			result.should have(2).items	
 		end
 		it "should be able to give the encoding of the string" do
