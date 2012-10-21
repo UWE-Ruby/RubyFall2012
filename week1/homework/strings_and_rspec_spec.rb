@@ -11,6 +11,7 @@ describe String do
 	context "When a string is defined" do
 		before(:all) do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
+			p @my_string.encoding.name
 		end
 		it "should be able to count the charaters" do
 			@my_string.should have(@my_string.size).characters
