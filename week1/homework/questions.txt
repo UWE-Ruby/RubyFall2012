@@ -3,6 +3,24 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
+<<<<<<< HEAD
+An object is an instance of a class. Each object has all the characteristics of the class but it's instance variables are allowed to have values that are specific to the object. In Ruby "everything" is an object, even what looks like a string variable is actually just a pointer to an object.
+ 
+2. What is a variable?
+In Ruby a variable is a pointer to an object. The variable holds the memory address of the object. So if you do something like myobject = myclass.new and they you say yourobject = myobject you end up with one object and two references to it. 
+
+3. What is the difference between an object and a class?
+A class defines a data structure, but you can't actually do anything with it until you create an object as a new instance of the class. 
+
+4. What is a String?
+A String is an object of class String. It holds a sequence of characters 
+
+5. What are three messages that I can send to a string object? Hint: think methods
+split, chomp, squeeze!
+
+6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+single quotes and double quotes. Single quotes only allow two escape sequences \', and \\. Double quotes allow you to put a bunch of whitespace characters in the quotes and embed variables in the quotes. 
+=======
 An object is a representation in memory of a specific concept or thing that the Ruby interpreter knows about. 
 
 2. What is a variable?
@@ -22,3 +40,4 @@ split  - returns an array of strings made up of the original string separated on
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
 Single quotes ex: '' and Double quotes ex: "". The single qoutes allow for 2 escape characters: \' and \\ . The double qouted string literal allows for many different escaped special characters (like \n is a line break) and allows for string interpolation, or the injection of evaluated Ruby code into the string ex: "Hello #{my_name}". The single qouted string takes up much less memory than a doulbe qouted string with interpolation. Without interpolation, both are about the same.
 
+>>>>>>> 476e4b543ee68aad8bb809afdfe2207afd39e8e5

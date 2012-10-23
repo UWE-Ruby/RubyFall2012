@@ -1,0 +1,35 @@
+#simon says module for week 2 homework
+module SimonSays
+  #repeat the word back
+  def echo(sound)
+    "#{sound}"
+  end
+  
+  #make the work uppercase
+  def shout(sound)
+    "#{sound.upcase}"
+  end
+  
+#repeat a word 2 or 3 times, default is 2.
+def repeat(sound,iterations = 2)
+     if iterations == 2
+       "#{sound} #{sound}"
+     elsif iterations == 3
+       "#{sound} #{sound} #{sound}"
+     end
+   end
+end
+  
+  #return the first n letters of a word
+  def start_of_word(word,letters)
+    while word.length > letters do
+      word.chop!
+    end
+    "#{word}"
+  end
+  
+  #return the first word of 2
+  def first_word(word)
+    "#{word.split(" ")[0]}"
+  end
+  
