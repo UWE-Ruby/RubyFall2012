@@ -3,6 +3,7 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
+<<<<<<< HEAD
 => An object is an abstract data structure combined with functionality (in the form of methods) that allows the data structure to interact and be interacted with. 
 
 2. What is a variable?
@@ -21,3 +22,4 @@ p.90-94 Strings
 
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
 => The two ways of creating string literals are enclosing the desired text in either double or single quotes. The difference between the two is the amount of processing Ruby does on the string. With double quotes, more processing is done, such as expression interpolation (e.g. #{name}) and interpreting control characters  (e.g. In, "Hello, \nWorld!" \n forces a line break). String literals created with single quotes are treated essentially as-is. For instance, a newline character placed in a string in single quotes would literally be treated as a backslash and an n, rather than forcing a line break.
+
