@@ -1,0 +1,3 @@
+Slides: http://www.slideshare.net/reneedv
+Enumerable: http://ruby-doc.org/core-1.9.3/Enumerable.html
+BigDecimal: http://www.ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/BigDecimal.html
