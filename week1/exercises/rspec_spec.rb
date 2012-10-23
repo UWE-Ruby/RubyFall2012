@@ -100,6 +100,7 @@ describe "The Rspec ruby gem" do
 	it "should check basic spelling" do
     "team".should_not include("I")
   end
-  end
+
+end
 
 end
