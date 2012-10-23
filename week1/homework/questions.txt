@@ -3,14 +3,13 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
-<<<<<<< HEAD
 => An object is an abstract data structure combined with functionality (in the form of methods) that allows the data structure to interact and be interacted with. 
 
 2. What is a variable?
 => A variable is a named location in memory whose value can be changed. In Ruby, a variable is named reference to an object.
 
 3. What is the difference between an object and a class?
-=> Classes are essentially templates for objects. All of the attributes and properties of an object are determined by the class of which it is an instance. The difference between classes and objects is that a class defines the form and functionality of an object while an object (or class instance) is an entity that actually posseses the form and functionality described in the  class.
+=> Classes are essentially templates for objects. All of the attributes and properties of an object are determined by the class of which it is an instance. The difference between classes and objects is that a class defines the form and functionality of an object, while an object (or class instance) is an entity that actually posseses the form and functionality described in the  class.
 
 4. What is a String?
 => A string is a sequence of characters, usually in the form of readable text. In Ruby, string objects are instances of the String class.

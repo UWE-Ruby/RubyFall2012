@@ -90,17 +90,5 @@ describe "The Rspec ruby gem" do
 	it "should check basic spelling" do
 		"Field".should include('ie')
 	end
-<<<<<<< HEAD
-	it "should count the charaters in your name" do
-    "Price".should have(5).characters
-  end
-	it "should check basic math" do
-    (5+7).should eq 12
-  end
-	it "should check basic spelling" do
-    "team".should_not include("I")
-  end
-
-  end
 
 end

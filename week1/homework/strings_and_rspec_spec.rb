@@ -17,7 +17,6 @@ describe String do
 			result.should eq 66
 
 			@my_string.should have(@my_string.size).characters
-
 		end
 		it "should be able to split on the . charater" do
 			result = @my_string.split('.')
@@ -28,7 +27,6 @@ describe String do
 			result = @my_string.encoding
 			result.should eq (Encoding.find("UTF-8"))
 			@my_string.encoding.should eq (Encoding.find("UTF-8"))
-
 		end
 	end
 end
