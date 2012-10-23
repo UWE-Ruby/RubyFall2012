@@ -6,7 +6,7 @@ module SimonSays
 		text.upcase
 	end
 	def repeat(text,times=2)
-		("#{text} " * times).chop
+		("#{text} " * times).rstrip
 	end
 	def start_of_word(text,letters=1)
 		text[0,letters]
