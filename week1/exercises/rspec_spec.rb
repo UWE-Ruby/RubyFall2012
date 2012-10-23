@@ -90,6 +90,5 @@ describe "The Rspec ruby gem" do
 	it "should check basic spelling" do
 		"Field".should include('ie')
 	end
-  end
 
 end
