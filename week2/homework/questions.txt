@@ -1,0 +1,14 @@
+Please Read The Chapters on: 
+Containers, Blocks, and Iterators 
+Sharing Functionality: Inheritance, Modules, and Mixins
+
+1. What is the difference between a Hash and an Array?
+2. When would you use an Array over a Hash and vice versa?
+3. What is a module? Enumerable is a built in Ruby module, what is it?
+4. Can you inherit more than one thing in Ruby? How could you get around this problem?
+
+Ruby does not support multiple inheritance. However, since a child class can inherit from more than one thing because of the inheritance hierarchy; a child class can inherit from a parent class which in turn may have inherited from its own parent class. Additionally, modules can be used to share functionality.
+
+5. What is the difference between a Module and a Class?
+
+A Class can be instantiated. Modules can have contracts that may require inheriting classes to implement certain methods.
