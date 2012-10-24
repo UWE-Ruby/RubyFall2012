@@ -3,16 +3,16 @@ Containers, Blocks, and Iterators
 Sharing Functionality: Inheritance, Modules, and Mixins
 
 1. What is the difference between a Hash and an Array?
-An Array is an indexed collection of object references and the index can only be a non-negative integer.  A Hash is also an indexed collection of object references but you can index with more than the a non-negative integer. So, the main difference is that Hashes hold their collection in a key value pair. 
+An Array is an ordered collection of indexed values (Ruby thinks they are object references.)  A Hash is also an indexed collection of object references but you can index with more than the a non-negative integer. So, the main difference is that Hashes hold their collection in a key value pair in which the keys are unique. 
 
 2. When would you use an Array over a Hash and vice versa?
-Given that Ruby remembers the order in which you add items to a Hash, and you can index a Hash with more than a non-negative integer, you are more likely to use a Hash over an Array. However, I would use an Array when what I want to do is straightforward enough that it is alright it only has a non-negative integer as the index and the order is not critical.  The book suggests for queues and that makes sense to me, Arrays will probably be more performant in those situations.  
+Given that Ruby remembers the order in which you add items to a Hash you will use a Hash to do fast lookups of a value by a key.  You would use an Array if you were more interested in iterating over the values or a subset of the values.
 
 3. What is a module? Enumerable is a built in Ruby module, what is it?
-A module is reusable code which can be included in a class.  If you change the reusable code in the module then those changes are immediately available to the classes in which it is required/included and those methods defined.  I think and Enumerable Module implments methods expressed in the class's "each" method.  Sort of a helper tool so you do not have to write all of these functions yourself.   
+A module is reusable code (methods and constants) which can be included in a class.  If you change the reusable code in the module then those changes are immediately available to the classes in which it is required/included and those methods defined.  I think and Enumerable Module adds behaviors to any class that has already defined an "each" method.  Sort of a helper tool so you do not have to write all of these functions yourself.   
 
 4. Can you inherit more than one thing in Ruby? How could you get around this problem?
 Yes, well sort of! A Ruby class has one direct parent so it is single inheritance like in Java which means technically, no, you cannot inherit more than one thing.  However, you can allow multiple inheritance by including a "mixin" module which acts like a superclass.  
 
 5. What is the difference between a Module and a Class? 
-I think the main difference is that a Module provides extra functionality to a Class or many Classes.  The required/included Module namespaces defined methods therby safely allowing the same method name to be used. To be very honest this is not a new concept!  We did this on the mainframe - they were just called subroutines :) They saved us a lot of code, allowed our main program to be easily read and were very predictable in what they returned.  I think they even appeared in "Tron", that's how old the concept is.
+Modules cannot be instantiated or subclassed.  To be very honest this is not a new concept!  We did this on the mainframe - they were just called subroutines :) They saved us a lot of code, allowed our main program to be easily read and were very predictable in what they returned.  I think they even appeared in "Tron", that's how old the concept is.
