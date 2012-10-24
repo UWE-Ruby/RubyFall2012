@@ -1,4 +1,4 @@
-Module SimonSays
+module SimonSays
   def echo(text)
     text
   end
