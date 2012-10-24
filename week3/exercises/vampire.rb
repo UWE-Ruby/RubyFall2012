@@ -4,4 +4,3 @@ class Vampire < Monster
 		super(noc,legs,name,vul,dangers)
 	end
 end
-puts Vampire.new.inspect
