@@ -1,4 +1,5 @@
 module SimonSays
+<<<<<<< HEAD
 
 	def echo(word)
 		@word = word
@@ -33,3 +34,25 @@ module SimonSays
 
 	end
 end
+=======
+	def echo(st)
+		st
+	end
+	
+	def shout(st)
+		st.upcase
+	end
+
+	def first_word(st)
+		st.split.first
+	end
+
+	def start_of_word(st,i)
+		st[0...i]
+	end
+	
+	def repeat(st, t=2)
+		([st]*t).join(' ')
+	end
+end
+>>>>>>> 529b28228eac9e841374d40584eb6341ab03b2dd
