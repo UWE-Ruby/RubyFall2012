@@ -3,16 +3,16 @@ Containers, Blocks, and Iterators
 Sharing Functionality: Inheritance, Modules, and Mixins
 
 1. What is the difference between a Hash and an Array?
-They are both lists of object references that remember the order in which you add the items. Arrays are indexed with integers, while hashes can be indexed with any type of object.
+An array is an ordered list of items that are referenced by their index (order), a hash is a collection of items that can be referenced by a key and have no order.
 
 2. When would you use an Array over a Hash and vice versa?
-An array would be ideal if you want its contents to be accessible easily via the number of its location. Hashes might have a more wide range of useful situations since you can set each entry to any key of your choosing.
+When the items have an inherent order I would use an array, when I want to reference the items in my collection by a name or key and their order does not matter I would use a hash.
 
 3. What is a module? Enumerable is a built in Ruby module, what is it?
-Modules are a way to group methods, classes, and constants to prevent name clashes and support the mixin facility.
+A module is a way to group code that you can use across multiple classes. Enumerable is a Ruby module that provides collection functionality; iteration, searching, and sorting. It requires an implementation of the each method.
 
 4. Can you inherit more than one thing in Ruby? How could you get around this problem?
-Ruby classes have only one direct parent, so Ruby is a single-inheritance language. However, they can include the functionality of any number of mixins, which are like partial class definitions. So this means multiple-inheritance-like functionality.
+No, multiple inheritance is not allowed in Ruby. You can include multiple modules if you wanted to mix-in different functionality into your code. Code that is related with a hierarchical nature should be subclassed (inherited). A class can only have 1 direct parent, but can have lots of ancestors.
 
 5. What is the difference between a Module and a Class?
-They both group together chunks of potentionally reusable code, but modules define a namespace - a sandbox in which the methods and constants don't get confused with others from outside the module.
+A class can be instantiated into an object, a module cannot. A module is code that can be used across many classes.
