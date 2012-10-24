@@ -1,14 +1,20 @@
 class Book
 	
-	attr_accessor :title, :page_count
 
-	def initialize(title, page_count)
+	def initialize(title)
 		@title = title
-		@page_count = page_count
 	end
 
 	def page_count
 		return "Page count is #{@page_count}"
+	end
+
+	def repeat(s, n = false)
+		if n
+			
+		else
+			return (s + " ") * 2
+		end
 	end
 
 
@@ -21,3 +27,5 @@ puts book1.title
 book1.title = "Serpent"
 puts book1.title
 =end
+n = Book.new('afafa')
+puts n.repeat('feet')

@@ -17,3 +17,4 @@ Ruby is a single inheritance language, but you can use mixins to add more inheri
 
 5. What is the difference between a Module and a Class?
 Modules cannot be instantiated like classes, but are used to extend the functionality of classes.
+

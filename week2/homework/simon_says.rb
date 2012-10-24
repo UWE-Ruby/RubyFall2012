@@ -24,5 +24,4 @@ module SimonSays
 		return s.split[0...1].join(' ')
 	end
 
-
 end
