@@ -1,21 +1,27 @@
 module SimonSays
-	def echo(st)
-		st
-	end
-	
-	def shout(st)
-		st.upcase
+
+	def echo(s)
+		return s
 	end
 
-	def first_word(st)
-		st.split.first
+	def shout(s)
+		return s.upcase
 	end
 
-	def start_of_word(st,i)
-		st[0...i]
+	def repeat(s, n = false)
+		if n
+			return ((s + " ") * n).chomp(' ')
+		else
+			return ((s + " ") * 2).chomp(' ')
+		end
 	end
-	
-	def repeat(st, t=2)
-		([st]*t).join(' ')
+
+	def start_of_word(s, n)
+		return s[0, n]
 	end
+
+	def first_word(s)
+		return s.split[0...1].join(' ')
+	end
+
 end
