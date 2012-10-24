@@ -2,7 +2,6 @@ Please Read The Chapters on:
 Containers, Blocks, and Iterators 
 Sharing Functionality: Inheritance, Modules, and Mixins
 1. What is the difference between a Hash and an Array?
-<<<<<<< HEAD
 A Hash can be indexed with anything whereas an Array can only be indexed by integers.
 
 2. When would you use an Array over a Hash and vice versa?
