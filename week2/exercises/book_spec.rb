@@ -4,6 +4,7 @@ describe Book do
 	before :each do
 		@book = Book.new("Harry Potter", 200)
 	end
+
 	it "should respond to title" do
 		@book.should respond_to "title"
 	end
