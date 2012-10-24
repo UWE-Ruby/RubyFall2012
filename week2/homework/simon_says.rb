@@ -16,7 +16,7 @@ module SimonSays
 	end
 	
 	def repeat(st, t=2)
+<<<<<<< HEAD
 		(st+" ")*(t-1)+st  # or could use Array join method.
-		
 	end
 end
