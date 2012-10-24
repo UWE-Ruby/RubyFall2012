@@ -2,6 +2,7 @@ Please Read The Chapters on:
 Containers, Blocks, and Iterators 
 Sharing Functionality: Inheritance, Modules, and Mixins
 1. What is the difference between a Hash and an Array?
+<<<<<<< HEAD
 A Hash can be indexed with anything whereas an Array can only be indexed by integers.
 
 2. When would you use an Array over a Hash and vice versa?
@@ -22,3 +23,4 @@ Ruby does not support multiple inheritance. However, since a child class can inh
 5. What is the difference between a Module and a Class?
 
 A Class can be instantiated. Modules can have contracts that may require inheriting classes to implement certain methods.
+

@@ -1,4 +1,5 @@
 module SimonSays
+
   def echo(str)
     str
   end
@@ -18,4 +19,4 @@ module SimonSays
   def first_word(str)
     str.split(' ').first
   end
-end
+
