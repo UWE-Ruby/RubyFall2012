@@ -1,6 +1,7 @@
 # Hint: require needs to be able to find this file to load it
 #require "./simon_says.rb"
-include 'simon_says.rb'
+#include 'simon_says.rb'
+require "./simon_says.rb"
 
 describe SimonSays do
   include SimonSays # Hint: Inclusion is different than SimonSays.new (read about modules)
