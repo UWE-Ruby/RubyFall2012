@@ -5,8 +5,7 @@ class Calculator
   end
 
   def multiply(num1, num2=1)
-    return num1 * num2 if num1.class == Fixnum
-    num1.inject(:*)
+    num1.class == Fixnum ? num1*num2 : num1.inject(:*)
   end
 
   def power(num1, num2)
