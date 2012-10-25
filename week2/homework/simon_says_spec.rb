@@ -8,7 +8,10 @@ describe SimonSays do
   it "should echo hello" do
     echo("hello").should == "hello"
   end
-  
+  it "should echo cheese" do
+    echo("cheese").should == "cheese"
+  end
+
   it "should echo bye" do
     echo("bye").should == "bye"
   end
