@@ -11,6 +11,7 @@ module SimonSays
   end
 
   def repeat(text, repeater = 2)
+    # return "Go Away!" if repeater == 0
     #([text]*repeater).join(' ')
     repeated_text = "#{text} " * repeater
     repeated_text.strip!
