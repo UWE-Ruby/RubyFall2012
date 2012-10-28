@@ -1,8 +1,11 @@
+MINE
+
 Please Read The Chapters on: 
 Containers, Blocks, and Iterators 
 Sharing Functionality: Inheritance, Modules, and Mixins
 
 1. What is the difference between a Hash and an Array?
+<<<<<<< HEAD
 Arrays use [] operator, hash uses {} (with key value pairs using # =>). Hashes store data in key-value pairs that can use any object as a key. (Arrays store in key-value pairs determined by index position [interger].)
 	
 2. When would you use an Array over a Hash and vice versa?
@@ -16,3 +19,20 @@ No, restricted to single inheritance from one parent. A work around is to use mi
 
 5. What is the difference between a Module and a Class?
 Modules provide methods to multiple classes (functionality focused), cannot be instatiated. Classes create objects, are instantiated, use modules. 
+
+
+HERS
+An array is an ordered list of items that are referenced by their index (order), a hash is a collection of items that can be referenced by a key and have no order.
+
+2. When would you use an Array over a Hash and vice versa?
+When the items have an inherent order I would use an array, when I want to reference the items in my collection by a name or key and their order does not matter I would use a hash.
+
+3. What is a module? Enumerable is a built in Ruby module, what is it?
+A module is a way to group code that you can use across multiple classes. Enumerable is a Ruby module that provides collection functionality; iteration, searching, and sorting. It requires an implementation of the each method.
+
+4. Can you inherit more than one thing in Ruby? How could you get around this problem?
+No, multiple inheritance is not allowed in Ruby. You can include multiple modules if you wanted to mix-in different functionality into your code. Code that is related with a hierarchical nature should be subclassed (inherited). A class can only have 1 direct parent, but can have lots of ancestors.
+
+5. What is the difference between a Module and a Class?
+A class can be instantiated into an object, a module cannot. A module is code that can be used across many classes.
+
