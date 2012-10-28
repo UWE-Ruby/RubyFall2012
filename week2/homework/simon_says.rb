@@ -16,6 +16,7 @@ module SimonSays
 	end
 	
 	def repeat(st, t=2)
+		return "Go Away!" if t==0
 		([st]*t).join(' ')
 	end
 end
