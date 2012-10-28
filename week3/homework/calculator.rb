@@ -1,7 +1,7 @@
 class Calculator
 
-  def sum(*num)
-    num.map {|n| n.inject(0,:+)}.first
+  def sum(num)
+    num.inject(0,:+)
   end
 
   def multiply(num1, num2=1)
