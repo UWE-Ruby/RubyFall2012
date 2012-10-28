@@ -35,7 +35,8 @@ module SimonSays
     st[0...i]
   end
 
-  def repeat(st, t=2)
-    ([st]*t).join(' ')
-  end
+	def repeat(st, t=2)
+		return "Go Away!" if t==0
+		([st]*t).join(' ')
+	end
 end
