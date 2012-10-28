@@ -5,8 +5,50 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
+
+A symbol is a referent, often a word, which is frequently used in hashes to stand for whatever information it refers to.
+
 2. What is the difference between a symbol and a string?
+
+A symbol can be string-like, but how it is used is very different than how strings are used. A string is a collection of characters, while a symbol is a name used to refer to some piece of stored information. That name can be more than one-word, but in practice it rarely is.What a symbol is called is not important to the program, though using mnemonic symbol names makes things easier on programmers.
+
 3. What is a block and how do I call a block?
+
+A block is a chunk of code between either a pair of curly braces ({}) of between a do…end pair. Blocks in braces are usually written on a single line, while blocks in a do…end are written over multiple lines. A block can be called with yield, a keyword which returns the block passed to it in the current method. For example:
+	def block
+		puts "This is code in the method."
+		yield
+	end
+
+	block {"This is code passed through the block."}
+*returns*
+	This is code in the method.
+	This is code passed through the block.
+
+The method will return whatever is passed in with a yield so:
+	block {"I like cats."}
+*returns*
+	This is code in the method.
+	I like cats.
+
 4. How do I pass a block to a method? What is the method signature?
+
+A block is passed to mathod by invoking the method with it's name and any parameters in parantheses, and then passing the block in curly braces to the method. Like so:
+	method_name(param1, param2){"I'm just like Garfield. I hate Mondays and I love lasagna."}
+
+A method signature is the full first line of the method definition... something like `def caturday(week, *cat_pics)`. Below I've excerpted a table from The Well-Grounded Rubyist which demonstrates a variety of method signatures.
+
+Table 2-2 from TWGR:
+Argument type(s)		Method signature
+Required (R)				def m(a,b,c)
+Optional (O)				def m(*a)
+Default-valued (D)	def m(a=1)
+R/O 								def m(a,*b)
+R/D 								def m(a,b=1)
+D/O 								def m(a=1,*b)
+R/D/O 							def m(a,b=2,*c)
+R/D/O/R 						def m(a,b=2,*c,d)
+
 5. Where would you use regular expressions?
 
+Regular expressions are good at helping a programmer parse strings into smaller parts. I have used regular expressions to process a file full of lines with data formatted in a particular fashion. Something like `score.match(/^(.*)\s(\d),/).to_a` yields ["Lions 3,", "Lions", "3"]. The first element of the array is the entire pattern matched by the regex ^(.*)\s(\d), while the second and third elements are matched by the parenthical portion of the regex.
