@@ -19,3 +19,4 @@ module SimonSays
     sentence.scan(/[\w']+/)[0]
   end
 end
+
