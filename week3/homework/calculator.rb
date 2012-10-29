@@ -17,7 +17,7 @@ class Calculator
   end
 
   def pow(x, y)
-  	x**y
+    x**y
   end
 
   def factorial(n)
