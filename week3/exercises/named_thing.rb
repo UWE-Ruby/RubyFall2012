@@ -1,3 +1,4 @@
+
 module NamedThing
 	attr_accessor :name
 
