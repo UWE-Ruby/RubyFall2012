@@ -9,7 +9,7 @@ class Calculator
   end
 
   def multiply(array)
-  	if array.any?
+    if array.any?
       array.inject(:*)
     else
       0
