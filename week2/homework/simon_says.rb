@@ -8,15 +8,15 @@ module SimonSays
 	end
 
 	def first_word(st)
-		st.split.first
+		st.split(' ')[0]
 	end
 
 	def start_of_word(st,i)
-		st[0...i]
+		st.slice!(0..i-1)
 	end
 	
 	def repeat(st, t=2)
-		return "Go Away!" if t==0
-		([st]*t).join(' ')
+<<<<<<< HEAD
+		(st+" ")*(t-1)+st  # or could use Array join method.
 	end
 end
