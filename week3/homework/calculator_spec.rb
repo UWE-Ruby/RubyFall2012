@@ -27,19 +27,38 @@ describe Calculator do
   # Once the above tests pass, 
   # write tests and code for the following:
   
-  it "multiplies two numbers"
+  it "multiplies two numbers" do
+    @calculator.multiply([2,3]).should == 6
+  end
 
-  it "multiplies an array of numbers"
+
+  it "multiplies an array of numbers" do
+    @calculator.multiply([2,3,4]).should == 24
+  end
   
-  it "raises one number to the power of another number"
+  it "raises one number to the power of another number" do
+    @calculator.exponent(5,2).should == 25
+  end
   
   # http://en.wikipedia.org/wiki/Factorial
   describe "#factorial" do
-    it "computes the factorial of 0"
-    it "computes the factorial of 1"
-    it "computes the factorial of 2"
-    it "computes the factorial of 5"
-    it "computes the factorial of 10"
+    it "computes the factorial of 0" do
+      @calculator.factoral(0).should == 1
+    end
+
+    it "computes the factorial of 1" do
+      @calculator.factoral(1).should == 1
+    end
+    it "computes the factorial of 2" do
+      @calculator.factoral(2).should == 2
+    end
+    it "computes the factorial of 5" do
+      @calculator.factoral(5).should == 120
+    end
+
+    it "computes the factorial of 10" do
+      @calculator.factoral(10).should == 3628800
+    end
   end
 
 end
