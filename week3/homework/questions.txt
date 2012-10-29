@@ -5,8 +5,24 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
+=>A symbol is a constant defined by a name following a colon, e.g. :north. The advantage of doing this as opposed to defining a variable is that the value of a symbol is assigned and handled internally by Ruby, leading to greater simplicity and performance. All the user has to do is declare a symbol with a memorable name.
+
 2. What is the difference between a symbol and a string?
+=>A symbol is a unique numerical value (handled by Ruby under the surface) that is referenced with a string name. A symbol is not an instance of the string class, and thereby has no access to all the methods of String. A symbol can be turned into a string with to_s though.
+
 3. What is a block and how do I call a block?
+=> A block is a snippet of code -- enclosed either in braces or do..end -- that is called immediately after the invocation of a method and is used to generalize the functionality of that method. For instance,
+array1 = []
+def double(input)
+	yield(input*2)
+end
+double(3) {|x| puts "The method output is #{x}"}  #prints "The method output is 6".
+double(three) {|x| array1 << x} #places output threethree into array1.
+Thus, while the functionality of the method double is the same (it simply multiplies its input by 2, according to the defintion of the * operator for the input's class), the block allows that output to be implemented in a wide variety of ways. Blocks are also very convenient for iterating over collections.
+
 4. How do I pass a block to a method? What is the method signature?
+=> A block is passed to a method either by using "yield" in the method definition (see previous answer), or as a parameter itself with a leading ampersand (e.g. def method(input, &block) ).
+
 5. Where would you use regular expressions?
+=> Regular expressions are used for parsing strings in powerful and more robust ways than simpler string manipulation techniques allow. One of the many instances in which one could use regular expressions is in processing data read from a file, which would get read by IO as a string.
 
