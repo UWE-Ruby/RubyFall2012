@@ -1,13 +1,12 @@
 class Book
+  attr_reader :title
 
-	attr_accessor :title, :pages
+  def initialize title, page_count
+    @title = title
+    @page_count = page_count
+  end
 
-	def initialize(title, pages)
-		@title = title
-		@pages = pages
-	end
-
-	def page_count
-		"Page count is #{@pages}"
-	end
+  def page_count
+    %Q[Page count is #@page_count]
+  end
 end
