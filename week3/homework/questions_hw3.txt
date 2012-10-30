@@ -1,0 +1,18 @@
+1. What is a symbol?
+A symbol is an identifier corresponding to a string of characters, often a name.
+
+2. What is the difference between a symbol and a string?
+A symbol is an unchangable string.
+
+3. What is a block and how do I call a block?
+A block is a bit of code between either braces or do/end, blocks are not objects.
+A block can be called by using call, yield or [].
+However, you can also call it by name.(arg) which maps to name.call(arg)
+
+4. How do I pass a block to a method? What is the method signature?
+You pass a block to a method by listing the last parameter as a prefix with an ampersand. ex. def test(&block)
+A method signature is the method name and all if its arguments.
+
+5. Where would you use regular expressions?
+A regular expression is to identify a pattern in a string.
+I imagine using regular expressions when finding data points based on unique ID format.
