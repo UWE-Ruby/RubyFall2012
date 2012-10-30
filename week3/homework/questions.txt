@@ -1,12 +1,29 @@
-Please Read: 
+Please Read:
  - Chapter 6 Standard Types
  - Review Blocks
  - Chapter 7 Regular Expressions
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
-2. What is the difference between a symbol and a string?
-3. What is a block and how do I call a block?
-4. How do I pass a block to a method? What is the method signature?
-5. Where would you use regular expressions?
+A: A symbol is a constant referenced by a sequence of characters following an initial colon (:) that gets created as the Ruby interpreter encounters it. Ruby internally manages what the actual constant is so programmers only have to keep track of the name.
 
+For example, maybe :north stands for 8, while :east stands for 77. This is useful for cases where the pragrammer doesn't care what it stands for, they just want a unique value and don't want to worry about accidentally assigning two symbols to the same value.
+
+2. What is the difference between a symbol and a string?
+A: The main difference between a symbol and string is that symbols are immutable, while strings are mutable. This means that strings can be changed after they are created while symbols can't.
+
+Another facet of this is that strings created with the same text will all be different objects while symbols won't. This is because symbols with the same text representation are the same object.
+
+:my_symbol.object_id == :my_symbol.object_id    # => true
+Versus:
+"my_string".object_id == "my_string".object_id  # => false
+
+3. What is a block and how do I call a block?
+A: A block is a section of code enclosed by either braces ({}) or do/end keywords. It can be called by creating a Proc object or a lambda with your code block, assigning that to a variable and then using the call method on that variable.
+
+4. How do I pass a block to a method? What is the method signature?
+A: You pass a block to a method by turning it into a lambda or proc object, assigning that lambda/proc to a variable and passing that variable to your method prefixed with an ampersand (&).
+Example method signature: 'def my_method(&block)' .
+
+5. Where would you use regular expressions?
+A: You would use regular expressions anytime you want to extract from a string sections that match a pattern, replace a substring of text within a string or test a string to see if it matches a pattern.
