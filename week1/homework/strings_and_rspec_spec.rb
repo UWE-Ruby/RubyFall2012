@@ -16,11 +16,12 @@ describe String do
 			@my_string.should have(@my_string.size).characters
 		end
 		it "should be able to split on the . charater" do
-			result = @my_string.split('.')
-			result.should have(2).items	
+			result = @my_string.split(/\s*\.\s*/)
+			result.should have(2).items
 		end
 		it "should be able to give the encoding of the string" do
-			@my_string.encoding.should eq (Encoding.find("UTF-8"))
+			results = @my_string.encoding
+			results.should eq(Encoding.find("UTF-8"))
 		end
 	end
 end
