@@ -4,9 +4,45 @@ Please Read:
  - Chapter 7 Regular Expressions
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
-1. What is a symbol?
-2. What is the difference between a symbol and a string?
-3. What is a block and how do I call a block?
-4. How do I pass a block to a method? What is the method signature?
-5. Where would you use regular expressions?
+Q1. What is a symbol?
+
+A1. Two references for symbols: Section 2.4 (Symbols, p.21), and section 22.3 (The Basic Types, p. 301).
+
+A symbol is simply a named constant identifier. It does not refer to anything other than itself, and has no value other than its name (it is not a variable, or a String). It is a unique reference: a given name refers to exactly one symbol. It is not a class and is not instantiated, so there is never any ambiguity about "which instance" of a symbol we are referring to.
+
+Because a named symbol is a unique reference, they are a good choice for use as hash keys, since there is no possibility of using the wrong value or wrong instance when performing a hash lookup.
+
+This brings up an interesting question, though: Do symbols reside in namespaces? Will we have naming collisions if we use the same symbol in multiple modules or classes? It doesn't seem to present a problem. A practice class I wrote included two modules, each of which declared a symbol by the same name. There was no conflict, and tests (using that symbol as a hash key, and looking at its object_id) indicated that it was the same symbol regardless of which module was referring to it.
+
+----
+
+Q2. What is the difference between a symbol and a string?
+
+A2. A symbol is a unique object by a given name. Two strings with the same content may appear to be the same, but can be distinct objects, as shown by their object_id values. And since they are distinct, modifying one instance of the string has no effect on other instances that share the same value but are different objects.
+
+----
+
+Q3. What is a block and how do I call a block?
+
+A3. References for blocks: Section 2.7 (Blocks and Iterators, p.25), section 4.3 (Blocks and Iterators, p.52), section 22.13 (Blocks, Closures, and Proc Objects, p.332).
+
+A block is a section of code within delimiters (braces or a do-end pair) which can be passed to a method call, and can be executed within the receiving method. This is frequently used to implement iteration over a code block, where the method receiving the block is an iterative method (each, times, upto, map, inject, etc.). Methods other than iterators can receive a block of code, and execute it via the yield statement.
+
+A block can take parameters, which appear at the beginning of the block between vertical bars. Each time the code in the block is invoked via the yield statement, the parameters to the block are passed in via the yield.
+
+----
+
+Q4. How do I pass a block to a method? What is the method signature?
+
+A4. A block is passed to a method by converting it to a Proc object. Proc objects can be created implicitly, via the enclosing braces or a do-end pair, or explicitly via the Proc.new or lambda methods. If the Proc object is implicitly created on the fly, the method signature must prefix the name of its last parameter with an ampersand, and the block must be the last parameter to the method. If the Proc object has been explicitly created, it can be assigned to a variable and passed to a method like any other parameter. 
+
+----
+
+Q5. Where would you use regular expressions?
+
+A5. References for regular expressions: Section 2.6 (Regular Expressions, p.24), Chapter 7 (Regular Expressions, p.93), and section 22.3 (The Basic Types, p. 301).
+
+A regular expression is useful any time we need to look for patterns within a String, and possibly make changes to the String based on that pattern. Regular expressions include facilities to look for character literals, substring literals, classes of characters (whitespace, digits, letters, etc.), as well as repetitions, alternations ("match any one of several"), or exclusions of these. Substitution for matched character sequences in the original string is performed via the sub or gsub methods.
+
+Matched character sequences can be referenced for substitution or duplication by their index, by a name assigned within the regular expression (the ?<name> and k<name> pattern), or as parameters to a block.
 
