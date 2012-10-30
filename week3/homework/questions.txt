@@ -5,8 +5,22 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
+A Ruby symbol is an identifier corresponding to a string of characters, often a name.  You construct the symbol for a name by preceding the name with a colon.  Substitution occurs in double-quoted strings.
+
 2. What is the difference between a symbol and a string?
+Multiple symbols representing a single value are unique whereas this is not true with strings. 
+
+
 3. What is a block and how do I call a block?
+A block is simply a chunk of code enclosed between either braces or the keywords do and end. 
+The block is being called by the each method once for each element in the array.  The element is passed to the block as the value parameter.
+
 4. How do I pass a block to a method? What is the method signature?
+Blocks can appear in Ruby source code only immediately after the invocation of some method.  If the method takes parameters, the block appears after these parameters.
+
+
 5. Where would you use regular expressions?
+You can test a string to see whether it matches a pattern.
+You can extract from a string the sections that match all or part of a pattern.
+You can change the string, replacing parts that match a pattern.
 
