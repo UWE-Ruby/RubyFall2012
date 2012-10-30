@@ -98,4 +98,48 @@ public
     end
     result
   end
+
+  # The two methods below are variants of exp() and factorial() above. They make
+  # use of the product() method. Instead of performing the multiplication within
+  # these methods, they build up an array of factors, and pass the array to
+  # product() for evaluation. It's not as efficient as the original, but it is
+  # kind of a cool proof of concept, and it leverages existing code. The methods
+  # below pass all the same unit tests as the original.
+
+  # Raise a number to an integer power. We don't mess around with non-integral
+  # powers. And we certainly don't try to do anything with non-numerics.
+  def exp_variant(base, exp)
+    result = nil
+    negativeExponent = false
+    counter = 0
+    # Make sure base is numeric, exponent is integer
+    if ((base.is_a? Numeric) && (exp.is_a? Integer))
+      negativeExponent = (exp < 0)
+      counter = exp.abs
+      # Make an array of copies of the base value
+      factors = Array.new(counter, base)
+      # And multiply them together
+      result = product(factors)
+      # If the exponent was negative, take the inverse of the product
+      if (negativeExponent)
+        result = 1.0 / result
+      end
+    end
+    result
+  end
+
+  # Take the factorial value of a non-negative integer. If not an integer, or
+  # if a negative integer, returns nil.
+  def factorial_variant(n)
+    result = nil
+    # Check for valid input
+    if ((n.is_a? Integer) && (n >= 0))
+      # Make an array of the values 1 through n
+      factors = Array.new(n) { |i| (i+1) }
+      # And multiply them together
+      result = product(factors)
+    end
+    result
+  end
+
 end
