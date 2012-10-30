@@ -5,8 +5,15 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
+A symbol is like as string but it is immutable. It can't change once it is created. This makes it better to use a symbol for program control compared to a string which is good for data that may change. 
 2. What is the difference between a symbol and a string?
-3. What is a block and how do I call a block?
-4. How do I pass a block to a method? What is the method signature?
-5. Where would you use regular expressions?
+A symbol is immutable, a string can change. A symbol is represented once in memory even when the symbol is repeated multiple times, when the same string is repeated each one is it's own object. 
 
+3. What is a block and how do I call a block?
+A block is a chunk of code that is enclosed in {} or sandwiched between do and end. You call a block from within a method using 'yield'
+
+4. How do I pass a block to a method? What is the method signature?
+You pass a block to a method by putting the block after the method call. A method signature is a string representation of a method including a method's name and its parameters. 
+
+5. Where would you use regular expressions?
+You'd use regular expressions to evaluate whether a string follows a certain pattern. For example is a date in the format mm:dd:yyyy? Is your new password complicated enough? Is the string passed in to the method as an argument something the method knows how to deal with?
