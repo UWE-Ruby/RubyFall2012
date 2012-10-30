@@ -5,8 +5,18 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
+A constant that is garunteed to be unique and that does not need to be predeclared.
+
 2. What is the difference between a symbol and a string?
+Strings are a sequence of characters whereas symbols represent and point to another object. Stings can be binary objects. Strings can be duplicated, but symbols will always be unique.
+
 3. What is a block and how do I call a block?
+A block is a chunk of code between either braces or the keywords do and end.
+Calling a block only occurs after a method is called.
+
 4. How do I pass a block to a method? What is the method signature?
+Pass a block to a method with do |value| end. The method signature is the method name.
+
 5. Where would you use regular expressions?
+You would most likely use a regular expression in searching for data or matches or to manipulate data to extract items that match a pattern or change items that match a pattern.
 
