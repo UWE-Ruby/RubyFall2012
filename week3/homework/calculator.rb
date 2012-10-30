@@ -4,8 +4,8 @@ class Calculator
     num.inject(0,:+)
   end
 
-  def multiply(num1, num2=1)
-    num1.class == Fixnum ? num1*num2 : num1.inject(:*)
+  def multiply(*num1)
+    num1.flatten.inject(:*)
   end
 
   def power(num1, num2)
