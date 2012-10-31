@@ -25,8 +25,8 @@ describe Timer do
 
 	it "should give the average time" do
 		Time.stub(:now).and_return(0,10)
-		result = Timer.time_code(1) { }
-		result.should be_within(0.1).of(10)
+		result = Timer.time_code(10) { }
+		result.should be_within(0.1).of(1)
 	end
 
 end
