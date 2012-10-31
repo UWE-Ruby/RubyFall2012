@@ -4,3 +4,8 @@ BigDecimal: http://www.ruby-doc.org/stdlib-1.9.3/libdoc/bigdecimal/rdoc/BigDecim
 Array: http://www.ruby-doc.org/core-1.9.3/Array.html
 Hash: http://www.ruby-doc.org/core-1.9.3/Hash.html
 Range: http://ruby-doc.org/core-1.9.3/Range.html
+<<<<<<< HEAD
+=======
+
+Why's Poignant Guide: http://mislav.uniqpath.com/poignant-guide/
+>>>>>>> f7e675fa7a88f9cdfc4b342f33e2567d897b5075
