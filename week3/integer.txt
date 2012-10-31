@@ -1,0 +1,50 @@
+
+C:\Projects\RubyFall2012\book>irb
+irb(main):001:0> num=81
+=> 81
+irb(main):003:0> 6.times do
+irb(main):004:1* puts "#{num.class}:#{num}"
+irb(main):005:1> num*=num
+irb(main):006:1> end
+Fixnum:81
+Fixnum:6561
+Fixnum:43046721
+Bignum:1853020188851841
+Bignum:3433683820292512484657849089281
+Bignum:11790184577738583171520872861412518665678211592275841109096961
+=> 6
+irb(main):007:0> Rational(3,4)*Rational(2,3)
+=> (1/2)
+irb(main):008:0> Rational("3/4")*Rational("2/3")
+=> (1/2)
+irb(main):010:0> Complex(1,2)*Complex(3,4)
+=> (-5+10i)
+irb(main):011:0> 1+2
+=> 3
+irb(main):012:0> 1+2.0
+=> 3.0
+irb(main):013:0> 1.0+2
+=> 3.0
+irb(main):014:0> 1.0+Complex(1,2)
+=> (2.0+2i)
+irb(main):015:0> 1+Rational(2,3)
+=> (5/3)
+irb(main):016:0> 1.0+Rational(2,3)
+=> 1.6666666666666665
+irb(main):017:0> 1.0/2
+=> 0.5
+irb(main):018:0> 1/2.0
+=> 0.5
+irb(main):019:0> 1/2
+=> 0
+irb(main):020:0> 22/7
+=> 3
+irb(main):021:0> Complex::I*Complex::I
+=> (-1+0i)
+irb(main):022:0> require 'mathn'
+=> true
+irb(main):023:0> 22/7
+=> (22/7)
+irb(main):024:0> Complex::I*Complex::I
+=> -1
+irb(main):025:0>

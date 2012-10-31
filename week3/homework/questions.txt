@@ -1,0 +1,36 @@
+Please Read: 
+ - Chapter 6 Standard Types
+ - Review Blocks
+ - Chapter 7 Regular Expressions
+ - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
+
+1. What is a symbol?
+A symbol is a constant name that you don't have to predeclare. They are guaranteed to be unique so they are often used as keys in hashes. They are generated using the :name or :"arbitrary text" literal syntax and exist for the life of a program's execution. Essentially symbols represent names inside the Ruby interpreter.  
+  
+2. What is the difference between a symbol and a string?
+Every time a String is declared, a new Object is created - the difference is that a symbol is a Singleton, but many instances of the same String can exist in a program.
+
+3. What is a block and how do I call a block?
+ A block is a set of Ruby statements and expressions attached to a method.  They remember variables and constants that were available in the same scope where the block was defined. You call a block using .call if you are out of its context.
+ 
+4. How do I pass a block to a method? What is the method signature?
+You use method#define to pass a block to a method.  Although I have seen .each be used to to pass a block to an enum. The method signature looks like this:  
+		def sum (numbers)
+			value = 0
+			# .each is a method to an enum, it is passed a block in this case an array. Think forloop
+			numbers.each { |number| value = value + number }
+			value
+		 end
+
+5. Where would you use regular expressions?
+You would use regular expressions when you find that String class cannot do what you want to do - it needs more complex pattern matching.  For example you can check to see if a string matches a certain pattern, you can extract from a string using patterns or you can find/replace what is in a string also based on a pattern. 
+
+
+public Runnable getRunnable(final int i) {
+   return new Runnable() {
+		public void run() {
+			System.out.println(i);
+		}
+   };
+}  
+
