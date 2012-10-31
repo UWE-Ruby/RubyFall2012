@@ -1,4 +1,4 @@
-module SimonSays
+ module SimonSays
 	def echo(what)
 		what
 	end
