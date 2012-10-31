@@ -5,24 +5,30 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
-A symbol is a static name or identifier.
+Symbols are "scalar value objects used as identifiers, mapping immutable strings to fixed internal values." [Peter Cooper, Ruby Reloaded]
 
 2. What is the difference between a symbol and a string?
-A string is a collection of characters whereas a string is a static identifier. A string is not static no matter what the contents of the string are. So the strings "hello" and "hello" are two different ojects, whereas the symbol :hello and :hello are the exact same object. If you think of 1 as a FixNum or fixed number, you can think of the symbol :hello as the "FixStr" or fixed string :hello.
+Symbols are immutable objects and if having the same name are the same object in memory while strings are mutable objects which have their own place in memory and can be manipulated by methods in the String class.
 
 3. What is a block and how do I call a block?
-A block is an anonymous function, or some code snipt that you can define and then call at a later time. To call a block you can use the yield keyword.
+A block is simply a chunk of code enclosed in either braces or the keywords do and end. [Thomas p.55] Blocks are like anonymous methods. [Thomas p.66] Alternatively, blocks can be converted into an object having closure. You call a block using one of the ways outlined in the next answer.
 
 4. How do I pass a block to a method? What is the method signature?
-To pass a block to a method you define the block after the method call with either the curly bracket enclosure {} or the do/end syntax. An example of passing a block to the each method of an array:
+You pass a block to a method in two ways:
 
-my_array.each {|a| puts a}
+Oneline:
+my_receiver.my_method(args) { |v| v }
 
-Any method in Ruby can take a block. You can explicitly add a block to a method by putting an ampersand & before the variable name in the method definition. An example of this would be:
+Multiline:
+my_receiver.my_method(args) do |v|
+  v
+end
 
-def my_method(&my_block)
-	my_block.call
+You could then write the method signature like this that would act upon the block variables and return the output using the yield keyword:
+
+def my_method
+  yield(v + 1)
 end
 
 5. Where would you use regular expressions?
-Regular expressions are used for pattern matching and replacement with strings. An example would be if I wanted to write a syntax checker for some text that checked if each sentance ended with a period, started with a space and then a capital letter. 
+One might use regular expressions to test a string to see whether it mathces a pattern, extract sections of a string that match all or part of a pattern, or change a string, replacing parts that match a pattern. [Thomas p.99]

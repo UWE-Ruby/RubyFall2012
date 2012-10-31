@@ -1,23 +1,49 @@
 class Calculator
-	def sum(array)
-		array.inject(0){|sum, x| sum +x}
-	end
 
-	def multiply(*numbers)
-		numbers.flatten.inject(:+)
-	end
+  # Initializes the calculator.
+  def initialize
+  end
 
-	def pow(base, p)
-		#(1..p).to_a.inject(1){|r,v| r *= base}
-		pow_fac(base, p)
-	end
+  # Returns the sum of the given numbers or an array of numbers.
+  def sum(*arr)
+    arr.flatten!
 
-	def fac(n)
-	       #(1..n).to_a.inject(1){|f,v| f *= v}
-	       pow_fac(n)
-	end
-private
-	def pow_fac(base=nil, p)
-		(1..p).to_a.inject(1){|f,v| f *= base || v}
-	end	
+    arr.each{ |n| raise ArgumentError, "arguments must be of type Number or an 
+      Array of variables all of type Numeric" unless n.is_a? Numeric }
+
+    if arr.length > 0
+      arr.inject(:+)
+    else
+      0
+    end
+  end
+
+  # Returns the product of the given numbers or an array of numbers.
+  def product(*arr)
+    arr.flatten!
+
+    arr.each{ |n| raise ArgumentError, "arguments must be of type Numeric or an 
+      Array of variables all of type Numeric" unless n.is_a? Numeric }
+
+    arr.inject(:+)
+  end
+
+  # Returns the result of the base number raised to the power of the exponent number.
+  def pow(base, exponent)
+    raise ArgumentError, "base must be of type Numeric" unless base.is_a? Numeric
+    raise ArgumentError, "exponent must be of type Numeric" unless exponent.is_a? Numeric
+
+    base ** exponent
+  end
+
+  # Returns the factorial of the specified number.
+  def factorial(num)
+    raise ArgumentError, "argument must be a non-negative integer" if !(num.is_a? Integer) || num < 0
+
+    if num == 0
+      1
+    else
+      num * factorial(num - 1)
+    end
+  end
 end
