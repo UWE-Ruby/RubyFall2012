@@ -4,9 +4,26 @@ Please Read:
  - Chapter 7 Regular Expressions
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
-1. What is a symbol?
-2. What is the difference between a symbol and a string?
-3. What is a block and how do I call a block?
-4. How do I pass a block to a method? What is the method signature?
-5. Where would you use regular expressions?
+Q1. What is a symbol?
 
+A1. A symbol is a constant that has a consistent name.
+
+Q2. What is the difference between a symbol and a string?
+
+A2. A symbol is a consistent object, that is guarenteed to be unique. A string is a changeable object.
+
+Q3. What is a block and how do I call a block?
+
+A3. A block of a chunk of code that contains the variables when it was initialized. You can call a block by `yield`
+or Proc::call.
+
+Q4. How do I pass a block to a method? What is the method signature?
+
+A4. At the end of the method call between curly brackets, such as do_this_for_reals { block here }, which can then be called with yield.
+If you'd rather pass in a proc, method_name(arg1, argv2, &proc)
+
+Q5. Where would you use regular expressions?
+
+A5. Where wouldn't you use a regular expression? They're useful to match patterns, 
+pull specific chunks of strings that match patterns out, and all sorts of other such
+tidbits. Not to mention substitution!
