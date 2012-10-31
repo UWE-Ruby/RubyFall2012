@@ -17,6 +17,5 @@ module SimonSays
 	
 	def repeat(st, t=2)
 		(st+" ")*(t-1)+st  # or could use Array join method.
-		
 	end
 end
