@@ -5,8 +5,35 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
+Symbols are constant names that are immutable. You use them as a label or name for something that will not change
+and that you need to use many times. Symbols save space in memory because a symbol only takes up one place in memory
+and ruby reuses that symbol or name every time you call it. They are commonly used as hash keys because you use the
+same hash key name over and over but you only really need one reference to it.
+
 2. What is the difference between a symbol and a string?
+String are mutable, you can change them or append to them, but symbols are constant, you cannot change their name,
+otherwise it creates a new symbol and/or throws an error. Strings usually hold a value but symbols are more of a label
+or a pointer/name that references some place in memory, for reuse.
+
 3. What is a block and how do I call a block?
+A block is just ruby code found between curly braces or a do/end pair. You call a block with the yield keyword inside of a method.
+
 4. How do I pass a block to a method? What is the method signature?
+You pass a block to a method using the yield keyword and by calling the method with the block right after the method signature.
+
+def myMethod
+  // some ruby code
+  yield
+end
+
+myMethod { puts "hello" * 3 }
+
+gives you
+
+// soem ruby code
+hello hello hello
+
 5. Where would you use regular expressions?
+You would use regular expressions when searching or comparing a string against some value. For example, if you had a sentence that
+said "I took the dog to the park" and you wanted to know if the string contained the word "dog" you would use a regular expression.
 
