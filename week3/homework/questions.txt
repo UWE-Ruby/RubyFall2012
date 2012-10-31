@@ -25,6 +25,7 @@ You use method#define to pass a block to a method.  Although I have seen .each b
 5. Where would you use regular expressions?
 You would use regular expressions when you find that String class cannot do what you want to do - it needs more complex pattern matching.  For example you can check to see if a string matches a certain pattern, you can extract from a string using patterns or you can find/replace what is in a string also based on a pattern. 
 
+Please ignore this part:
 
 public Runnable getRunnable(final int i) {
    return new Runnable() {
