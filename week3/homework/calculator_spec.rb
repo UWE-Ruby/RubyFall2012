@@ -27,7 +27,7 @@ describe Calculator do
   # Once the above tests pass, 
   # write tests and code for the following:
   it "multiplies two numbers" do
-    @calculator.multiply2numbers(2,2).should == 4
+    @calculator.multiply(2,2).should == 4
   end
 
   it "multiplies an array of numbers" do
@@ -41,7 +41,7 @@ describe Calculator do
   # http://en.wikipedia.org/wiki/Factorial
   describe "#factorial" do
     it "computes the factorial of 0" do
-      @calculator.factorial(0).should == 0
+      @calculator.factorial(0).should == 1
     end
 
     it "computes the factorial of 1" do

@@ -3,12 +3,8 @@ class Calculator
     numberArray.count == 0 ? 0 : numberArray.inject(:+)
   end
 
-  def multiply2numbers(firstNumber, secondNumber)
-    firstNumber * secondNumber
-  end
-
-  def multiply(numberArray)
-    numberArray.count == 0 ? 0 : numberArray.inject(:*)
+  def multiply(*numberArray)
+    numberArray.flatten().count == 0 ? 0 : numberArray.flatten().inject(:*)
   end
 
   def power(baseNumber, exponent)
@@ -16,6 +12,6 @@ class Calculator
   end
 
   def factorial(number)
-    number == 0 ? 0 : Math.gamma(number + 1)
+    number == 0 ? 1 : Math.gamma(number + 1)
   end
 end
