@@ -23,9 +23,6 @@ describe Calculator do
       @calculator.sum([1,3,5,7,9]).should == 25
     end
   end
-  
-  # Once the above tests pass, 
-  # write tests and code for the following:
 
   describe "#multiplies" do
     it "multiplies two numbers" do
@@ -43,7 +40,6 @@ describe Calculator do
     end
   end
 
-  # http://en.wikipedia.org/wiki/Factorial
   describe "#factorial" do
     it "computes the factorial of 0" do
       @calculator.factorial(0).should == 0

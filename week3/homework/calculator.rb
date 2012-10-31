@@ -14,7 +14,6 @@ class Calculator
 	def power(power_array)
 		@power_array = power_array
 		@power = nil
-		# @power_array.each {|x| @power=x} {|x| @power=@power**x }
 		@power = @power_array[0]**@power_array[1]
 		@power
 	end
