@@ -1,23 +1,17 @@
 class Calculator
-	def sum(array)
-		array.inject(0){|sum, x| sum +x}
-	end
+  def sum(numberArray)
+    numberArray.count == 0 ? 0 : numberArray.inject(:+)
+  end
 
-	def multiply(*numbers)
-		numbers.flatten.inject(:+)
-	end
+  def multiply(*numberArray)
+    numberArray.flatten().count == 0 ? 0 : numberArray.flatten().inject(:*)
+  end
 
-	def pow(base, p)
-		#(1..p).to_a.inject(1){|r,v| r *= base}
-		pow_fac(base, p)
-	end
+  def power(baseNumber, exponent)
+    baseNumber**exponent
+  end
 
-	def fac(n)
-	       #(1..n).to_a.inject(1){|f,v| f *= v}
-	       pow_fac(n)
-	end
-private
-	def pow_fac(base=nil, p)
-		(1..p).to_a.inject(1){|f,v| f *= base || v}
-	end	
+  def factorial(number)
+    number == 0 ? 1 : Math.gamma(number + 1)
+  end
 end
