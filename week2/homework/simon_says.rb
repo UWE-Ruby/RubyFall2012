@@ -4,7 +4,7 @@ module SimonSays
 	end
 	
 	def shout(st)
-		st.upcase
+		st.to_s.upcase
 	end
 
 	def first_word(st)
