@@ -26,7 +26,6 @@ describe Calculator do
   
   # Once the above tests pass, 
   # write tests and code for the following:
-  
   it "multiplies two numbers" do
     @calculator.multiply2numbers(2,2).should == 4
   end

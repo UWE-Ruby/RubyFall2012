@@ -14,4 +14,3 @@ Please Read:
     It's passed as an argument after the method call: doSomething {puts 'Block'}
 5. Where would you use regular expressions?
     Many places. It's used for string matching, modification and replacement
-
