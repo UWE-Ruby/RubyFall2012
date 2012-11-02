@@ -17,16 +17,16 @@ describe Timer do
 		flag.should be_true
 	end
 
-  it "should run our code 10 times" do
-    counter = 0
-    Timer.time_code(17) {counter += 1}
-    counter.should == 17
-  end
+	it "should run our code multiple times" do
+		counter = 0
+		result = Timer.time_code(17) {counter += 1}
+		counter.should equal 17
+	end
 
-  it "should give the average time" do
-    Timer.stub(:now).and_return(0,10)
-    result = Timer.time_code(10) {sleep(1)}
-    result.should be_within(0.1).of(10)
-  end
+	it "should give the average time" do
+		Time.stub(:now).and_return(0,10)
+		result = Timer.time_code(10) { }
+		result.should be_within(0.1).of(1)
+	end
 
 end
