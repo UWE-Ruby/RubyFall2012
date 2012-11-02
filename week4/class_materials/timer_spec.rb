@@ -17,4 +17,15 @@ describe Timer do
 		flag.should be_true
 	end
 
+	it "should run out code multiple times" do
+		counter = 0
+		result = Timer.time_code(17){counter += 1}
+		counter.should equal 17
+	end
+
+	it "should give the average time" do
+		Time.stub(:now).and_return(0,1)
+		result = Timer.time_code(1) {}
+		result.should be_within(0.1).of(1.0)
+	end
 end
