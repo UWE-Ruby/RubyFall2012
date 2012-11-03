@@ -4,14 +4,14 @@ class ThanksgivingDinner < Dinner
   attr_accessor :guests
   attr_reader :menu
 
-  def initialize(menu)
-    intialize_menu
-    @menu[:diet] = menu
+  def initialize(diet)
+    intialize_menu(diet)
   end
 
   private
-  def intialize_menu
+  def intialize_menu(diet)
     @menu = {
+      diet: diet,
       proteins: ["Tofurkey", "Hummus"],
       veggies:  [:ginger_carrots , :potatoes, :yams],
       desserts:
