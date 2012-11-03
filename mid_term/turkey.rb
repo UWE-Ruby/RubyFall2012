@@ -7,4 +7,8 @@ class Turkey < Animal
   def initialize(weight = 0)
     @weight = weight
   end
+
+  def gobble_speak(str)
+    "Gobble Gobble Gobble gobble Gobble. Gobble Gobb'le Gobble Gobble"
+  end
 end
