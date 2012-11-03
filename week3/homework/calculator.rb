@@ -1,37 +1,23 @@
 class Calculator
+	def sum(array)
+		array.inject(0){|sum, x| sum +x}
+	end
 
-  def sum(x)
-    if x.length == 0
-      return 0
-    else
-      x.inject(:+)
-    end
-    #elsif @x.length == 1
-  end
+	def multiply(*numbers)
+		numbers.flatten.inject(:+)
+	end
 
-  def multiply(*args)
-    #n.to_a
-    args.inject(:*)
+	def pow(base, p)
+		#(1..p).to_a.inject(1){|r,v| r *= base}
+		pow_fac(base, p)
+	end
 
-    # monkey = n.to_a
-    # n[0] * n[1]
-    # (n.first..n.last).inject(:*)
-
-  # def multiply(*args)
-  #   monkey = args.to_a
-  #   monkey.inject(:*)
-  end  
-
-  def to_power(a,b)
-    a ** b
-  end
-
-  def factorial(z)
-    if z == 0
-      return 1
-    else
-      (1..z).inject(:*)
-    #1.upto(z).inject(:*)
-    end
-  end
+	def fac(n)
+	       #(1..n).to_a.inject(1){|f,v| f *= v}
+	       pow_fac(n)
+	end
+private
+	def pow_fac(base=nil, p)
+		(1..p).to_a.inject(1){|f,v| f *= base || v}
+	end	
 end
