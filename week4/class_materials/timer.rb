@@ -1,4 +1,5 @@
 class Timer
+<<<<<<< HEAD
   def self.time_code(n=1)
   	start_time = Time.now
   	n.times{yield}
@@ -18,3 +19,13 @@ end
   # end
   # load 'timer.rb'
   # Timer.time_code {(1..10000000).to_a}
+
+	# def self.time_code(n=1)
+	# 	start_time = Time.now
+	# 	n.times{yield}
+	# 	end_time = Time.now
+	# 	(end_time - start_time) / n.to_f
+	# end
+  
+end
+
