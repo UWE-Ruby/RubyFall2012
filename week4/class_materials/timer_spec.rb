@@ -3,7 +3,7 @@ require "#{File.dirname(__FILE__)}/timer"
 describe Timer do
 
 	it "should report the time difference" do
-		Time.stub(:now).and_return(0,3)
+		Time.stub(:now).and_return(0,3) # a redefinition of this method for the purposes of the test
 		time_difference = Timer.time_code do
 		end
 		time_difference.should be_within(0.1).of(3.0)
@@ -17,4 +17,15 @@ describe Timer do
 		flag.should be_true
 	end
 
+	it "should run our code multiple times" do
+		counter = 0
+		result = Timer.time_code(17) {counter += 1}
+		counter.should equal "17"
+	end
+
+	it "should give the average time" do
+		Time.stub(:now).and_return(0,10)
+		Timer.time_code(10) { }
+		result.should be_within(0.1).of(10)
+	end
 end
