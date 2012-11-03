@@ -3,6 +3,7 @@ class Calculator
 		input.empty? ? 0 : input.inject(:+) #if input is empty array, return 0, else sum the elements
 	end
 
+<<<<<<< HEAD
 	def product(*input) #takes multiple arguments, as an array
 		input.length > 1 ? input.inject(:*) : input[0].inject(:*)
 	end
