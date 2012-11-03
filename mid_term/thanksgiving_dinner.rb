@@ -8,6 +8,12 @@ class ThanksgivingDinner < Dinner
     intialize_menu(diet)
   end
 
+  # sum the letters in each guest name for the seating chart size
+  def seating_chart_size
+    raise ArgumentError "Must set guests to an Array of strings containing guests names before calling this method." unless guests && guests.respond_to?(:inject)
+    guests.inject(0) {|sum, name| sum += name.size }
+  end
+
   private
   def intialize_menu(diet)
     @menu = {
