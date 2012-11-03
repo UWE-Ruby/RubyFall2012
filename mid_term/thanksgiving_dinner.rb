@@ -12,7 +12,8 @@ class ThanksgivingDinner < Dinner
   private
   def intialize_menu
     @menu = {
-      proteins: ["Tofurkey", "Hummus"]
+      proteins: ["Tofurkey", "Hummus"],
+      veggies:  [:ginger_carrots , :potatoes, :yams]
     }
   end
 end
