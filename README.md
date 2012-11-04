@@ -7,14 +7,14 @@ Syllabus
 ============
 
 Week 1
-Setup
-Git
-rSpec
+* Setup
+* Git
+* rSpec
 
 Week 2
-Strings
-Variables
-Classes and Objects
+* Strings
+* Variables
+* Classes and Objects
 
 Week 3
 Array and hash
