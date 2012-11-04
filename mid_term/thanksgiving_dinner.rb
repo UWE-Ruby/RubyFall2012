@@ -18,6 +18,9 @@ class ThanksgivingDinner < Dinner
     "Tonight we have 5 delicious desserts: #{menu[:desserts][:pies].pop.kris_l_titleize}, #{menu[:desserts][:other].pop}, and #{menu[:desserts][:molds].size} molds: #{menu[:desserts][:molds].map{|m| m.kris_l_titleize}.join(' and ')}."
   end
 
+  def whats_for_dinner
+    "Tonight we have proteins #{menu[:proteins].join(' and ')}, and veggies #{menu[:veggies].map{|v| v.kris_l_titleize }.join(', ')}."
+  end
   private
   def intialize_menu(diet)
     @menu = {
