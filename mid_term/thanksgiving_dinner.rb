@@ -14,6 +14,10 @@ class ThanksgivingDinner < Dinner
     guests.inject(0) {|sum, name| sum += name.size }
   end
 
+  def whats_for_dessert
+    "Tonight we have 5 delicious desserts: #{menu[:desserts][:pies].pop.kris_l_titleize}, #{menu[:desserts][:other].pop}, and #{menu[:desserts][:molds].size} molds: #{menu[:desserts][:molds].map{|m| m.kris_l_titleize}.join(' and ')}."
+  end
+
   private
   def intialize_menu(diet)
     @menu = {
@@ -38,3 +42,10 @@ class ThanksgivingDinner < Dinner
   end
 end
 
+# duck punching Symbol
+class Symbol
+  # giving this an unusual name to hopefully prevent naming collisions
+  def kris_l_titleize
+    to_s.gsub('_', ' ').split(/(\W)/).map(&:capitalize).join
+  end
+end

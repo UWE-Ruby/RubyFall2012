@@ -69,6 +69,6 @@ describe ThanksgivingDinner do
  end
  
  it "should return what is on the dessert menu" do
-   @t_dinner.whats_for_dessert.should eq "Tonight we have 5 delicious desserts: Pumkin Pie, Chcolate Moose, and 3 molds: Cranberry and Mango and Cherry."
+   @t_dinner.whats_for_dessert.should eq "Tonight we have 5 delicious desserts: Pumkin Pie, Chocolate Moose, and 3 molds: Cranberry and Mango and Cherry."
  end
 end
