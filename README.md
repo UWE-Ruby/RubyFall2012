@@ -40,18 +40,18 @@ Week 6
 * Exceptions
 
 Week 7
-* Metaprogramming
-* Duck typing
-* Monkey patching
+* Cucumber
+* Testing frameworks
+* Refactoring
 
 Week 8
 * Gems
 * CI
 
 Week 9
-* Cucumber
-* Testing frameworks
-* Refactoring
+* Metaprogramming
+* Duck typing
+* Monkey patching
 
 Week 10
 * Final due!
