@@ -17,43 +17,43 @@ Week 2
 * Classes and Objects
 
 Week 3
-Array and hash
-Numbers / range
-Modules / inheritance
+* Array and hash
+* Numbers / range
+* Modules / inheritance
 
 Week 4
-Range
-Symbols
-Blocks
-Regexp
+* Range
+* Symbols
+* Blocks
+* Regexp
 
 Week 5
-Review
-I/O
-Files / Dir
-Rake
+* Review
+* I/O
+* Files / Dir
+* Rake
 
 Week 6
-Mid-term due!
-Projects intro
-Control
-Exceptions
+* Mid-term due!
+* Projects intro
+* Control
+* Exceptions
 
 Week 7
-Metaprogramming
-Duck typing
-Monkey patching
+* Metaprogramming
+* Duck typing
+* Monkey patching
 
 Week 8
-Gems
-CI
+* Gems
+* CI
 
 Week 9
-Cucumber
-Testing frameworks
-Refactoring
+* Cucumber
+* Testing frameworks
+* Refactoring
 
 Week 10
-Final due!
-Project due!
-Interesting Stuff
+* Final due!
+* Project due!
+* Interesting Stuff
