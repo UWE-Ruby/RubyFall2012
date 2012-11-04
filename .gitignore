@@ -11,11 +11,17 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+<<<<<<< HEAD
 *.*~
 *~
+=======
+>>>>>>> 55106fa09d6f7a2eb0e5e798bd4797a0aec9acb1
 
 # YARD artifacts
 .yardoc
 _yardoc
 doc/
+<<<<<<< HEAD
 .DS_Store
+=======
+>>>>>>> 55106fa09d6f7a2eb0e5e798bd4797a0aec9acb1
