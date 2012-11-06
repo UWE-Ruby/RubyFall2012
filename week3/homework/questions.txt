@@ -5,6 +5,7 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
+
 Symbols are constant names that are immutable. You use them as a label or name for something that will not change
 and that you need to use many times. Symbols save space in memory because a symbol only takes up one place in memory
 and ruby reuses that symbol or name every time you call it. They are commonly used as hash keys because you use the

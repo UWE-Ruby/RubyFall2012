@@ -55,6 +55,4 @@ describe Calculator do
     it "computes the factorial of 10" do
       @calculator.factorial(10).should == 3628800
     end
-  end
-
 end

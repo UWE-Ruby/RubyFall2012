@@ -15,3 +15,4 @@ class Calculator
 		(1..num).inject(:*)
 	end
 end
+
