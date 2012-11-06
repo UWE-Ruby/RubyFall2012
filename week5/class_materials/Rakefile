@@ -1,0 +1,3 @@
+task :test do
+	puts "Hello World!"
+end
