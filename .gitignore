@@ -13,6 +13,11 @@ test/version_tmp
 tmp
 *.*~
 *~
+./week1
+./week2
+./week3
+./midterm
+./week4
 
 # YARD artifacts
 .yardoc
