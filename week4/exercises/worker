@@ -1,0 +1,5 @@
+def Worker
+    def self.work(&block)
+        yield
+    end
+end

@@ -27,6 +27,7 @@ describe Calculator do
   # Once the above tests pass, 
   # write tests and code for the following:
   describe "#multiply" do
+<<<<<<< HEAD
     it "multiplies two numbers" do
       @calculator.multiply([2,3]).should == 6
     end

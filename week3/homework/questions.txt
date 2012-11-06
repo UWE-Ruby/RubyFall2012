@@ -24,4 +24,3 @@ Please Read:
      Regular expressions are useful for input parsing (e.g., ensuring a supplied email address is a valid
      one).  They can be used to strip undesirable characters from a string, or search a block of text
      to find any instances of a search term.
-

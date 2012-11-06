@@ -1,4 +1,5 @@
 module SimonSays
+<<<<<<< HEAD
   def echo(input)
     input
   end

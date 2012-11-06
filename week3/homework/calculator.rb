@@ -1,4 +1,5 @@
 class Calculator
+<<<<<<< HEAD
   
   def sum(input)
     output = 0
