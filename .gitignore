@@ -13,6 +13,10 @@ test/version_tmp
 tmp
 *.*~
 *~
+./week1
+./week3
+./week2
+*/Fall2012RubyMidTerm/*
 
 # YARD artifacts
 .yardoc
