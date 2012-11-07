@@ -1,4 +1,5 @@
 class Calculator
+
 	def sum(a)
 		a.inject(:+).to_i
 	end
@@ -16,3 +17,4 @@ class Calculator
 		[num, 1].max
 	end
 end
+
