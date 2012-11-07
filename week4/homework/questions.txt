@@ -13,8 +13,13 @@ The Rake Gem: http://rake.rubyforge.org/
 	end 
 		
 3. What is the Directory class and what is it used for?
+	The Directory class gives a way to navigate and manipulate directories and the contents within. It can be used in any situation where it would be useful to change or write to specific directories.
 
 4. What is an IO object?
 	IO object is a base class subclassed by classes File and BasicSocket to provide more specialized behavior when handling input and output.
 	
 5. What is rake and what is it used for? What is a rake task?
+	Rake is a gem that provides an environment for managing file dependencies and building multi-file projects. It features the functionality of make, but uses Ruby syntax. The operations and functions a user can perform with rake is contained in rake tasks, which are essentially scripts.
+
+
+	
