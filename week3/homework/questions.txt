@@ -5,15 +5,26 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
+# renee's answer
 A symbol is a static name or identifier.
+# my answer
+A symbol is an identifier that relates to a string which is usually a name. This identifier can then have values assigned to it. The name of a symbol can not change (is immutable).
 
 2. What is the difference between a symbol and a string?
+# renee's answer
 A string is a collection of characters whereas a string is a static identifier. A string is not static no matter what the contents of the string are. So the strings "hello" and "hello" are two different ojects, whereas the symbol :hello and :hello are the exact same object. If you think of 1 as a FixNum or fixed number, you can think of the symbol :hello as the "FixStr" or fixed string :hello.
+# my answer
+As symbol reference is not able to be changed and it retains it's object_id (and place in memory), where a string is mutable and receives a new object_id each time it's changed
 
 3. What is a block and how do I call a block?
+# renee's answer
 A block is an anonymous function, or some code snipt that you can define and then call at a later time. To call a block you can use the yield keyword.
+# my answer
+A block is a closure which takes a chunk of code and it’s variables and stores it for execution later.
+You call a block by calling "yield".
 
 4. How do I pass a block to a method? What is the method signature?
+# renee's answer
 To pass a block to a method you define the block after the method call with either the curly bracket enclosure {} or the do/end syntax. An example of passing a block to the each method of an array:
 
 my_array.each {|a| puts a}
@@ -24,5 +35,13 @@ def my_method(&my_block)
 	my_block.call
 end
 
+# my answer
+You pass a block to a method by using the curly braces. The method signature allow you to pass parameters into a block
+
 5. Where would you use regular expressions?
+# renee's answer
 Regular expressions are used for pattern matching and replacement with strings. An example would be if I wanted to write a syntax checker for some text that checked if each sentance ended with a period, started with a space and then a capital letter. 
+# my answer
+You use regular expressions to perform pattern-matching and "search-and-replace" functions on text.
+
+
