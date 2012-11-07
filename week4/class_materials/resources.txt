@@ -1,0 +1,12 @@
+Slides: http://www.slideshare.net/reneedv/week4-14957721 
+Blocks, Procs, Lambdas, and Closures: http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/
+Rubular: http://www.rubular.com/
+ASCII Table: http://www.asciitable.com/
+or
+('A'..'z').to_a
+ => ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "[", "\\", "]", "^", "_", "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+ Breaking up Regular expressions: http://stackoverflow.com/questions/3833787/making-a-small-regular-expression-a-bit-more-readable
+
+ Video: https://www.dropbox.com/sh/qdyxd081hcq6873/TgmpMmXd1k 
+ In The RubyFall2012 folder (Only have part 1 for tonight)
