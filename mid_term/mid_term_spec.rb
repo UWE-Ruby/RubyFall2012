@@ -15,7 +15,7 @@ describe Turkey do
   end
   
   it "should gobble speak" do
-    @turkey.gobble_speak("Hello I Am a Turkey. Please Don't Eat Me.").should eq "Gobble Gobble Gobble gobble Gobble. Gobble Gobb'le Gobble Gobble"
+    @turkey.gobble_speak("Hello I Am a Turkey. Please Don't Eat Me.").should eq "Gobble Gobble Gobble gobble Gobble. Gobble Gobb'le Gobble Gobble."
   end
   
 end
