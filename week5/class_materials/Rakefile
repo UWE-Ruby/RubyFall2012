@@ -1,0 +1,44 @@
+task :test do
+  puts "Hello World!"
+end
+
+desc "Create a names file from roster.txt"
+task :create_names do
+  store_names = []
+  File.open("names", "w") do |names|
+    open_file_use_lines("roster.txt") do |l|
+      name = l.split(",").first.split(" ").first
+      if store_names.include?(name)
+        name += l.split(",").first.split(" ").last[0]  
+      end
+      store_names << name
+      puts name
+      names.puts name
+    end
+  end
+end
+
+desc "Creates git directories for all the lines in names file"
+task :create_dirs => [:create_names] do
+  open_file_use_lines{|l| Dir.mkdir(l) unless Dir.exists?(l)}
+end
+
+desc "deletes all the git directories made from the names file"
+task :clean_up_dirs => [:create_dirs] do
+  open_file_use_lines{|l| Dir.rmdir(l)}
+end
+
+desc "deletes all the .git directories"
+task :clean_git_dirs do
+  Dir["*.git"].each do |d|
+    Dir.rmdir(d)
+  end
+end
+
+def open_file_use_lines(file="names")
+  File.open(file) do |f|
+    f.each do |l|
+      yield "#{l.chomp}.git"
+    end
+  end
+end
