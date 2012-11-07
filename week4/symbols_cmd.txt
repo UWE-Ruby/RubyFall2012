@@ -1,0 +1,18 @@
+# Symbol is just like a number (fixNum) - Renee thinks of them as fixed strings
+
+irb(main):002:0> 3.object_id
+=> 7
+irb(main):003:0> :hello.object_id
+=> 356552
+irb(main):004:0> :hello.object_id
+=> 356552
+irb(main):005:0> {:monster_1=>:vampire}
+=> {:monster_1=>:vampire}
+irb(main):006:0> :vampire.to_s
+=> "vampire"
+irb(main):007:0> "vampire".to_sym
+=> :vampire
+irb(main):008:0> :vampire.to_s.object_id
+=> 14277288
+irb(main):009:0> :vampire.to_s.object_id
+=> 2865408

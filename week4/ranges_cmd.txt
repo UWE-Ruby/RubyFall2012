@@ -1,0 +1,68 @@
+
+C:\Sites>irb
+irb(main):001:0> load 'OddNumber.rb'
+LoadError: cannot load such file -- OddNumber.rb
+        from (irb):1:in `load'
+        from (irb):1
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):002:0> exit
+
+C:\Sites>cd\
+
+C:\>cd projects
+
+C:\Projects>cd RubyFall2012
+
+C:\Projects\RubyFall2012>ls
+README.md  TESTING.txt  book  cmd_logs  week1  week2  week3  week4
+
+C:\Projects\RubyFall2012>cd week4
+
+C:\Projects\RubyFall2012\week4>ls
+OddNumber.rb
+
+C:\Projects\RubyFall2012\week4>irb
+irb(main):001:0> load 'OddNumber.rb'
+=> true
+irb(main):002:0> OddNumber.new (1)
+=> #<OddNumber:0x1d578c8 @value=1>
+irb(main):003:0> OddNumber.new(1)..OddNumber.new(5)
+ArgumentError: bad value for range
+        from (irb):3
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):004:0> OddNumber.new(5)
+=> #<OddNumber:0x1d0df48 @value=5>
+irb(main):005:0> (o..oo).include?(OddNumber.new(3))
+NameError: undefined local variable or method `o' for main:Object
+        from (irb):5
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):006:0> o = OddNumber.new(1)
+=> #<OddNumber:0x1baf0f8 @value=1>
+irb(main):007:0> oo=OddNumber.new(5)
+=> #<OddNumber:0x1e49368 @value=5>
+irb(main):008:0> (o..oo).to_a
+ArgumentError: bad value for range
+        from (irb):8
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):009:0> exit
+
+C:\Projects\RubyFall2012\week4>irb
+irb(main):001:0> o=OddNumber(1)
+NoMethodError: undefined method `OddNumber' for main:Object
+        from (irb):1
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):002:0> load 'OddNumber.rb'
+=> true
+irb(main):003:0> o=OddNumber.new(1)
+=> #<OddNumber:0x1cce198 @value=1>
+irb(main):004:0> oo=OddNumber.new(5)
+=> #<OddNumber:0x1aed1a8 @value=5>
+irb(main):005:0> (o..oo).to_a
+ArgumentError: bad value for range
+        from (irb):5
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):006:0> (o..oo).include?(OddNumber.new(3))
+ArgumentError: bad value for range
+        from (irb):6
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):007:0>
