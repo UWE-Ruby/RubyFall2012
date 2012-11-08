@@ -1,3 +1,22 @@
 task :test do
 	puts "Hello World!"
 end
+
+desc "Reads all the names and outputs them"
+task :output_names do
+  keep_names = []
+  File.open("names", "r") do |file|
+    file.each do |names|
+      keep_names << names
+    end
+  end
+
+  puts keep_names
+end
+
+desc "Creates a class directory"
+task :create_classdir
+  Dir.mkdir
+
+desc "makes a directory in the class directory for each name in names"
+task :make_dir => [:create_classdir]
