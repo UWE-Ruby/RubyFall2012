@@ -1,0 +1,5 @@
+Slides: http://www.slideshare.net/reneedv/week5-15057407
+File: http://www.ruby-doc.org/core-1.9.3/File.html
+Dir: ruby-doc.org/core-1.9.3/Dir.html
+Rake: http://rake.rubyforge.org/doc/rakefile_rdoc.html
+Rake Tutorial: http://jasonseifer.com/2010/04/06/rake-tutorial

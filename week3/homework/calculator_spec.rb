@@ -23,7 +23,7 @@ describe Calculator do
       @calculator.sum([1,3,5,7,9]).should == 25
     end
   end
-  
+
   describe "#multiply" do
     it "multiplies two numbers" do
       @calculator.multiply(5, 9).should == 45
