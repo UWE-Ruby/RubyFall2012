@@ -1,3 +1,22 @@
 task :test do
 	puts "Hello World!"
 end
+
+task :puts_names do
+  File.open('names', 'r').each do |line|
+    puts line
+  end
+end
+
+task :create_class_dir do
+  Dir.mkdir 'class'
+end
+
+task :create_folder_for_each_name => [:create_class_dir] do
+  Dir.chdir 'class'
+  File.open('../names', 'r').each do |line|
+    Dir.mkdir line.chomp.gsub(/\s+/, '_')
+  end
+end
+
+
