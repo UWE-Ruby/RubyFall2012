@@ -1,3 +1,17 @@
-task :test do
-	puts "Hello World!"
+
+task :read_names  do
+	  File.open("names") do |f|
+	    f.each do |line|
+	      puts line
+      end
+    end
+end
+  
+task :create_class_directory do
+ Dir.mkdir ("RubyClass")
+end
+
+task :create_dirs do
+  
+  Dir.mkdir("RubyClass/")
 end
