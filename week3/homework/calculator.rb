@@ -1,4 +1,5 @@
 class Calculator
+<<<<<<< HEAD
 	def sum(num_array)
 		sum = num_array.inject(0) {|sum, num| sum += num }
 	end
@@ -19,4 +20,28 @@ class Calculator
 			a * self.factorial(a - 1)
 		end
 	end
+=======
+	def sum(array)
+		array.inject(0){|sum, x| sum +x}
+	end
+
+	def multiply(*numbers)
+		puts numbers.inspect
+		numbers.flatten.inject(:*)
+	end
+
+	def pow(base, p)
+		#(1...p).to_a.inject(base){|r,v| r *= base}
+		pow_fac(base, p)
+	end
+
+	def fac(n)
+	       #(1..n).to_a.inject(1){|f,v| f *= v}
+	       pow_fac(n)
+	end
+private
+	def pow_fac(base=nil, p)
+		(1..p).to_a.inject(1){|f,v| f *= base || v}
+	end	
+>>>>>>> 15e2934dd67bd9a431f1e6ce9ad8fc2e50446bbb
 end
