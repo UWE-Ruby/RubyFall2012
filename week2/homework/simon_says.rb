@@ -20,3 +20,15 @@ module SimonSays
     str.split(' ').first
   end
 
+<<<<<<< HEAD
+=======
+	def start_of_word(st,i)
+		st[0...i]
+	end
+	
+	def repeat(st, t=2)
+		return "Go Away!" if t==0
+		([st]*t).join(' ')
+	end
+end
+>>>>>>> f7e675fa7a88f9cdfc4b342f33e2567d897b5075
