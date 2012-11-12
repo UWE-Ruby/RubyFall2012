@@ -1,0 +1,33 @@
+name, email, github, twitter, hipchat
+Brian Ward, brianmatthewward@gmail.com, brianward, mrbrianward, brianmatthewward@gmail.com
+Renee D, renee@nird.us, reneedv, @gigglegirl4e, renee.devoursney@gmail.com
+Yan Li, leeyeon0307@gmail.com, YanLi0307, nil, leeyeon0307@gmail.com
+Nell Shamrell, nellshamrell@gmail.com, nellshamrell, @nellshamrell
+Brian Torretta, btorretta@gmail.com, btorretta, no twitter, btorretta@gmail.com
+Emily, allenemilyh@gmail.com, allenemilyh, @Emily_Allen, allenemilyh@gmail.com
+Danny Pham, pham.dannyt.@gmail.com
+Chris Tsongas, chris.tsongas@bitmojo.com, tsongas, @tsongas, @ChrisTsongas
+Chris F, christopher.d.ferris@gmail.com, chrisdfe
+Mallory Fontenot, malloryfontenot@gmail.com, malloryfontenot, mallory711
+Greg Stallings, gregstallings@gmail.com, gregstallingsuw, @gregstallings, gregstallings@gmail.com
+Tim Piele, timpiele@gmail.com, timpiele, timpiele
+Eddie L, eddielee@email.com, patternchef, @patternchef, eddielee@email.com
+Steven C, stevencurtiss@hotmail.com, scurtiss, ,
+Josh R, josh@estately.com, hungrysquirrel,@hungrysquirrel, joshmaxrubinstein@gmail.com
+Nikky Southerland, nikky@uw.edu, allynfolksjr, @allynfolksjr, nikky@uw.edu
+Chris Barcroft, ChrisABarcroft@gmail.com, cbarcroft, n/a, ChrisABarcroft@gmail.com 
+Kelli, kellimohr@gmail.com, kellimohr, @gimmesamohr, kellimohr@gmail.com
+Ben Woodall, mail@benwoodall.com, benwoody, @benwoodall
+Cheri, cherimarie@gmail.com, cherimarie, @cheriii, cherimarie@gmail.com 
+Strand McCutchen, strand.mccutchen@gmail.com, strand, @strabd, strand@bettermistak.es
+Kris L, kris.luminar@gmail.com, kris-luminar, nil, nil
+Santy M, mick26soum@gmail.com
+Nicholas Palaniuk, npalaniuk@gmail.com, npalaniuk, @npalaniuk, npalaniuk@gmail.com
+Karen Keasler, keaslk@gmail.com, github.com/irissilvermoon, irissilvermoon, keaslk@gmail.com
+Bryan Williams, b_d_williams@yahoo.com, tallbryan, no twitter, b_d_williams@yahoo.com
+Serene C., ruby@serenecareaga.com, serened, @grrlcoder, serened@gmail.com
+Peter E. Granger, peter@granger.net, evac156, N/A, N/A
+Price Hardman, PriceHardman@gmail.com, PriceHardman
+Will Sugg, sugg.will@gmail.com, wsugg, , sugg.will@gmail.com
+Nicole Lewis, lewis.nicole@gmail.com, nelewis, nil, lewis.nicole@gmail.com
+Sol Wagner, capnsol@gmail.com, Soladin, n/a, capnsol@gmail.com
