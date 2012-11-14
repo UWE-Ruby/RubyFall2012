@@ -6,3 +6,10 @@ describe Skier do
 	    s.ski("the hill").should == "This skier is skiing the hill"
     end	    
 end
+=begin
+	it "should ski the hill" do
+		s = Skier.new
+		s.ski("the hill").should eq "This skier is skiing the hill"
+	end
+end
+=end

@@ -32,3 +32,10 @@ def open_file_use_lines(file="names")
     end
   end
 end
+
+task :make_class_dir do
+	Dir.mkdir("class")
+end
+
+task :output
+
