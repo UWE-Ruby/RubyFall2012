@@ -1,3 +1,27 @@
 task :test do
 	puts "Hello World!"
 end
+
+desc "Create a task that reads all the lines in names and outputs them"
+task :read_names do
+  File.open("names", "r") do |names|
+    names.each do |l|
+      puts "#{l.chomp}"
+    end
+  end
+end
+
+desc "Create a task that creates a class directory"
+task :create_class_directory do
+  Dir.mkdir("class") unless Dir.exists?("class")
+end
+
+desc "Create a task dependent on the class directory task that makes a directory in the class directory for each name in names"
+task :create_names_dirs => [:create_class_directory] do
+  File.open("names", "r") do |names|
+  	Dir.chdir("class")
+    names.each do |l|
+      Dir.mkdir(l) unless Dir.exists?(l)
+    end
+  end
+end
