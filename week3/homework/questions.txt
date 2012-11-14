@@ -11,10 +11,14 @@ A symbol is a static name or identifier.
 A symbol is an identifier that relates to a string which is usually a name. This identifier can then have values assigned to it. The name of a symbol can not change (is immutable).
 
 2. What is the difference between a symbol and a string?
+<<<<<<< HEAD
 # renee's answer
 A string is a collection of characters whereas a string is a static identifier. A string is not static no matter what the contents of the string are. So the strings "hello" and "hello" are two different ojects, whereas the symbol :hello and :hello are the exact same object. If you think of 1 as a FixNum or fixed number, you can think of the symbol :hello as the "FixStr" or fixed string :hello.
 # my answer
 As symbol reference is not able to be changed and it retains it's object_id (and place in memory), where a string is mutable and receives a new object_id each time it's changed
+=======
+A string is a collection of characters whereas a symbol is a static identifier. A string is not static no matter what the contents of the string are. So the strings "hello" and "hello" are two different ojects, whereas the symbol :hello and :hello are the exact same object. If you think of 1 as a FixNum or fixed number, you can think of the symbol :hello as the "FixStr" or fixed string :hello.
+>>>>>>> 8e40b4405eff23831e44e86f2b0d147dd1fd77c9
 
 3. What is a block and how do I call a block?
 # renee's answer

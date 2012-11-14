@@ -25,3 +25,4 @@ task :create_names_dirs => [:create_class_directory] do
     end
   end
 end
+
