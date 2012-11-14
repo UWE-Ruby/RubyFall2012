@@ -1,3 +1,24 @@
 task :test do
 	puts "Hello World!"
 end
+
+desc "Read names files"
+task :create_names do
+store_names = []
+  File.open("names", "w") do |names|
+    open_file_use_lines("names") do |l|
+      name = l
+      store_names << name
+      puts store_names
+    end
+  end
+end
+
+def open_file_use_lines(file="names")
+  File.open(file) do |f|
+    f.each do |l|
+      yield "#{l.chomp}.git"
+    end
+  end
+end
+
