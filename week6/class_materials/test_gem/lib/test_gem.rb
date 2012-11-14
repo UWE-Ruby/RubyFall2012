@@ -1,1 +1,4 @@
-puts "Hello World from test_gem in lib dir!"
+
+puts "Hello World!"
+class Hello
+end

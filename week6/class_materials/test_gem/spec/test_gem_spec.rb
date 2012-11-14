@@ -1,5 +1,10 @@
 require 'test_gem'
 
-describ "test_gem" do
+
+describe "test_gem" do
+	it "Should make a new Hello" do
+		h = Hello.new
+		h.should be_a Hello
+	end
 	
 end
