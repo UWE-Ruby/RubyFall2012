@@ -30,7 +30,7 @@ Please Read:
 A symbol is a static name or identifier.
 
 2. What is the difference between a symbol and a string?
-A string is a collection of characters whereas a string is a static identifier. A string is not static no matter what the contents of the string are. So the strings "hello" and "hello" are two different ojects, whereas the symbol :hello and :hello are the exact same object. If you think of 1 as a FixNum or fixed number, you can think of the symbol :hello as the "FixStr" or fixed string :hello.
+A string is a collection of characters whereas a symbol is a static identifier. A string is not static no matter what the contents of the string are. So the strings "hello" and "hello" are two different ojects, whereas the symbol :hello and :hello are the exact same object. If you think of 1 as a FixNum or fixed number, you can think of the symbol :hello as the "FixStr" or fixed string :hello.
 
 3. What is a block and how do I call a block?
 A block is an anonymous function, or some code snipt that you can define and then call at a later time. To call a block you can use the yield keyword.

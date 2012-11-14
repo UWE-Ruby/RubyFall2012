@@ -2,6 +2,7 @@ task :test do
 	puts "Hello World!"
 end
 
+<<<<<<< HEAD
 desc "Read names files"
 task :create_names do
 store_names = []
@@ -21,4 +22,11 @@ def open_file_use_lines(file="names")
     end
   end
 end
+=======
+task :make_class_dir do
+	Dir.mkdir("class")
+end
+
+task :output
+>>>>>>> 8e40b4405eff23831e44e86f2b0d147dd1fd77c9
 
