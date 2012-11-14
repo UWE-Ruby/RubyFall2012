@@ -26,6 +26,20 @@ describe Calculator do
   
   # Once the above tests pass, 
   # write tests and code for the following:
+  
+  it "multiplies two numbers" do
+    @calculator.multiply([2,3]).should == 6
+  end
+
+
+  it "multiplies an array of numbers" do
+    @calculator.multiply([2,3,4]).should == 24
+  end
+  
+  it "raises one number to the power of another number" do
+    @calculator.exponent(5,2).should == 25
+
+=begin teachers work
   describe "#multiply" do
   	it "multiplies two numbers" do
 		@calculator.multiply(2,2).should eq 4
@@ -40,10 +54,30 @@ describe Calculator do
   	p = 1
 	32.times{ p *= 2 } 
 	@calculator.pow(2,32).should eq p 
+=end
   end
   
   # http://en.wikipedia.org/wiki/Factorial
   describe "#factorial" do
+    it "computes the factorial of 0" do
+      @calculator.factoral(0).should == 1
+    end
+
+    it "computes the factorial of 1" do
+      @calculator.factoral(1).should == 1
+    end
+    it "computes the factorial of 2" do
+      @calculator.factoral(2).should == 2
+    end
+    it "computes the factorial of 5" do
+      @calculator.factoral(5).should == 120
+    end
+
+    it "computes the factorial of 10" do
+      @calculator.factoral(10).should == 3628800
+    end
+
+=begin
     it "computes the factorial of 0" do
     	@calculator.fac(0).should eq 1
     end
@@ -63,6 +97,7 @@ describe Calculator do
     	@calculator.fac(10).should eq 3628800
     end
 
+=end
   end
 
 end
