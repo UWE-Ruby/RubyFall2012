@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+CLASS
+HEAD
 RubyFall2012
 ============
 
