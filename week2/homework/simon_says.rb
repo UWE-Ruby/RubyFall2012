@@ -1,22 +1,22 @@
 module SimonSays
-	def echo(st)
-		st
-	end
-	
-	def shout(st)
-		st.upcase
-	end
+  def echo(textToEcho)
+    textToEcho
+  end
 
-	def first_word(st)
-		st.split.first
-	end
+  def shout(textToShout)
+    textToShout.upcase
+  end
 
-	def start_of_word(st,i)
-		st[0...i]
-	end
-	
-	def repeat(st, t=2)
-		return "Go Away!" if t==0
-		([st]*t).join(' ')
-	end
+  def repeat(textToRepeat, count=2)
+    Array.new(count, textToRepeat + " ").inject(:+).chomp(" ")
+  end
+
+  def start_of_word(word, count)
+    word[0...count]
+  end
+
+  def first_word(sentence)
+    sentence.scan(/[\w']+/)[0]
+  end
 end
+
