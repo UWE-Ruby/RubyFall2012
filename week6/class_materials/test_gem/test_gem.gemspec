@@ -8,4 +8,5 @@ Gem::Specification.new do |s|
   s.email       = 'renee@nird.us'
   s.homepage    = 'http://rubygems.org/gems/test_gem'
   s.files       = ["lib/test_gem.rb"]
+  s.executables << "test_gem.rb"
 end
