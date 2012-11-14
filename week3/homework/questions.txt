@@ -1,29 +1,28 @@
-Please Read:
+Please Read: 
  - Chapter 6 Standard Types
  - Review Blocks
  - Chapter 7 Regular Expressions
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
-A: A symbol is a constant referenced by a sequence of characters following an initial colon (:) that gets created as the Ruby interpreter encounters it. Ruby internally manages what the actual constant is so programmers only have to keep track of the name.
-
-For example, maybe :north stands for 8, while :east stands for 77. This is useful for cases where the pragrammer doesn't care what it stands for, they just want a unique value and don't want to worry about accidentally assigning two symbols to the same value.
+A symbol is a static name or identifier.
 
 2. What is the difference between a symbol and a string?
-A: The main difference between a symbol and string is that symbols are immutable, while strings are mutable. This means that strings can be changed after they are created while symbols can't.
-
-Another facet of this is that strings created with the same text will all be different objects while symbols won't. This is because symbols with the same text representation are the same object.
-
-:my_symbol.object_id == :my_symbol.object_id    # => true
-Versus:
-"my_string".object_id == "my_string".object_id  # => false
+A string is a collection of characters whereas a symbol is a static identifier. A string is not static no matter what the contents of the string are. So the strings "hello" and "hello" are two different ojects, whereas the symbol :hello and :hello are the exact same object. If you think of 1 as a FixNum or fixed number, you can think of the symbol :hello as the "FixStr" or fixed string :hello.
 
 3. What is a block and how do I call a block?
-A: A block is a section of code enclosed by either braces ({}) or do/end keywords. It can be called by creating a Proc object or a lambda with your code block, assigning that to a variable and then using the call method on that variable.
+A block is an anonymous function, or some code snipt that you can define and then call at a later time. To call a block you can use the yield keyword.
 
 4. How do I pass a block to a method? What is the method signature?
-A: You pass a block to a method by turning it into a lambda or proc object, assigning that lambda/proc to a variable and passing that variable to your method prefixed with an ampersand (&).
-Example method signature: 'def my_method(&block)' .
+To pass a block to a method you define the block after the method call with either the curly bracket enclosure {} or the do/end syntax. An example of passing a block to the each method of an array:
+
+my_array.each {|a| puts a}
+
+Any method in Ruby can take a block. You can explicitly add a block to a method by putting an ampersand & before the variable name in the method definition. An example of this would be:
+
+def my_method(&my_block)
+	my_block.call
+end
 
 5. Where would you use regular expressions?
-A: You would use regular expressions anytime you want to extract from a string sections that match a pattern, replace a substring of text within a string or test a string to see if it matches a pattern.
+Regular expressions are used for pattern matching and replacement with strings. An example would be if I wanted to write a syntax checker for some text that checked if each sentance ended with a period, started with a space and then a capital letter. 
