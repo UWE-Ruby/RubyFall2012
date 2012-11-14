@@ -1,6 +1,7 @@
 task :test do
 	puts "Hello World!"
 end
+<<<<<<< HEAD
 task :list_names do
 	File.open("names","r") do |n|
 		n.each do |l|
@@ -23,4 +24,12 @@ def parse_name_file(file)
 		Dir.mkdir(n)
 	end
 end
+=======
+
+task :make_class_dir do
+	Dir.mkdir("class")
+end
+
+task :output
+>>>>>>> 5a2c257e99f58173ae91aeee5ce8af92c39e2ab6
 

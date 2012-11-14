@@ -1,0 +1,1 @@
+raise "Missing name" if nil.nil?
