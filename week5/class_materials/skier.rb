@@ -11,6 +11,6 @@ class Skier
 	end
 
 	def ski(event)
-	  "This skier is skiing #{event}"
+	 "This skier is skiing #{event}"
 	end
 end
