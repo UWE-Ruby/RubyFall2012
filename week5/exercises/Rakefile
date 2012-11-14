@@ -11,3 +11,10 @@ task :classmaker => ["makeclassdirectory"] do
 	    end  
 	end
 end
+
+task :make_class_dir do
+	Dir.mkdir("class")
+end
+
+task :output
+
