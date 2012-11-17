@@ -1,0 +1,10 @@
+Slides: http://www.slideshare.net/reneedv/week6-15164387
+
+RubyGems.org: https://rubygems.org/
+RubyGems Command Reference: http://guides.rubygems.org/command-reference/
+Travis CI: https://travis-ci.org
+Travis CI Docs for Ruby: http://about.travis-ci.org/docs/user/languages/ruby/
+About Travis: http://about.travis-ci.org/
+Gem Release: https://github.com/svenfuchs/gem-release
+Jeweler: https://github.com/technicalpickles/jeweler
+Make Your Own Gem Guide: http://guides.rubygems.org/make-your-own-gem/
