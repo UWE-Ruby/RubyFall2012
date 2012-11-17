@@ -1,0 +1,56 @@
+Instructions for Mid-Term submission and Git Review (10pts):
+ - Create a git repository for your answers
+ - Add and Commit as you work through the questions and programming problems
+ - Your git log should reflect your work, don't just commit after you have finished working
+ - Use .gitignore to ignore any files that are not relevant to the midterm
+ - E-mail me your ssh public key
+ - I will email you back with your repository name
+ - Add a remote to your git repository: git@nird.us:RubyFall2012/YOURREPOSITORYNAME.git
+ - Push your changes to the remote
+ - After 6pm Tuesday November 13th you will not be able to push to your remote repository (or clone).
+
+#this  is a test
+ 
+ Questions (20pts):
+ - What are the three uses of the curly brackets {} in Ruby?
+	Three cases when curly brackets are used are for making hashes, when denoting blocks instead of do...end, 
+	
+ - What is a regular expression and what is a common use for them?
+	Regular expressions are a set of constants and operator symbols that operate over sets of strings. They are commonly used for matching patterns within a String. This can include seeing if the pattern exists in a String, extracting all or partial matched portions of a pattern from a string, and changing the string by replacing the parts that match the pattern.
+	
+ - What is the difference between how a String, a symbol, a FixNum, and a Float are stored in Ruby?
+	
+ - Are these two statements equivalent? Why or Why Not?
+   1. x, y = "hello", "hello"
+   2. x = y = "hello"
+
+	These two statements are equivalent in that statement 1. stores 
+	
+- What is the difference between a Range and an Array?
+	A range is a interval of a set of values from start to end (1,2,3...a,b,c,d) where an Array could be any set of values and not necessarily in an particular order (d,v,e,d....3,4,2,5,1). 
+	
+- Why would I use a Hash instead of an Array?
+	A Hash would be used over an Array when you need to find items based of key-value pairs. Arrays are good when you need to iterate over a set that is in particular order.
+	
+- What is your favorite thing about Ruby so far?
+	
+	
+- What is your least favorite thing about Ruby so far?
+	My least favorite thing in Ruby so far is Blocks. This is probably do to the fact that I don't fully understand it yet and have not capitalized on its use case.
+ 
+ Programming Problems (10pts each):
+ - Write a passing rspec file called even_number_spec.rb that tests a class called EvenNumber.
+    - The EvenNumber class should:
+       - Only allow even numbers
+       - Get the next even number
+       - Compare even numbers
+       - Generate a range of even numbers
+- Make the rspec tests in wish_list_spec.rb pass by writing a WishList class
+   - The WishList class should:
+      - Mixin Enumerable
+      - Define each so it returns wishes as strings with their index as part of the string
+
+Mid-Term Spec (50pts):
+- Make the tests pass.
+ 
+ 
