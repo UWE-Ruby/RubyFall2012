@@ -2,8 +2,80 @@ Please Read:
 Chapter 10 Basic Input and Output
 The Rake Gem: http://rake.rubyforge.org/
 
-1. How does Ruby read files?
-2. How would you output "Hello World!" to a file called my_output.txt?
-3. What is the Directory class and what is it used for?
-4. What is an IO object?
-5. What is rake and what is it used for? What is a rake task?
+----
+
+Q1. How does Ruby read files?
+
+A1. Since we haven't discussed the underlying mechanics of how Ruby performs a file read, I'm assuming this question means, "How can Ruby be used to read a file?" This is covered in Chapter 11, "Basic Input and Output", and in the RDoc for the File and IO classes. Since File extends IO, most of File's methods are inherited from IO, and are found in the doc for IO.
+
+Once a file is opened using the File.new(filename, "r") method, or any other mode that allows reading, several methods are available for reading. The simplest, gets, just reads the next line of the file, up to an optional separator character. The default separator, if none is given, is the system end-of-line. Similar to gets are the getc and getbyte methods, which read the next character or next byte.
+
+The each or each_line methods are iterative methods which also take an optional separator, and split the input file on that separator, passing each line to an associated code block. Similar to each_line, there are also each_byte and each_char methods, which iterate over the file one byte or one character at a time.
+
+----
+
+Q2. How would you output "Hello World!" to a file called my_output.txt?
+
+A2. Here's a simple HelloWorld class that just has this one method. It doesn't take any parameters, and doesn't do any checking to see if the output file is valid, has write permissions, etc.
+
+class HelloWorld
+
+  # A simple function to write a single string to a single output file. We use
+  # the block syntax for file operations, since that implicitly handles the file
+  # close operation. There's also no checking here to make sure the output file
+  # is valid (since it's hard-coded here). We use append mode so that any
+  # previous contents aren't lost.
+  def simpleWrite
+    outFileName = "my_output.txt"
+    outString = "Hello World!"
+
+    File.open(outFileName, "a") do |outFile|
+      outFile.puts outString
+    end
+  end
+
+end
+
+pgranger@PEGLinux$ irb
+1.9.3-p286 :001 > load "helloWorld.rb"
+ => true 
+1.9.3-p286 :002 > hw = HelloWorld.new
+ => #<HelloWorld:0x00000000fc67c8> 
+1.9.3-p286 :003 > hw.simpleWrite
+ => nil 
+1.9.3-p286 :004 > exit
+pgranger@PEGLinux$ cat my_output.txt
+Hello World!
+
+----
+
+Q3. What is the Directory class and what is it used for?
+
+A3. I can't find any reference to a "Directory" class, so I'm assuming this question is about the Dir class. It's not mentioned in Chapter 11 (Basic Input and Output), but it's in the class references on p.449, and online at http://ruby-doc.org/core-1.9.3/Dir.html.
+
+Objects of class Dir are used for directory manipulations similar to what we'd perform from the command line: creating directories (mkdir), moving into a directory (chdir), finding out the current working directory (pwd or getwd), or removing a directory (delete). It isn't clear whether the Dir.new() method will actually create a new directory if it doesn't exist, or if it just creates a reference to an existing directory. Would need to run some tests to check on that.
+
+There are also quite a few methods for retrieving and examining the contents of a directory. Many of these seem to treat the directory contents as a array of file or subdirectory objects: each iterates over the contents of the directory; read retrieves the name of the next entry as a string; seek and rewind move the current reference to a specific point in the directory iterator.
+
+----
+
+Q4. What is an IO object?
+
+A4. From section 11.1, "What is an IO Object?": "Ruby defines a single base class, IO, to handle input and output. This base class is subclassed by classes File and BasicSocket to provide more specialized behavior, but the principles are the same. An IO object is a bidirectional channel between a Ruby program and some external resource."
+
+Whether the external resource is a file, a socket, or the command-line IO, there is an IO object which has a reference to that series of characters, can read them, and can write back out to them. When we're dealing with files, we'll often control the mode of the IO object (File object) so that it is only being read from or written to, but in principle we could be reading from and writing to the file. In the case of command-line IO, it is usually going to be a bidirectional stream.
+
+----
+
+Q5. What is rake and what is it used for? What is a rake task?
+
+A5. Found some information online at:
+
+* http://rake.rubyforge.org/
+* http://docs.rubyrake.org/
+* https://github.com/jimweirich/rake/blob/master/doc/glossary.rdoc
+
+Rake is a makefile utility for Ruby. It specifies a set of tasks and prerequisites for those tasks, so in that way it is similar to Make or Ant. It uses Ruby syntax for defining tasks. The online sources I found were very vague about its usage. Strangely, the tutorial talked mostly about building applications in C. Since it's called a "make utility," normally that would imply compiling of source files and deployment of executables and resources. Since Ruby isn't compiled, then it's probably for deployment of source files. It can probably also be used to run suites of unit tests.
+
+From Jim Weirich's glossary at GitHub: "task (Task): Basic unit of work in a rakefile. A task has a name, a set of prerequisites and a list of actions to be performed." The prerequisites will usually be other tasks. This allows small, simple tasks to be defined explicitly, and larger tasks become composites of the smaller ones.
+
