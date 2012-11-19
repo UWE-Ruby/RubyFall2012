@@ -36,12 +36,11 @@ class Calculator
 	end
 
 	def multiply(*numbers)
-		puts numbers.inspect
-		numbers.flatten.inject(:*)
+		numbers.flatten.inject(:+)
 	end
 
 	def pow(base, p)
-		#(1...p).to_a.inject(base){|r,v| r *= base}
+		#(1..p).to_a.inject(1){|r,v| r *= base}
 		pow_fac(base, p)
 	end
 

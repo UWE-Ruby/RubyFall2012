@@ -3,7 +3,20 @@ Chapter 10 Basic Input and Output
 The Rake Gem: http://rake.rubyforge.org/
 
 1. How does Ruby read files?
+File.open(filename, "r").readline
+
 2. How would you output "Hello World!" to a file called my_output.txt?
+Please see filer.rb and file_spec.rb for more than this.....File.open(filename, "w").write("Hello World") 
+
 3. What is the Directory class and what is it used for?
+Dir is used to list, navigate, and maniplate dirs in a system and the files under those dirs.
+A good use for Dir. is to check if the given dir name exists.
+Another good use of Dir is to get a collection of the files in the given dir.
+
 4. What is an IO object?
-5. What is rake and what is it used for? What is a rake task?
+A simple definition is and IO Obj is a stream that can be either read from or written to.
+The File Class is a child class of IO and gets all of IO to use opening, reading, and writing to files like a stream.
+
+5. What is rake and what is it used for?  What is a rake task?
+Rake is an automation tool that can sub for make, and also execute other ruby code to make creating tools and tasks faster and simpler.
+A rake task is the bit of ruby code that it can execute. The tasks are put in files called Rakefile. When rake is invoked it looks for Rakefiles.
