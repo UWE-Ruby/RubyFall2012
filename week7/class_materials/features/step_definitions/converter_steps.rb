@@ -10,6 +10,6 @@ When /^I press convert$/ do
 	@result = @converter.convert
 end
 
-Then /^the result should be (\d+) on the screen$/ do |arg1|
-	@result.should eq arg1.to_i
+Then /^the result should be (\d+)\.(\d+) on the screen$/ do |arg1, arg2|
+	@result.should eq "#{arg1}.#{arg2}".to_f
 end

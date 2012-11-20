@@ -1,7 +1,7 @@
 class Converter
 
 	def initialize(unit)
-		@unit = unit
+		@unit = unit.to_f
 	end
 
 	def type=(type)
@@ -13,6 +13,6 @@ class Converter
 	end
 
 	def Celsius_convertion
-		32
+	    (@unit *  (9.0/5.0) + 32.0).round(1)	
 	end
 end
