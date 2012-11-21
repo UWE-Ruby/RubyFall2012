@@ -1,4 +1,4 @@
-Slides:
+Slides: http://www.slideshare.net/reneedv/week7-15273981
 
 BDD: http://en.wikipedia.org/wiki/Behavior-driven_development#Principles_of_BDD
 cucumber: cukes.info
