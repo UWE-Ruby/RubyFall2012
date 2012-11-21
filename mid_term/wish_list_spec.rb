@@ -11,7 +11,7 @@ describe WishList do
   end
   
   context "#each" do
-    it "should give me a numberd list" do
+    it "should give me a numbered list" do
       @wish_list.map{|w| w}.should eq ["1. Lamborghini", "2. Corn Starch and Water Moat", "3. Vegan Bacon Ice Cream", "4. Rubber Chicken", "5. Free Tickets to Skyfall"]
     end
   end
