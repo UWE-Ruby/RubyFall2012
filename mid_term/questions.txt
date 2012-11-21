@@ -11,16 +11,33 @@ Instructions for Mid-Term submission and Git Review (10pts):
  
  Questions (20pts):
  - What are the three uses of the curly brackets {} in Ruby?
+ 1. String interpolation: "#{1+1}"
+ 2. Hash instantiation: {:key => "value"}
+ 3. Block/lambda notation: {puts "hello"}
+
  - What is a regular expression and what is a common use for them?
+ A Regular expression is a pattern used to search text. A common use for them is for verifying the format of user input, like email addresses or phone numbers. 
+
  - What is the difference between how a String, a symbol, a FixNum, and a Float are stored in Ruby?
+A String is stored as a collection of characters (bytes) and the value of a string instance can change. A Symbol is a fixed name in ruby and is stored as an integer, so it takes up much less space than a string. A FixNum is an integer in Ruby and does not change its value. It is stored the same way as a symbol (you can think of symbols as Fixed Strings). Floats can have their value change and are stored like a string: each byte of the float is stored and can change individually.
+
  - Are these two statements equivalent? Why or Why Not?
    1. x, y = "hello", "hello"
    2. x = y = "hello"
+No, in the first example x and y point to different objects, in the second they point to the same object. In # 2 if y changes x will change and vice versa. In # 1 if y changes x does not change and vice versa.
+
 - What is the difference between a Range and an Array?
+A Range is an object that denotes a sequence between two objects (lower/min and higher/max). It does not store every element of the sequence, only the min and max. An array is an ordered list of many objects. Each object in an array is stored and cannot necessarily be determined by the prior object in the array.
+
 - Why would I use a Hash instead of an Array?
+If I had data which I wanted to reference by meta-data instead of by order I would use a hash. For example, if I had a set of attributes common to a collection of things, I would use a hash so I could look across my data (or search) by the data's attribute dimensions.
+
 - What is your favorite thing about Ruby so far?
+.map
+
 - What is your least favorite thing about Ruby so far?
- 
+nil.object_id => 4
+
  Programming Problems (10pts each):
  - Write a passing rspec file called even_number_spec.rb that tests a class called EvenNumber.
     - The EvenNumber class should:

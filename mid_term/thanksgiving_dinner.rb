@@ -1,71 +1,78 @@
-# duck punching Symbol
-class Symbol
+class String
+  def titlecase
+    self.gsub(/\b\w/){|f| f.upcase}
+  end
 
-  # giving this an unusual name to hopefully prevent naming collisions
-  def kris_l_titleize
-    to_s.gsub('_', ' ').split(/(\W)/).map(&:capitalize).join
+  def humanize
+    self.gsub('_', ' ').titlecase
   end
 end
 
-# duck punching Array
-class Array
-
-  # giving this an unusual name to hopefully prevent naming collisions
-  def kris_l_and_join(str)
-    out = ""
-    cln = clone
-
-    last_item = cln.pop
-    out << cln.join(str)
-    out << ", and #{last_item}"
+module MenuFinder
+  MENUS = {
+    :vegan => {
+      :diet => :vegan,
+      :proteins => ["Tofurkey", "Hummus"],
+      :veggies => [:ginger_carrots , :potatoes, :yams]
+    }
+  }
+  def find_menu(kind)
+    MENUS[kind]
+  end
+  def find_dessert
+    @menu[:desserts] = {:pies => [:pumkin_pie],
+      :other => ["Chocolate Moose"],
+      :molds => [:cranberry, :mango, :cherry]}
   end
 end
 
-require_relative 'dinner'
-
-class ThanksgivingDinner < Dinner
-  attr_accessor :guests
-  attr_reader :menu
-
-  def initialize(diet)
-    intialize_menu(diet)
+class Dinner
+  include MenuFinder
+  attr_accessor :menu, :guests, :kind
+  def initialize(kind)
+    @kind = kind
+    @menu = find_menu(kind)
   end
-
-  # sum the letters in each guest name for the seating chart size
   def seating_chart_size
-    raise ArgumentError "Must set guests to an Array of strings containing guests names before calling this method." unless guests && guests.respond_to?(:inject)
-    guests.inject(0) {|sum, name| sum += name.size }
+    guests.inject(0){|sum,g| sum += g.size}
   end
 
-  def whats_for_dessert
-    "Tonight we have 5 delicious desserts: #{menu[:desserts][:pies].pop.kris_l_titleize}, #{menu[:desserts][:other].pop}, and #{menu[:desserts][:molds].size} molds: #{menu[:desserts][:molds].map{|m| m.kris_l_titleize}.join(' and ')}."
+  def proteins
+    @menu[:proteins].map{|w| w.titlecase}.join(' and ')
+  end
+
+  def veggies
+    @menu[:veggies].map{|w| w.to_s.humanize}.join(', ').gsub(/, \w*\z/){|w| w.gsub(',', ', and')}
   end
 
   def whats_for_dinner
-    "Tonight we have proteins #{menu[:proteins].join(' and ')}, and veggies #{menu[:veggies].map{|v| v.kris_l_titleize }.kris_l_and_join(', ')}."
-  end
-
-  private
-  def intialize_menu(diet)
-    @menu = {
-      diet: diet,
-      proteins: ["Tofurkey", "Hummus"],
-      veggies:  [:ginger_carrots , :potatoes, :yams],
-      desserts:
-      {
-        :molds => [
-          :cranberry,
-          :mango,
-          :cherry
-        ],
-        :other => [
-          "Chocolate Moose"
-        ],
-         :pies => [
-          :pumkin_pie
-        ]
-      }
-    }
+    "Tonight we have proteins #{proteins}, and veggies #{veggies}."
   end
 end
 
+class ThanksgivingDinner < Dinner
+  def number_of_desserts
+    @menu[:desserts].map{|k,v| v}.flatten.count
+  end
+
+  def pies
+    @menu[:desserts][:pies].map{|s| s.to_s.humanize}.join(',')
+  end
+
+  def other
+    @menu[:desserts][:other].join(',')
+  end
+
+  def number_of_molds
+    @menu[:desserts][:molds].count
+  end
+
+  def molds
+    @menu[:desserts][:molds].map{|s| s.to_s.titlecase}.join(' and ')
+  end
+
+  def whats_for_dessert
+    find_dessert
+	  "Tonight we have #{number_of_desserts} delicious desserts: #{pies}, #{other}, and #{number_of_molds} molds: #{molds}."
+  end
+end
