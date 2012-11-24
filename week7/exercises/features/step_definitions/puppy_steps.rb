@@ -26,7 +26,7 @@ When /^we ring the bell$/ do
 end
 
 When /^it wags its tail$/ do
-  pending # express the regexp above with the code you wish you had
+  @result.should eq "the puppy wags its tail"
 end
 
 Then /^we must take it out$/ do

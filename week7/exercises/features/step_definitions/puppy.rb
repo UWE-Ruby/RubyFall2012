@@ -8,6 +8,7 @@ class Puppy
   end
 
   def ring_the_bell
+    wag
   end
 
   protected
