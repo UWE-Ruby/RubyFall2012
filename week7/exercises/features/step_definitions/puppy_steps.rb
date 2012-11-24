@@ -8,11 +8,11 @@ Given /^its name is (\w+)$/ do |arg1|
 end
 
 When /^we pet the puppy$/ do
-  pending # express the regexp above with the code you wish you had
+  @result = @puppy.pet
 end
 
 Then /^the puppy wags its tail$/ do
-  pending # express the regexp above with the code you wish you had
+  @result.should eq "the puppy wags its tail"
 end
 
 Given /^its name is Bella$/ do
