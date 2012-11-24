@@ -11,6 +11,10 @@ class Puppy
     wag
   end
 
+  def take_it_out
+
+  end
+
   protected
   def wag
     "the puppy wags its tail"

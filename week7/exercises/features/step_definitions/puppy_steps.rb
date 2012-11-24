@@ -30,7 +30,7 @@ When /^it wags its tail$/ do
 end
 
 Then /^we must take it out$/ do
-  pending # express the regexp above with the code you wish you had
+  @result = @puppy.take_it_out
 end
 
 Then /^then it will not pee on the floor$/ do
