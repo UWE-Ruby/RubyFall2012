@@ -2,8 +2,9 @@ Given /^we have a puppy$/ do
   @puppy = Puppy.new
 end
 
-Given /^its name is Fred$/ do
-  pending # express the regexp above with the code you wish you had
+Given /^its name is (\w+)$/ do |arg1|
+  @puppy.name = arg1
+  @puppy.name == arg1
 end
 
 When /^we pet the puppy$/ do
