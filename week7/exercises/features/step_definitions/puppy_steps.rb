@@ -15,12 +15,14 @@ Then /^the puppy wags its tail$/ do
   @result.should eq "the puppy wags its tail"
 end
 
-Given /^its name is Bella$/ do
-  pending # express the regexp above with the code you wish you had
+Given /^its name is (\w+)$/ do |arg1|
+  @puppy = Puppy.new
+  @puppy.name = arg1
+  @puppy.name.should eq arg1
 end
 
 When /^we ring the bell$/ do
-  pending # express the regexp above with the code you wish you had
+  @result = @puppy.ring_the_bell
 end
 
 When /^it wags its tail$/ do

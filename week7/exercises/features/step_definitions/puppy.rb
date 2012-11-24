@@ -7,6 +7,9 @@ class Puppy
     wag
   end
 
+  def ring_the_bell
+  end
+
   protected
   def wag
     "the puppy wags its tail"
