@@ -1,7 +1,10 @@
-require 'minitest/autorun'
+require 'minitest/autorun' #didn't need to install anything to get this gem, part of the ruby library
+
+
+class Book
+end
 
 # Unit tests
-
 class TestBook < MiniTest::Unit::TestCase
   def setup
     @book = Book.new('test', "Mr. Test", 4)
