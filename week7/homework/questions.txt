@@ -3,7 +3,18 @@ Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
 1. What is method_missing and how can it be used?
+	method_missing is a method built into Ruby in which an exception is raised if a method being called is not found. There are two main ways to using method_missing: intercepts every use of an undefined method and handles it or it intercepts all calls but only handles some of them.
+
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
+	An Eigenclass is an anonymous class created when a singleton method is created for an object. Eigenclass then becomes the class of the object and the original class of the object is made its parent (String, Array..etc). This is done so Ruby can provide a consistent object model. Singleton methods live inside the Eigenclass.
+	
 3. When would you use DuckTypeing? How would you use it to improve your code?
+	DuckTyping is a style of dynamic typing in which an object's methods and properties determine the valid semantics rather than it's inheritance from a specific class. DuckTyping in use provides cleaner, concise, more readable code as the coder does not test for specific types of arguments in the method or function body and relies on documentation to ensure correct testing.
+	
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+	Instance methods access values stored in instances of a class. This could also be thought of a methods that access the attributes of the instance. A class method define ways of changing these attributes and provide functionality to the class for which each instance has access to. Instance_eval and class_eval both set self for the duration of a block, however they differ in that class_eval sets things up as if they were in the body of a class definition thus method definition will define instance methods. Instance_eval acts as if it were working inside the singleton class self and therefore any methods defined will become class methods.
+
 5. What is the difference between a singleton class and a singleton method?
+	A singleton class and a singleton method are different in that a singleton class is created when a singleton method is defined for an object. The singleton class then becomes the class for that object, forcing its way into the object model. The singleton method lives inside the singleton class.
+	
+	
