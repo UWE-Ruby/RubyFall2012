@@ -40,7 +40,11 @@ describe String do
 		end
 		it "should be able to give the encoding of the string" do
 			@my_string.encoding.should eq (Encoding.find("UTF-8"))
+<<<<<<< HEAD
 >>>>>>> 4d8ccdb3a54249f560991eda7f157ec66c3516d3
+=======
+>>>>>>> 217a9fddb9c3593e5125cdc0b20bbd32afab6597
+>>>>>>> master
 		end
 	end
 end

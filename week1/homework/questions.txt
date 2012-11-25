@@ -38,4 +38,8 @@ split  - returns an array of strings made up of the original string separated on
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
 Single quotes ex: '' and Double quotes ex: "". The single qoutes allow for 2 escape characters: \' and \\ . The double qouted string literal allows for many different escaped special characters (like \n is a line break) and allows for string interpolation, or the injection of evaluated Ruby code into the string ex: "Hello #{my_name}". The single qouted string takes up much less memory than a doulbe qouted string with interpolation. Without interpolation, both are about the same.
 
+<<<<<<< HEAD
 >>>>>>> 4d8ccdb3a54249f560991eda7f157ec66c3516d3
+=======
+>>>>>>> 217a9fddb9c3593e5125cdc0b20bbd32afab6597
+>>>>>>> master
