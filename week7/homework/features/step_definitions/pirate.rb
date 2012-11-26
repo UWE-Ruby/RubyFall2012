@@ -2,10 +2,7 @@ class PirateTranslator
 	attr_accessor :translation
 
 	def say(phrase)
-	@translation = 	case phrase
-								 	when "Hello Friend"
-										"Ahoy Matey"
-								 	end
+		@translation = "Ahoy Matey"	if phrase == "Hello Friend"
 	end
 
 	def translate
