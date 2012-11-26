@@ -1,12 +1,13 @@
 Gangway /^I have a PirateTranslator$/ do
-  PirateTranslator.new
+  PirateTranslator.new 'test'
 end
 
-Blimey /^I say 'Hello Friend'$/ do
+Blimey /^I say ('\w+\s\w+')$/ do |arg1|
+  @pirate_translator = PirateTranslator.new(arg1)
 end
 
 Blimey /^I hit translate$/ do
-  pending # express the regexp above with the code you wish you had
+  @pirate_speak = @pirate_translator.translate
 end
 
 Letgoandhaul /^it prints out 'Ahoy Matey'$/ do

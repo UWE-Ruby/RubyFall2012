@@ -1,5 +1,6 @@
 class PirateTranslator
-  def initialize
 
+  def initialize(english)
+    @english = english
   end
 end
