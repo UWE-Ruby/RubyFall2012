@@ -14,4 +14,3 @@ Scenario:
 	And I select Celsius
 	When I press convert
 	Then the result should be 69.8 on the screen
-	

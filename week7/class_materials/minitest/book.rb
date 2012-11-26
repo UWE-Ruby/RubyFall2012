@@ -1,3 +1,7 @@
+class Book
+
+end
+
 require 'minitest/autorun'
 
 # Unit tests
