@@ -1,4 +1,4 @@
-require './features/step_definitions/tic-tac-toe.rb'
+require './features/step_definitions/tic-tac-toe-steps.rb'
 
 @game = TicTacToe.new
 puts @game.welcome_player
