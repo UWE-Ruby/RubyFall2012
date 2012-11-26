@@ -2,21 +2,8 @@ task :test do
 	puts "Hello World!"
 end
 
-desc "Read all lines and output them"
-task :read_lines do
-  File.open("names", "r") do |names|
-    names.each {|name| puts name}
-  end
+task :make_class_dir do
+	Dir.mkdir("class")
 end
 
-desc "Create a class directory"
-task :create_class_dir do
-  Dir.mkdir("class") unless Dir.exists?("class")
-end
-
-desc "Create a directories for each student in a class"
-task :create_student_dir => [:create_class_dir] do 
-  File.open("names", "r") do |names|
-    names.each {|name| Dir.mkdir("class/#{name}") unless Dir.exists?("class/#{name}")}
-  end
-end
+task :output

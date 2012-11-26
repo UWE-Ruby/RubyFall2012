@@ -1,48 +1,78 @@
+class String
+  def titlecase
+    self.gsub(/\b\w/){|f| f.upcase}
+  end
+
+  def humanize
+    self.gsub('_', ' ').titlecase
+  end
+end
+
+module MenuFinder
+  MENUS = {
+    :vegan => {
+      :diet => :vegan,
+      :proteins => ["Tofurkey", "Hummus"],
+      :veggies => [:ginger_carrots , :potatoes, :yams]
+    }
+  }
+  def find_menu(kind)
+    MENUS[kind]
+  end
+  def find_dessert
+    @menu[:desserts] = {:pies => [:pumkin_pie],
+      :other => ["Chocolate Moose"],
+      :molds => [:cranberry, :mango, :cherry]}
+  end
+end
+
 class Dinner
+  include MenuFinder
+  attr_accessor :menu, :guests, :kind
+  def initialize(kind)
+    @kind = kind
+    @menu = find_menu(kind)
+  end
+  def seating_chart_size
+    guests.inject(0){|sum,g| sum += g.size}
+  end
+
+  def proteins
+    @menu[:proteins].map{|w| w.titlecase}.join(' and ')
+  end
+
+  def veggies
+    @menu[:veggies].map{|w| w.to_s.humanize}.join(', ').gsub(/, \w*\z/){|w| w.gsub(',', ', and')}
+  end
+
+  def whats_for_dinner
+    "Tonight we have proteins #{proteins}, and veggies #{veggies}."
+  end
 end
 
 class ThanksgivingDinner < Dinner
-	attr_accessor :guests, :diet
+  def number_of_desserts
+    @menu[:desserts].map{|k,v| v}.flatten.count
+  end
 
-	def initialize(diet)
-		@diet = diet
-	end
+  def pies
+    @menu[:desserts][:pies].map{|s| s.to_s.humanize}.join(',')
+  end
 
-	def seating_chart_size
-		@guests.map(&:length).inject(0, :+)
-	end
+  def other
+    @menu[:desserts][:other].join(',')
+  end
 
-	def menu
-		{ diet: @diet,
-			proteins: ["Tofurkey", "Hummus"],
-			veggies: [:ginger_carrots , :potatoes, :yams],
-			desserts: {:pies=>[:pumkin_pie],
-								 :other=>["Chocolate Moose"],
-								 :molds=>[:cranberry, :mango, :cherry]} }
-	end
+  def number_of_molds
+    @menu[:desserts][:molds].count
+  end
 
-	def whats_for_dinner
-		proteins = menu[:proteins]
-		veggies  = menu[:veggies]
-		veggies.each_with_index do |veggie, index|
-			veggies[index] = titleize veggie.to_s
-		end 
-		"Tonight we have proteins #{proteins.oxford_commaize}" +
-		", and veggies #{veggies.oxford_commaize} ."
-	end
+  def molds
+    @menu[:desserts][:molds].map{|s| s.to_s.titlecase}.join(' and ')
+  end
 
-
-	def whats_for_dessert
-	end
-
-end
-class Array
-	def oxford_commaize
-		case
-		when self.length >= 3 then self[0..-2].join(", ") + ", and #{self.last}"
-		when self.length == 2 then "#{self.first} and #{self.last}"
-		when self.length == 1 then "#{self.first}"
-		else 											 ""
-		end
-	end
+  def whats_for_dessert
+    find_dessert
+	  "Tonight we have #{number_of_desserts} delicious desserts: #{pies}, #{other}, and #{number_of_molds} molds: #{molds}."
+  end
 end

@@ -10,7 +10,7 @@ A symbol is a referent, often a word, which is frequently used in hashes to stan
 
 2. What is the difference between a symbol and a string?
 
-A symbol can be string-like, but how it is used is very different than how strings are used. A string is a collection of characters, while a symbol is a name used to refer to some piece of stored information. That name can be more than one-word, but in practice it rarely is.What a symbol is called is not important to the program, though using mnemonic symbol names makes things easier on programmers.
+A string is a collection of characters whereas a symbol is a static identifier. A string is not static no matter what the contents of the string are. So the strings "hello" and "hello" are two different ojects, whereas the symbol :hello and :hello are the exact same object. If you think of 1 as a FixNum or fixed number, you can think of the symbol :hello as the "FixStr" or fixed string :hello.
 
 3. What is a block and how do I call a block?
 
