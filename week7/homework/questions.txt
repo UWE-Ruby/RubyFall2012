@@ -3,7 +3,12 @@ Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
 1. What is method_missing and how can it be used?
+A: method_missing is called by Ruby whenever a message is sent to an object for which it doesn't have a method defined to capture that particular message.
+It can be used to dynamically create methods at run time. For example you could capture method names send to a mass converter class that matched /(\w+)_gram/ to handle milligram, decagram, etc.
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
-3. When would you use DuckTypeing? How would you use it to improve your code?
+3. When would you use DuckTyping? How would you use it to improve your code?
+A: DuckTyping is when you don't care what class you are dealing with only what it is able to actually do. If it walks like a duck and talks like a duck, then why should we care if it is in fact a duck?
+DuckTyping is handy for creating flexible code that is decoupled from your current problem domain. In other words, reusable code that won't break every time you add a new feature.
+
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
 5. What is the difference between a singleton class and a singleton method?
