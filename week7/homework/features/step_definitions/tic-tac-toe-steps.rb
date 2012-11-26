@@ -33,13 +33,13 @@ Given /^the computer knows my name is Renee$/ do
   @game.player.should eq "Renee"
 end
 
-Then /^the computer prints "(.*?)"$/ do |arg1|
-  @game.should_receive(:puts).with(arg1)
-  @game.indicate_playyer_turn
+Then /^the computer prints "(.*?)"$/ do |output|
+  @game.should_receive(:puts).with(output)
+  @game.indicate_player_turn
 end
 
-Then /^waits for my input of "(.*?)"$/ do |arg1|
-  @game.should_receive(:gets).and_return(arg1)
+Then /^waits for my input of "(.*?)"$/ do |input|
+  @game.should_receive(:gets).and_return(input)
   @game.get_player_move
 end
 
