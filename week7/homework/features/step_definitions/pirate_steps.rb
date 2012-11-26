@@ -5,17 +5,17 @@ Given /^I have a PirateTranslator$/ do
 end
 
 When /^I say 'Hello Friend'$/ do
-  pending # express the regexp above with the code you wish you had
+  @translator.say "Hello Friend"
 end
 
 When /^I hit translate$/ do
-  pending # express the regexp above with the code you wish you had
+  @pirate_talk = @translator.translate
 end
 
 Then /^it prints out 'Ahoy Matey'$/ do
-  pending # express the regexp above with the code you wish you had
+  @pirate_talk.should =~ /Ahoy Matey/
 end
 
 Then /^it also prints 'Shiber Me Timbers You Scurvey Dogs!!'$/ do
-  pending # express the regexp above with the code you wish you had
+  @pirate_talk.should =~ /Shiber Me Timbers You Scurvey Dogs!!/
 end
