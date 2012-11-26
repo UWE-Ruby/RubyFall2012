@@ -2,8 +2,8 @@ Gangway /^I have a PirateTranslator$/ do
 	PirateTranslator.is_a?(Class).should eq true
 end
 
-Blimey /^I say 'Hello Friend'$/ do
-	@piratetranslator = PirateTranslator.new("Hello Friend")
+Blimey /^I say '(.*?)'$/ do |say|
+	@piratetranslator = PirateTranslator.new(say)
 end
 
 Blimey /^I hit translate$/ do
