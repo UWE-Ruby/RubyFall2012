@@ -1,4 +1,3 @@
-.
 # language: en-pirate
 
 Ahoy matey!: Pirate Speak
