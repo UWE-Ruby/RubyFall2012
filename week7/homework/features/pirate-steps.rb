@@ -10,8 +10,8 @@ Blimey /^I hit translate$/ do
   @pirate_speak = @pirate_translator.translate
 end
 
-Letgoandhaul /^it prints out 'Ahoy Matey'$/ do
-  pending # express the regexp above with the code you wish you had
+Letgoandhaul /^it prints out ('.*')$/ do |arg1|
+  @pirate_speak.should eq arg1
 end
 
 Letgoandhaul /^it also prints 'Shiber Me Timbers You Scurvey Dogs!!'$/ do
