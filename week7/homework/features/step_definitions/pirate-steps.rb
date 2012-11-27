@@ -8,6 +8,7 @@ end
 
 Blimey /^I hit translate$/ do
   @translate = @pirateTranslator.translate("Hello Friend")
+  @translate1 = @pirateTranslator.translate("")
 end
 
 Letgoandhaul /^it prints out 'Ahoy Matey'$/ do
@@ -15,6 +16,5 @@ Letgoandhaul /^it prints out 'Ahoy Matey'$/ do
 end
 
 Letgoandhaul /^it also prints 'Shiber Me Timbers You Scurvey Dogs!!'$/ do
-  @translate = @pirateTranslator.translate("")
-  @translate.should eq "Shiber Me Timbers You Scurvey Dogs!!"
+  @translate1.should eq "Shiber Me Timbers You Scurvey Dogs!!"
 end
