@@ -3,7 +3,16 @@ Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
 1. What is method_missing and how can it be used?
+	=> Method_missing is a hook that, after a method is called and not found anywhere in the object class or its ancestors, is activated to raise a method error exception. Since method_missing is essentially a method, it can be modified to suit application-specific needs.
+
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
+	=> An eigenclass is a special class that contains an object's singleton methods (if any have been defined for it). The eigenclass's parent is the class of which the object in question is an instance. This way, when a method for that object is called, the first place Ruby looks is in that object's eigenclass first. If the method called was a singleton method for that object, then that method will be called, since the eigenclass is where a singleton method lives, and is the first place Ruby looks. If its not a singleton method thats called, Ruby will continue looking in the normal fashion by looking in that object's normal class, then its parent class, and so on, all the way up to BasicObject until the method is found.
+
 3. When would you use DuckTypeing? How would you use it to improve your code?
+	=> Duck typing would be used in an situation where the behavior of an object is whats important, not necessarily what "sort" of object it is. This allows for more easily-maintainable code that can be adapted over time to implement various objects, so long as they possess the correct behavior (such as the right data structures and methods).
+
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+	=> A class method is a method called on the class in which the method is defined, whereas instance methods are called on instances of the class for which they are defined. The difference between instance_eval and class_eval is the scope in which the block passed to instance/class_eval is executed. instance_eval acts as if the argument block is passed inside the singleton class of self, whereas class_eval acts as if the argument block is passed inside the class of self. The consequence of this difference is any method defined in instance_eval will be a singleton method available only to self, whereas any defined in class_eval are available to any instance of the class, as if the method were any normal instance method.
+
 5. What is the difference between a singleton class and a singleton method?
+	=> Singleton class is an alternate name for eigenclass -- the anonymous class in which singleton methods reside when defined on an object --, whereas a singleton method is a method defined on an individual object (rather than its class). Singleton methods live inside singleton classes.

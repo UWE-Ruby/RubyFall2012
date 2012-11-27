@@ -1,4 +1,6 @@
 name, email, github, twitter, hipchat
+
+
 Brian Ward, brianmatthewward@gmail.com, brianward, mrbrianward, brianmatthewward@gmail.com
 Renee D, renee@nird.us, reneedv, @gigglegirl4e, renee.devoursney@gmail.com
 Yan Li, leeyeon0307@gmail.com, YanLi0307, nil, leeyeon0307@gmail.com
@@ -31,3 +33,4 @@ Price Hardman, PriceHardman@gmail.com, PriceHardman
 Will Sugg, sugg.will@gmail.com, wsugg, , sugg.will@gmail.com
 Nicole Lewis, lewis.nicole@gmail.com, nelewis, nil, lewis.nicole@gmail.com
 Sol Wagner, capnsol@gmail.com, Soladin, n/a, capnsol@gmail.com
+

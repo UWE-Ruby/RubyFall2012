@@ -1,24 +1,18 @@
 class Calculator
-	def sum(array)
-		array.inject(0){|sum, x| sum +x}
+	def sum(input)
+		input.empty? ? 0 : input.inject(:+) #if input is empty array, return 0, else sum the elements
 	end
 
-	def multiply(*numbers)
-		puts numbers.inspect
-		numbers.flatten.inject(:*)
+<<<<<<< HEAD
+	def product(*input) #takes multiple arguments, as an array
+		input.length > 1 ? input.inject(:*) : input[0].inject(:*)
 	end
 
-	def pow(base, p)
-		#(1...p).to_a.inject(base){|r,v| r *= base}
-		pow_fac(base, p)
+	def power(base, power)
+		base**power
 	end
 
-	def fac(n)
-	       #(1..n).to_a.inject(1){|f,v| f *= v}
-	       pow_fac(n)
+	def factorial(n)
+		n == 0 ? 1 :  (n==1 ? 1 : n*factorial(n-1) ) #recursive definition, takes into account zero case using nested ternary
 	end
-private
-	def pow_fac(base=nil, p)
-		(1..p).to_a.inject(1){|f,v| f *= base || v}
-	end	
 end
