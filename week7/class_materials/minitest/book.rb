@@ -1,3 +1,6 @@
+class Book
+end
+
 require 'minitest/autorun'
 require './book_answers.rb'
 
