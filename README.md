@@ -36,8 +36,8 @@ Week 5
 Week 6
 * Mid-term due!
 * Projects intro
-* Control
-* Exceptions
+* Gems
+* CI
 
 Week 7
 * Cucumber
@@ -45,13 +45,13 @@ Week 7
 * Refactoring
 
 Week 8
-* Gems
-* CI
-
-Week 9
 * Metaprogramming
 * Duck typing
 * Monkey patching
+
+Week 9
+* Control
+* Exceptions
 
 Week 10
 * Final due!

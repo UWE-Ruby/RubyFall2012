@@ -11,6 +11,8 @@ An identifier corresponding to a string of characters, often a name.
 2. What is the difference between a symbol and a string?
 Multiple symbols representing a single value have the same object id whereas
 multiple values of the same string have different object ids.
+A string is a collection of characters whereas a symbol is a static identifier. A string is not static no matter what the contents of the string are. So the strings "hello" and "hello" are two different ojects, whereas the symbol :hello and :hello are the exact same object. If you think of 1 as a FixNum or fixed number, you can think of the symbol :hello as the "FixStr" or fixed string :hello.
+
 
 3. What is a block and how do I call a block?
 A code block is a set of Ruby statements and expressions between braces or

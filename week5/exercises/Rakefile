@@ -1,3 +1,10 @@
 task :test do
 	puts "Hello World!"
 end
+
+task :make_class_dir do
+	Dir.mkdir("class")
+end
+
+task :output
+
