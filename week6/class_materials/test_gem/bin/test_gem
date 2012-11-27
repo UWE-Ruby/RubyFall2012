@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+puts "Hello There!"
+puts ARGV[0]
