@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require './book_answers.rb'
 
 # Unit tests
 
