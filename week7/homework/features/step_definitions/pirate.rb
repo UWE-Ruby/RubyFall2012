@@ -11,7 +11,8 @@ attr_accessor :talk
 	end
 
 	def translate(talk)
-		@translate = "Ahoy Matey" || "Shiber Me Timbers You Scurvey Dogs!!"
+		@translate = "Ahoy Matey" && "Shiber Me Timbers You Scurvey Dogs!!"
+		puts "#{@translate}"
 	end
 
 end
