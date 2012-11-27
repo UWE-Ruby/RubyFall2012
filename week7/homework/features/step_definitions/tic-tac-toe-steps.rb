@@ -43,15 +43,13 @@ Then /^waits for my input of "(.*?)"$/ do |input|
   @game.get_player_move
 end
 
-Given /^it is the computer's turn$/ do
+Given /^it is the computer's turn$/ do #'
   @game = TicTacToe.new(:computer, :O)
   @game.current_player.should eq "Computer"
 end
 
-Then /^the computer randomly chooses an open position for its move$/ do
-  open_spots = @game.open_spots
-  @com_move = @game.computer_move
-  open_spots.should include(@com_move)
+Then /^the computer randomly chooses an open position for its move$/ do 
+  @game.open_spots.should include(@game.computer_move)
 end
 
 Given /^the computer is playing X$/ do
@@ -67,21 +65,21 @@ Given /^I am playing X$/ do
   @game.player_symbol.should eq :X
 end
 
-When /^I enter a position "(.*?)" on the board$/ do |arg1|
-  @old_pos = @game.board[arg1.to_sym]
-  @game.should_receive(:get_player_move).and_return(arg1)
-  @game.player_move.should eq arg1.to_sym
+When /^I enter a position "(.*?)" on the board$/ do |position|
+  @old_pos = @game.board[position.to_sym]
+  @game.should_receive(:get_player_move).and_return(position)
+  @game.player_move.should eq position.to_sym
 end
 
 When /^"(.*?)" is not taken$/ do |arg1|
   @old_pos.should eq " "
 end
 
-Then /^it is now the computer's turn$/ do
+Then /^it is now the computer's turn$/ do #'
   @game.current_player.should eq "Computer"
 end
 
-When /^there are three X's in a row$/ do
+When /^there are three X's in a row$/ do #'
   @game = TicTacToe.new(:computer, :X)
   @game.board[:C1] = @game.board[:B2] = @game.board[:A3] = :X
 end

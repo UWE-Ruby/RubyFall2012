@@ -3,7 +3,33 @@ Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
 1. What is method_missing and how can it be used?
+
+method missing is a method used to catch calls to undefined methods and handle it in some way. (Possibly by throwing errors or defining undefined methods.) ActiveRecord uses method_missing to call the find_by methods on the fly.
+
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
-3. When would you use DuckTypeing? How would you use it to improve your code?
+
+An _eigenclass_ or singleton class is an anonymous class to which singleton methods are associated. For instance:
+
+> animal = "cat"
+>
+> def animal.speak
+>	  puts "I am a #{self}."
+> end
+
+In the method above, animal is a String with the contents of "cat". It has method of #speak, which is stored in its _eigenclass_.
+
+3. When would you use Duck Typing? How would you use it to improve your code?
+
+Duck Typing is treating all objects which respond to the same method as though they were the same type. When testing you might want to test a method designed to append a line to a file, without creating and destroying a file. Since append also works on strings, you could use a string to test the method rather than having the overhead of working with files.
+
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+
+"It might be helpful to remember that, when defining methods, class_eval and instance_eval have precisely the wrong names: class_eval defines instance methods, and instance_eval defines class methods." --Programming Ruby
+
+A class method is called on a class while an instance method is called on an instance of a class. Class methods have method signatures like `def self.foo` while instance method signatures look like `def baz`. Both eval methods can be used to define methods, but the class_eval defines instance methods while the instance_eval defines class methods.
+
+(I am confused by this.)
+
 5. What is the difference between a singleton class and a singleton method?
+
+A singleton class is an anonymous class associated with an object when you define singleton methods for that object. In the example under number 2, the singleton method is #speak. If I created a walk method with `def animal.walk`, both #speak and #walk would be associated to animal through its anonymous _eigenclass_.
