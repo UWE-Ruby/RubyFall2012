@@ -1,9 +1,14 @@
 require './features/step_definitions/tic-tac-toe.rb'
 
 @game = TicTacToe.new
-puts @game.welcome_player
 
-until @game.over?
+puts "What's your name?"
+@game.player = gets
+
+puts @game.welcome_player
+count = 0
+
+until @game.over? or count >= 10
 	case @game.current_player
 	when "Computer"
 		@game.computer_move
@@ -13,6 +18,8 @@ until @game.over?
 	end
 	puts @game.current_state
 	@game.determine_winner
+
+	count += 1
 end
 
 puts "You Won!" if @game.player_won?

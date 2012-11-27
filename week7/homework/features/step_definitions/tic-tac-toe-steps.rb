@@ -110,9 +110,9 @@ Then /^the game is declared a draw$/ do
   @game.draw?.should be_true
 end
 
-When /^"(.*?)" is taken$/ do |arg1|
-  @game.board[arg1.to_sym] = :O
-  @taken_spot = arg1.to_sym
+When /^"(.*?)" is taken$/ do |mark|
+  @game.board[mark.to_sym] = :O
+  @taken_spot = mark.to_sym
 end
 
 Then /^computer should ask me for another position "(.*?)"$/ do |arg1|

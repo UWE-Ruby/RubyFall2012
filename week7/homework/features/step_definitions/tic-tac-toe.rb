@@ -1,10 +1,12 @@
 class TicTacToe
-	attr_accessor :player, :player_symbol, :conch_shell, :board
+	attr_accessor :player, :player_symbol, :current_player, :board
 
 	SYMBOLS = [:X, :O]
 
 	def initialize(turn=nil, mark=nil)
-		@conch_shell = turn == :player ? :player : :computer
+		@player ||= "Renee"
+
+		@current_player = turn == :player ? self.player : turn == :computer ? "Computer" : ["Computer", self.player].shuffle.last #This is a horrible one-liner. I just hate it as a 6-liner too.
 
 		@player_symbol = mark.nil? ? SYMBOLS.shuffle.first : mark
 
@@ -13,25 +15,26 @@ class TicTacToe
 							C1: " ", C2: " ", C3: " " }
 	end
 
-	def current_player
-		# The way the spec calls this is a bit confusing… 
-		# The @conch_shell gets passed when a player makes their move.
-		@conch_shell == :player ? @player : "Computer"
-	end
-
 	def computer_symbol
 		self.player_symbol == :X ? :O : :X
 	end
 
 	def player_move
+		@current_player = "Computer"
+		
+		mark = gets.chomp.to_sym
+		self.board[mark] = self.player_symbol
 
-		@conch_shell = :computer
-		:A1
+		mark.to_s
 	end
 
 	def computer_move
-		@conch_shell = :player
-		%w(A1 A2 A3 B1 B2 B3 C1 C2 C3).shuffle.first
+		@current_player = self.player
+
+		mark = %w(A1 A2 A3 B1 B2 B3 C1 C2 C3).shuffle.first.to_sym
+		self.board[mark] = self.computer_symbol
+
+		mark.to_s
 	end
 
 	def current_state
