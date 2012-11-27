@@ -3,7 +3,7 @@ Gangway /^I have a PirateTranslator$/ do
 end
 
 Blimey /^I say 'Hello Friend'$/ do  #when
-  @text = @translator.text('Hello Friend')
+  @text = @translator.text("Hello Friend")
 end
 
 Blimey /^I hit translate$/ do #when
@@ -11,14 +11,14 @@ Blimey /^I hit translate$/ do #when
 end
 
 Letgoandhaul /^it prints out 'Ahoy Matey'$/ do  #then
-  if "#{@text} == Hello Friend"
-    @result.should == 'Ahoy Matey'
+  if "#{@text}" == "Hello Friend"
+    @result.should == "Ahoy Matey"
   end
 end
 
 Letgoandhaul /^it also prints 'Shiber Me Timbers You Scurvey Dogs!!'$/ do  #then
-  if @text != 'Hello Friend'
-  	@result.should eq 'Shiber Me Timbers You Scurvey Dogs!!'
+  if "#{@text}" != "Hello Friend"
+  	@result.should eq "Shiber Me Timbers You Scurvey Dogs!!"
   end
 end
 
