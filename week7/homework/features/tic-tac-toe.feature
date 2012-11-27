@@ -1,3 +1,4 @@
+.
 Feature: Tic-Tac-Toe Game
 	As a game player I like tic-tac-toe
 	In order to up my skills 
