@@ -22,14 +22,15 @@ class TicTacToe
 	def player_move
 		@current_player = "Computer"
 		
-		mark = gets.chomp.to_sym
+		mark = $stdin.gets
+		mark = mark.chomp.to_sym
 		self.board[mark] = self.player_symbol
 
 		mark.to_s
 	end
 
 	def computer_move
-		@current_player = self.player
+		@current_player = self.player || "Player"
 
 		mark = %w(A1 A2 A3 B1 B2 B3 C1 C2 C3).shuffle.first.to_sym
 		self.board[mark] = self.computer_symbol

@@ -9,10 +9,9 @@ puts @game.welcome_player
 count = 0
 
 until @game.over? or count >= 10
-	case @game.current_player
-	when "Computer"
+	if @game.current_player == "Computer"
 		@game.computer_move
-	when @game.player
+	else
 		@game.indicate_player_turn
 		@game.player_move
 	end
