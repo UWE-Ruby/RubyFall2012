@@ -1,4 +1,3 @@
-
 Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
@@ -13,7 +12,6 @@ You would utilize duck typing to reduce and reuse your code.  Duck typing is pol
 
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
 A class method can be called on a class and an instance method can be called on an instance.  instance_eval evaluates a block of code with self being the object receiving the call.  class_eval evaluates a block in the context of the class or module.   
-
 
 5. What is the difference between a singleton class and a singleton method?
 A singleton class is a class defined for a specific object whereas a singleton method is a method defined for a specific object.
