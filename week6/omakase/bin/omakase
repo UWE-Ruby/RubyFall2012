@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+puts "What does this gem do, anyway?"
+puts ARGV[0]
