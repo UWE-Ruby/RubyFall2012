@@ -4,11 +4,19 @@ Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 Questions:
 1. What is method_missing and how can it be used?
 A: method_missing is called by Ruby whenever a message is sent to an object for which it doesn't have a method defined to capture that particular message.
-It can be used to dynamically create methods at run time. For example you could capture method names send to a mass converter class that matched /(\w+)_gram/ to handle milligram, decagram, etc.
+It can be used to dynamically create methods at run time. For example you could capture method names sent to a mass converter class that matched /(\w+)_gram/ to handle milligram, decagram, etc.
+
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
+A: An Eigenclass, also called a singleton class, is an anonymous superclass for an object that Ruby creates on-the-fly to store variables and methods unique to that object.
+Singleton methods live in that anonymous singleton class.
+
 3. When would you use DuckTyping? How would you use it to improve your code?
-A: DuckTyping is when you don't care what class you are dealing with only what it is able to actually do. If it walks like a duck and talks like a duck, then why should we care if it is in fact a duck?
-DuckTyping is handy for creating flexible code that is decoupled from your current problem domain. In other words, reusable code that won't break every time you add a new feature.
+A: DuckTyping is when you don't care what class you are dealing with, only what it is able to actually do. If it walks like a duck and talks like a duck, then why should we care if it is in fact a duck?
+   DuckTyping is handy for creating flexible code that is decoupled from your current problem domain. In other words, reusable code that won't break every time you add a new feature.
 
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+A: A class method lives in the Eigenclass of a class, whereas an instance method exists in the class itself.
+   instance_eval defines class methods, while class_eval defines instance methods. Wierd, huh?
+
 5. What is the difference between a singleton class and a singleton method?
+A: A singleton class is the container for a singleton method.
