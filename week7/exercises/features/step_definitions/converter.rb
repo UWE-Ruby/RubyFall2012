@@ -8,10 +8,14 @@ class Converter
 	end
 
 	def convert
-		self.send("#{@type}_convertion")
+		self.send("#{@type}_conversion")
 	end
 
-	def Fahrenheit_convertion
-		(((@value - 32.0) /5.0) * 9.0).round(1)
+	def Fahrenheit_conversion
+		((@value - 32.0) /  1.8).round(1)
+	end
+
+	def Celsius_conversion
+		((@value * 1.8) + 32).round(1)
 	end
 end
