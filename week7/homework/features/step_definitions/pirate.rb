@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+# nikky version
 class Pirate
   def say(str1)
     @phrase = str1
@@ -15,7 +15,7 @@ class Pirate
   	"Shiber Me Timbers You Scurvey Dogs!!"
   end
 end
-=======
+# class answer
 class PirateTranslator
 	PIRATE_WORDS = {
 		"Hello Friend" => "Ahoy Matey"
@@ -33,4 +33,3 @@ private
 		PIRATE_WORDS[str]
 	end
 end
->>>>>>> 4b2958513d06a8a3cac07f3785ec431b77644ba7
