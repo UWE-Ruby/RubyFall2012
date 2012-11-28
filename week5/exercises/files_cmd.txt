@@ -1,0 +1,207 @@
+C:\Projects\RubyFall2012\week5\exercises>irb
+irb(main):001:0> File.open ("test", "w+") do |f|
+irb(main):002:1* puts f.get
+irb(main):003:1> f<<hiw
+irb(main):004:1> end
+SyntaxError: (irb):1: syntax error, unexpected ',', expecting ')'
+File.open ("test", "w+") do |f|
+                  ^
+(irb):1: syntax error, unexpected ')', expecting $end
+File.open ("test", "w+") do |f|
+                        ^
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):005:0> File.open("test","w+") do |f|
+irb(main):006:1* f>>"hiw"
+irb(main):007:1> end
+NoMethodError: undefined method `>>' for #<File:test (closed)>
+        from (irb):6:in `block in irb_binding'
+        from (irb):5:in `open'
+        from (irb):5
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):008:0> File.open("test","w+") do |f|
+irb(main):009:1* f<<"hiw"
+irb(main):010:1> end
+=> #<File:test (closed)>
+irb(main):011:0> f
+NameError: undefined local variable or method `f' for main:Object
+        from (irb):11
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):012:0> test
+ArgumentError: wrong number of arguments (0 for 2..3)
+        from (irb):12:in `test'
+        from (irb):12
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):013:0> f.test
+NameError: undefined local variable or method `f' for main:Object
+        from (irb):13
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):014:0> "test"
+=> "test"
+irb(main):015:0> dir.pwd
+NameError: undefined local variable or method `dir' for main:Object
+        from (irb):15
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):016:0> ruby Dir.pwd
+NoMethodError: undefined method `ruby' for main:Object
+        from (irb):16
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):017:0> exit
+
+C:\Projects\RubyFall2012\week5\exercises>ruby Dir.pwd
+ruby: No such file or directory -- Dir.pwd (LoadError)
+
+C:\Projects\RubyFall2012\week5\exercises>irb
+irb(main):001:0> Dir.pwd
+=> "C:/Projects/RubyFall2012/week5/exercises"
+irb(main):002:0> Dir.chdir("..")
+=> 0
+irb(main):003:0> Dir.pwd
+=> "C:/Projects/RubyFall2012/week5"
+irb(main):004:0> Dir.new(.")
+irb(main):005:1" ^C
+irb(main):005:0> Dir new(".")
+NoMethodError: undefined method `new' for main:Object
+        from (irb):5
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):006:0> d=Dir new(".")
+NoMethodError: undefined method `new' for main:Object
+        from (irb):6
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):007:0> d=Dir.new(.")
+irb(main):008:1" ^C
+irb(main):008:0> d.entries
+NoMethodError: undefined method `entries' for nil:NilClass
+        from (irb):8
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):009:0> Dir.pwd
+=> "C:/Projects/RubyFall2012/week5"
+irb(main):010:0> e=Dir.new("test")
+Errno::ENOENT: No such file or directory - test
+        from (irb):10:in `initialize'
+        from (irb):10:in `new'
+        from (irb):10
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):011:0> d.entries
+NoMethodError: undefined method `entries' for nil:NilClass
+        from (irb):11
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):012:0> d
+=> nil
+irb(main):013:0> d.entries
+NoMethodError: undefined method `entries' for nil:NilClass
+        from (irb):13
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):014:0> rake -t
+NameError: undefined local variable or method `t' for main:Object
+        from (irb):14
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):015:0> rake
+NameError: undefined local variable or method `rake' for main:Object
+        from (irb):15
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):016:0> rakefile
+NameError: undefined local variable or method `rakefile' for main:Object
+        from (irb):16
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):017:0> rakefile ?
+irb(main):018:0* ^C
+irb(main):018:0>
+irb(main):019:0* end
+SyntaxError: (irb):19: syntax error, unexpected keyword_end
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):020:0> rake -T
+NameError: uninitialized constant T
+        from (irb):20
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):021:0> rake clean_up_dirs
+NameError: undefined local variable or method `clean_up_dirs' for main:Object
+        from (irb):21
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):022:0> exit
+Terminate batch job (Y/N)? y
+
+C:\Projects\RubyFall2012\week5\exercises>ls
+Rakefile  ls  object_cmd.txt  rspec  rspec_cmd.txt  skier.rb  skier_spec.rb  test  touch
+
+C:\Projects\RubyFall2012\week5\exercises>gem install rake
+Successfully installed rake-0.9.2.2
+1 gem installed
+Installing ri documentation for rake-0.9.2.2...
+Installing RDoc documentation for rake-0.9.2.2...
+
+C:\Projects\RubyFall2012\week5\exercises>rake
+rake aborted!
+Don't know how to build task 'default'
+
+(See full trace by running task with --trace)
+
+C:\Projects\RubyFall2012\week5\exercises>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,114 @@
+C:\Projects\RubyFall2012\week5\exercises>touch skier_spec.rb
+
+C:\Projects\RubyFall2012\week5\exercises>ls
+Rakefile  object_cmd.txt  skier.rb  skier_spec.rb
+
+C:\Projects\RubyFall2012\week5\exercises>rspec skier_spec.rb
+the hill
+F
+
+Failures:
+
+  1) Skier should ski the hill
+     Failure/Error: s.ski("the hill").should equals "This skier is skiing the hill"
+     NoMethodError:
+       undefined method `equals' for #<RSpec::Core::ExampleGroup::Nested_1:0x215da50 @example=nil>
+     # ./skier_spec.rb:6:in `block (2 levels) in <top (required)>'
+
+Finished in 0.015 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./skier_spec.rb:4 # Skier should ski the hill
+
+C:\Projects\RubyFall2012\week5\exercises>rspec skier_spec.rb
+the hill
+.
+
+Finished in 0.021 seconds
+1 example, 0 failures
+
+C:\Projects\RubyFall2012\week5\exercises>rspec skier_spec.rb
+the hill
+F
+
+Failures:
+
+  1) Skier should ski the hill
+     Failure/Error: s.ski("the hill").should equal "This skier is skiing the hill"
+
+       expected #<String:16224444> => "This skier is skiing the hill"
+            got #<String:16224456> => "This skier is skiing the hill"
+
+       Compared using equal?, which compares object identity,
+       but expected and actual are not the same object. Use
+       'actual.should eq(expected)' if you don't care about
+       object identity in this example.
+     # ./skier_spec.rb:6:in `block (2 levels) in <top (required)>'
+
+Finished in 0.059 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./skier_spec.rb:4 # Skier should ski the hill
+
+C:\Projects\RubyFall2012\week5\exercises>rspec skier_spec.rb
+the hill
+F
+
+Failures:
+
+  1) Skier should ski the hill
+     Failure/Error: s.ski("the hill").should equal "This skier is skiing the hill"
+
+       expected #<String:15864000> => "This skier is skiing the hill"
+            got #<String:15864012> => "This skier is skiing the hill"
+
+       Compared using equal?, which compares object identity,
+       but expected and actual are not the same object. Use
+       'actual.should eq(expected)' if you don't care about
+       object identity in this example.
+     # ./skier_spec.rb:6:in `block (2 levels) in <top (required)>'
+
+Finished in 0.025 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./skier_spec.rb:4 # Skier should ski the hill
+
+C:\Projects\RubyFall2012\week5\exercises>rspec skier_spec.rb
+the hill
+F
+
+Failures:
+
+  1) Skier should ski the hill
+     Failure/Error: s.ski("the hill").should equal "This skier is skiing the hill"
+
+       expected #<String:16185864> => "This skier is skiing the hill"
+            got #<String:16185876> => "This skier is skiing the hill"
+
+       Compared using equal?, which compares object identity,
+       but expected and actual are not the same object. Use
+       'actual.should eq(expected)' if you don't care about
+       object identity in this example.
+     # ./skier_spec.rb:6:in `block (2 levels) in <top (required)>'
+
+Finished in 0.022 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./skier_spec.rb:4 # Skier should ski the hill
+
+C:\Projects\RubyFall2012\week5\exercises>rspec skier_spec.rb
+the hill
+.
+
+Finished in 0.021 seconds
+1 example, 0 failures
+
+C:\Projects\RubyFall2012\week5\exercises>

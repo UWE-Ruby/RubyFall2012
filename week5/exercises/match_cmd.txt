@@ -1,0 +1,226 @@
+C:\Sites>irb
+irb(main):001:0> /cat/ =~ "dog and cat"
+=> 8
+irb(main):002:0> /gerbil/=~"dog and cat"
+=> nil
+irb(main):003:0> /gerbil/.match ("dog and cat")
+=> nil
+irb(main):004:0> /cat/.match ("dog and cat")
+=> #<MatchData "cat">
+irb(main):005:0> #returns an instance of the class MatchData, can assign to a Var
+irb(main):006:0* ^C
+irb(main):006:0> m = /cat/.match ("dog and cat")
+=> #<MatchData "cat">
+irb(main):007:0> m
+=> #<MatchData "cat">
+irb(main):008:0> m.ts_s
+NoMethodError: undefined method `ts_s' for #<MatchData "cat">
+        from (irb):8
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):009:0> m.to_s
+=> "cat"
+irb(main):010:0> m = _
+=> "cat"
+irb(main):011:0> m.pre_match
+NoMethodError: undefined method `pre_match' for "cat":String
+        from (irb):11
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):012:0> /cat/.match("dog and cat")
+=> #<MatchData "cat">
+irb(main):013:0> m =
+irb(main):014:0* ^C
+irb(main):014:0> m = _
+=> #<MatchData "cat">
+irb(main):015:0> m.pre_match
+=> "dog and "
+irb(main):016:0> m.post_match
+=> ""
+irb(main):017:0> /cat/.match("dog and cat and gerbil")
+=> #<MatchData "cat">
+irb(main):018:0> m.post_match
+=> ""
+irb(main):019:0> m = _
+=> ""
+irb(main):020:0> m =/cat/.match("dog and cat and gerbil")
+=> #<MatchData "cat">
+irb(main):021:0> m.pre_match
+=> "dog and "
+irb(main):022:0> m.post_match
+=> " and gerbil"
+irb(main):023:0> #rubular.com is a place to play around with regex
+irb(main):024:0* ^C
+irb(main):024:0> #Alternation:  /Nell |Renee/
+irb(main):025:0* ^C
+irb(main):025:0> #metacharacters:  .    *
+irb(main):026:0* ^C
+irb(main):026:0> /.*@.*\..*\
+irb(main):027:0/ lewis.nicole@gmail.com
+irb(main):028:0/ end
+irb(main):029:0/ exit
+irb(main):030:0/ ^C
+irb(main):030:0> /[A-z]*@[A-z]*\.[A-z]*\
+irb(main):031:0/ ^C
+irb(main):031:0> /[A-z0-9]*@[A-z0-9]*\.[A-z0-9]*\
+irb(main):032:0/ ^C
+irb(main):032:0> /\w*@\w*\.\w*\
+irb(main):033:0/ ^C
+irb(main):033:0> /\w+@\w+\.\w+\
+irb(main):034:0/ ^C
+irb(main):034:0> #match groups:  / (206|253)-?(\d{3})(-?\d{4})\
+irb(main):035:0* ^C
+irb(main):035:0> #match groups in this instance created an array
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

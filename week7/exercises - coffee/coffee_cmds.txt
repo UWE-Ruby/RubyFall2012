@@ -1,0 +1,134 @@
+C:\Projects\RubyFall2012\week7>ls -a
+.  ..  class_materials  exercises  exercises - coffee  exercises - converter  exercises - puppies  homework
+
+C:\Projects\RubyFall2012\week7>cd "exercises - coffee"
+
+C:\Projects\RubyFall2012\week7\exercises - coffee>cucumber
+*** WARNING: You must use ANSICON 1.31 or higher (http://adoxa.110mb.com/ansicon) to get coloured output on Windows
+Feature: Serve coffee
+  In order to earn money
+  Customers should be able to
+  buy coffee at all times
+
+  Scenario: Buy last coffee                       # features\coffee.feature:6
+    Given there are 1 coffees left in the machine # features\coffee.feature:7
+    And I have deposited 1$                       # features\coffee.feature:8
+    When I press the coffee button                # features\coffee.feature:9
+    Then I should be served a coffee              # features\coffee.feature:10
+
+1 scenario (1 undefined)
+4 steps (4 undefined)
+0m0.011s
+
+You can implement step definitions for undefined steps with these snippets:
+
+Given /^there are (\d+) coffees left in the machine$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Given /^I have deposited (\d+)\$$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^I press the coffee button$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should be served a coffee$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+
+C:\Projects\RubyFall2012\week7\exercises - coffee>cucumber
+*** WARNING: You must use ANSICON 1.31 or higher (http://adoxa.110mb.com/ansicon) to get coloured output on Windows
+Feature: Serve coffee
+  In order to earn money
+  Customers should be able to
+  buy coffee at all times
+
+  Scenario: Buy last coffee                       # features\coffee.feature:6
+    Given there are 1 coffees left in the machine # features/step_definitions/coffee_steps.rb:3
+      uninitialized constant CoffeeMaker (NameError)
+      ./features/step_definitions/coffee_steps.rb:4:in `/^there are (\d+) coffees left in the machine$/'
+      features\coffee.feature:7:in `Given there are 1 coffees left in the machine'
+    And I have deposited 1$                       # features/step_definitions/coffee_steps.rb:7
+    When I press the coffee button                # features/step_definitions/coffee_steps.rb:11
+    Then I should be served a coffee              # features/step_definitions/coffee_steps.rb:15
+
+Failing Scenarios:
+cucumber features\coffee.feature:6 # Scenario: Buy last coffee
+
+1 scenario (1 failed)
+4 steps (1 failed, 3 skipped)
+0m0.014s
+
+C:\Projects\RubyFall2012\week7\exercises - coffee>cucumber
+*** WARNING: You must use ANSICON 1.31 or higher (http://adoxa.110mb.com/ansicon) to get coloured output on Windows
+Feature: Serve coffee
+  In order to earn money
+  Customers should be able to
+  buy coffee at all times
+
+  Scenario: Buy last coffee                       # features\coffee.feature:6
+    Given there are 1 coffees left in the machine # features/step_definitions/coffee_steps.rb:3
+      uninitialized constant CoffeeMaker (NameError)
+      ./features/step_definitions/coffee_steps.rb:4:in `/^there are (\d+) coffees left in the machine$/'
+      features\coffee.feature:7:in `Given there are 1 coffees left in the machine'
+    And I have deposited 1$                       # features/step_definitions/coffee_steps.rb:7
+    When I press the coffee button                # features/step_definitions/coffee_steps.rb:11
+    Then I should be served a coffee              # features/step_definitions/coffee_steps.rb:15
+
+Failing Scenarios:
+cucumber features\coffee.feature:6 # Scenario: Buy last coffee
+
+1 scenario (1 failed)
+4 steps (1 failed, 3 skipped)
+0m0.020s
+
+C:\Projects\RubyFall2012\week7\exercises - coffee>cucumber
+*** WARNING: You must use ANSICON 1.31 or higher (http://adoxa.110mb.com/ansicon) to get coloured output on Windows
+Feature: Serve coffee
+  In order to earn money
+  Customers should be able to
+  buy coffee at all times
+
+  Scenario: Buy last coffee                       # features\coffee.feature:6
+    Given there are 1 coffees left in the machine # features/step_definitions/coffee_steps.rb:3
+      uninitialized constant Machine (NameError)
+      ./features/step_definitions/coffee_steps.rb:4:in `/there are (\d+) coffees left in the machine/'
+      features\coffee.feature:7:in `Given there are 1 coffees left in the machine'
+    And I have deposited 1$                       # features/step_definitions/coffee_steps.rb:7
+    When I press the coffee button                # features/step_definitions/coffee_steps.rb:11
+    Then I should be served a coffee              # features/step_definitions/coffee_steps.rb:15
+
+Failing Scenarios:
+cucumber features\coffee.feature:6 # Scenario: Buy last coffee
+
+1 scenario (1 failed)
+4 steps (1 failed, 3 skipped)
+0m0.015s
+
+C:\Projects\RubyFall2012\week7\exercises - coffee>cucumber
+*** WARNING: You must use ANSICON 1.31 or higher (http://adoxa.110mb.com/ansicon) to get coloured output on Windows
+Feature: Serve coffee
+  In order to earn money
+  Customers should be able to
+  buy coffee at all times
+
+  Scenario: Buy last coffee                       # features\coffee.feature:6
+    Given there are 1 coffees left in the machine # features/step_definitions/coffee_steps.rb:3
+      uninitialized constant Machine (NameError)
+      ./features/step_definitions/coffee_steps.rb:4:in `/there are (\d+) coffees left in the machine/'
+      features\coffee.feature:7:in `Given there are 1 coffees left in the machine'
+    And I have deposited 1$                       # features/step_definitions/coffee_steps.rb:7
+    When I press the coffee button                # features/step_definitions/coffee_steps.rb:11
+    Then I should be served a coffee              # features/step_definitions/coffee_steps.rb:15
+
+Failing Scenarios:
+cucumber features\coffee.feature:6 # Scenario: Buy last coffee
+
+1 scenario (1 failed)
+4 steps (1 failed, 3 skipped)
+0m0.015s
+
+C:\Projects\RubyFall2012\week7\exercises - coffee>

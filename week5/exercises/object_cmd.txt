@@ -1,0 +1,54 @@
+C:\Projects\RubyFall2012\week5\exercises>irb
+irb(main):001:0> load 'skier.rb'
+=> true
+irb(main):002:0> Skier
+=> Skier
+irb(main):003:0> s=Skier.new
+=> #<Skier:0x1c84458 @events=[:gs, :downhill]>
+irb(main):004:0> s.Skier(:Slalom)
+NoMethodError: undefined method `Skier' for #<Skier:0x1c84458 @events=[:gs, :downhill]>
+        from (irb):4
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):005:0> s.Skier(:gs)
+NoMethodError: undefined method `Skier' for #<Skier:0x1c84458 @events=[:gs, :downhill]>
+        from (irb):5
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):006:0> s.events
+=> [:gs, :downhill]
+irb(main):007:0> s.ski(:gs)
+This skier is skiing gs
+=> nil
+irb(main):008:0> s.ski("slalom")
+This skier is skiing slalom
+=> nil
+irb(main):009:0> s.events=s.events+[:super_g]
+=> [:gs, :downhill, :super_g]
+irb(main):010:0> s2=Skier.new
+=> #<Skier:0x1d7dcf8 @events=[:gs, :downhill]>
+irb(main):011:0> s2.events
+=> [:gs, :downhill]
+irb(main):012:0> load 'skier.rb'
+=> true
+irb(main):013:0> s3=Skier.new
+=> #<Skier:0x1bb1b58 @events=[:gs, :downhill]>
+irb(main):014:0> s3.ski("the hills")
+the hills
+=> "This skier is skiing the hills"
+irb(main):015:0>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

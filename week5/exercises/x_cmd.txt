@@ -1,0 +1,227 @@
+C:\Projects\RubyFall2012_Master\week3\exercises>irb
+irb(main):001:0> require './named_thing.rb'
+=> true
+irb(main):002:0> class Vampire
+irb(main):003:1> include named_thing.rb
+irb(main):004:1> end
+NameError: undefined local variable or method `named_thing' for Vampire:Class
+        from (irb):3:in `<class:Vampire>'
+        from (irb):2
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):005:0> class Vampire
+irb(main):006:1> include NamedThing
+irb(main):007:1> end
+=> Vampire
+irb(main):008:0> v=Vampire.new("Count Dracula")
+=> #<Vampire:0x1db47c0 @name="Count Dracula">
+irb(main):009:0> v.say
+NoMethodError: undefined method `say' for #<Vampire:0x1db47c0 @name="Count Dracula">
+        from (irb):9
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):010:0> h=Human.new
+NameError: uninitialized constant Human
+        from (irb):10
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):011:0> ls
+NameError: undefined local variable or method `ls' for main:Object
+        from (irb):11
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):012:0> end
+SyntaxError: (irb):12: syntax error, unexpected keyword_end
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):013:0> ls
+NameError: undefined local variable or method `ls' for main:Object
+        from (irb):13
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):014:0> NamedThing
+=> NamedThing
+irb(main):015:0> load 'monster.rb'
+=> true
+irb(main):016:0> load'vampire.rb'
+TypeError: superclass mismatch for class Vampire
+        from vampire.rb:2:in `<top (required)>'
+        from (irb):16:in `load'
+        from (irb):16
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):017:0> exit
+
+C:\Projects\RubyFall2012_Master\week3\exercises>irb
+irb(main):001:0> load 'vampire.rb'
+=> true
+irb(main):002:0> ^exiting out of irb clears out prior loads/requires
+SyntaxError: (irb):2: syntax error, unexpected '^'
+^exiting out of irb clears out prior loads/requires
+ ^
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):003:0> ^so when I run vampires now it chains down to NamedThing then back up to the Class
+SyntaxError: (irb):3: syntax error, unexpected '^'
+^so when I run vampires now it...
+ ^
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):004:0> v.shout_name
+NameError: undefined local variable or method `v' for main:Object
+        from (irb):4
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):005:0> v=Vampire.new
+=> #<Vampire:0x1ca9520 @name="Vampire", @nocturnal=true, @vlunerabilities=[:garlic, :sunlight], @dangers=[:bites], @legs
+=2>
+irb(main):006:0> v.shout_name
+=> "VAMPIRE"
+irb(main):007:0> V.dangers
+NameError: uninitialized constant V
+        from (irb):7
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):008:0> v.kind_of? Vampires
+NameError: uninitialized constant Vampires
+        from (irb):8
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):009:0> v.kind_of? Vampire
+=> true
+irb(main):010:0> v.kind_of? Monster
+=> true
+irb(main):011:0> v.kind_of? NamedThing
+=> true
+irb(main):012:0> "1".to.i_class
+NoMethodError: undefined method `to' for "1":String
+        from (irb):12
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):013:0> "1".to_i
+=> 1
+irb(main):014:0> "1".to_i.class
+=> Fixnum
+irb(main):015:0> "1".object_id
+=> 14621700
+irb(main):016:0> 1.object_id
+=> 3
+irb(main):017:0> 1.object_id
+=> 3
+irb(main):018:0> 1.object_id
+=> 3
+irb(main):019:0> y = x =1
+=> 1
+irb(main):020:0> y=3
+=> 3
+irb(main):021:0> y
+=> 3
+irb(main):022:0> ^setting both x & y to 1
+SyntaxError: (irb):22: syntax error, unexpected '^'
+^setting both x & y to 1
+ ^
+(irb):22: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+^setting both x & y to 1
+                      ^
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):023:0>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+task :default do  |t|
+	puts "Hello World!"
+end
+task :reads_lines_in_names do
+	f=File.open("names") 
+	f.each{|line| puts line}
+end
+task :creates_a_class_dir do
+	Dir.mkdir("class")
+end
+task :creates_dir_in_classdir_for_names=>[:creates_a_class_dir] do
+	f=File.open("names")
+	Dir.chdir("class")
+	f.each{|line| Dir.mkdir(line.chomp)}
+end
