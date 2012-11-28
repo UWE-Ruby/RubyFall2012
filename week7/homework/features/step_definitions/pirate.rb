@@ -9,4 +9,3 @@ class Pirate
   end
 
 end
-
