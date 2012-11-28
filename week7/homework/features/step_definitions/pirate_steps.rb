@@ -3,11 +3,11 @@ Gangway /^I have a PirateTranslator$/ do
 end
 
 Blimey /^I say 'Hello Friend'$/ do
-  @translator.translate('Hello Friend')
+  @translator.translate("Hello Friend")
 end
 
 Blimey /^I hit translate$/ do
-  pending # express the regexp above with the code you wish you had
+   @translator.translate("Hello Friend")
 end
 
 Letgoandhaul /^it prints out 'Ahoy Matey'$/ do
@@ -15,7 +15,7 @@ Letgoandhaul /^it prints out 'Ahoy Matey'$/ do
 end
 
 Letgoandhaul /^it also prints 'Shiber Me Timbers You Scurvey Dogs!!'$/ do
-  pending # express the regexp above with the code you wish you had
+  @result = 'Shiber Me Timbers You Scurvey Dogs!!'
 end
 
 #Feature: Pirate Speak
