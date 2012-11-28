@@ -7,7 +7,7 @@ Questions:
 It can be patched to create methods at run time.
 
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
-An Eigenclass is an anonymous SuperClass.  Everything is really an Eigenclass!  They are referenced in their own singleton class.
+An Eigenclass is an anonymous SuperClass.  Class methods are really just Eigenclasses!  They are referenced in their own singleton class.
 
 3. When would you use DuckTypeing? How would you use it to improve your code?
 Ducktyping is used when the type of object you are using isn't necessary to the code you are producing.
