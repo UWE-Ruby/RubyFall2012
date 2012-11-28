@@ -9,3 +9,7 @@ http://railstips.org/blog/archives/2009/08/20/lookin-on-up-to-the-east-side/
 
 EigenClass & Call Chain:
 http://madebydna.com/all/code/2011/06/24/eigenclasses-demystified.html
+http://www.devalot.com/articles/2008/09/ruby-singleton
+
+Changing Self:
+http://pragdave.blogs.pragprog.com/pragdave/2007/11/changing-self-i.html
