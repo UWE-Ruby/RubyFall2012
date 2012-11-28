@@ -19,4 +19,3 @@ class OddNumber
 		@value <=> other.value
 	end
 end
-

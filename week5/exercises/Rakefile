@@ -1,5 +1,36 @@
 task :test do
-	puts "Hello World!"
+  puts "Hello World!"
+end
+
+desc "reads all the lines in the names file"
+task :read_lines do
+  File.open("names", "r").each do |names|
+      puts "#{names}"
+  end
+end
+
+desc "creates a directory for each name in names file"
+task :create_dir => [:read_lines] do
+  open_file_use_lines{|l| Dir.mkdir(l) unless Dir.exists?(l)}
+end
+
+desc "creates a class directory"
+task :create_class_dir do
+  Dir.mkdir(dir="Class")
+end
+
+desc "makes a directory in the Class directory for each name in names file"
+task :create_directories_for_names => [:read_lines] do
+	Dir.chdir("Class/")
+	open_file_use_lines(file="../names"){|l| Dir.mkdir(l) }
+end
+
+def open_file_use_lines(file="names")
+  File.open(file) do |f|
+    f.each do |l|
+      yield "#{l.chomp}"
+    end
+  end
 end
 
 task :make_class_dir do

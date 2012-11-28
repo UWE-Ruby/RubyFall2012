@@ -1,0 +1,5 @@
+require 'rspec/core/rake_task'
+# name of the task 'spec'
+# will use the spec dir automagically
+RSpec::Core::RakeTask.new('spec')
+task :default => :spec
