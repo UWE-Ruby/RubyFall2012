@@ -1,20 +1,19 @@
-Gangway /^I have a PirateTranslator$/ do
-  @pirate = Pirate.new
+Gangway /^I have a (\w+)$/ do |arg|
+	@translator = Kernel.const_get(arg).new
 end
 
-Blimey /^I say 'Hello Friend'$/ do
-  @pirate.phrase=('Hello Friend')
+Blimey /^I (\w+) '(.+)'$/ do |method, arg|
+	@translator.send(method, arg)
 end
 
-Blimey /^I hit translate$/ do
-  @pirate.translate()
+Letgoandhaul /^I hit (\w+)$/ do |arg|
+	@result = @translator.send(arg)
 end
 
-Letgoandhaul /^it prints out 'Ahoy Matey'$/ do
-  @translation = @pirate.translate
-  @translation.split("\n")[0].should eq('Ahoy Matey')
+Letgoandhaul /^it prints out '(.+)'$/ do |arg|
+	@result.split("\n ").first.should == arg
 end
 
-Letgoandhaul /^it also prints 'Shiber Me Timbers You Scurvey Dogs!!'$/ do
-  @translation.split("\n")[1].should eq "Shiber Me Timbers You Scurvey Dogs!!"
+Letgoandhaul /^it also prints '(.+)'$/ do |arg|
+	@result.split("\n ").last.should == arg
 end

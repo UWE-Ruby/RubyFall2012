@@ -1,16 +1,17 @@
-class Pirate
-	def initialize
-
+class PirateTranslator
+	PIRATE_WORDS = {
+		"Hello Friend" => "Ahoy Matey"
+	}
+	def say(str)
+		@said = lookup_pirate(str).to_s
 	end
 
 	def translate
-		@phrase.gsub!("Hello", "Ahoy")
-		@phrase.gsub!("Friend", "Matey")
-		return "#{@phrase}\nShiber Me Timbers You Scurvey Dogs!!"
+		@said + "\n Shiber Me Timbers You Scurvey Dogs!!"
 	end
 
-	def phrase=(p)
-		@phrase = p
+private
+	def lookup_pirate(str)
+		PIRATE_WORDS[str]
 	end
-
 end
