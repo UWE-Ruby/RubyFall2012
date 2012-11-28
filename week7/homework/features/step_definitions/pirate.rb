@@ -3,12 +3,11 @@ class PirateTranslator
 	@translator = PirateTranslator.new()
 
 	def translate(english)
-		#this isn't the greatest solution, but at least it does something and offers some flexibility.
-		english.sub(/Hello/, 'Ahoy')
-		english.sub(/Friend/, 'Matey')
-		english.sub(/w*\b/, 'Eek!')
+		if english =~ /Hello/ then puts "Ahoy"
+		if english =~ /Friend/ then puts "Matey"
+		else puts "Eeek!"
+		end
 			puts "Shiber Me Timbers You Scurvey Dogs!!"
 	end	
-		
-#end
+end
 end

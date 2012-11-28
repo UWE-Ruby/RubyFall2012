@@ -7,7 +7,7 @@ Blimey /^I say 'Hello Friend'$/ do
 end
 
 Blimey /^I hit translate$/ do
-   @translator.translate("Hello Friend")
+   @translator.translate("Hello Footy")
 end
 
 Letgoandhaul /^it prints out 'Ahoy Matey'$/ do
