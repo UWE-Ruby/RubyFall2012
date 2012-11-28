@@ -1,9 +1,41 @@
-
 Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
 1. What is method_missing and how can it be used?
-2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
-3. When would you use DuckTypeing? How would you use it to improve your code?
-4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+method_missing is a way to reuse functionality/code in order to define methods
+on the fly. For example, if I created a method called discipline_rabbit and wanted
+to increase readability and enable usage of a similar method that works with 
+multiple rabbits, I could define in method_missing a way to automatically 
+understand discipline_rabbits or discipline_cats and resue functionality from 
+the original discipline_dog method.
+
+2. What is and Eigenclass and what is it used for? 
+An Eigenclass, or a Singleton class, is a way to define functionality for a
+specific object or instance of a class. Practically, I'm not really sure why
+I'd use it. I suppose I'd use it to create specific functionalilty without
+bothering with making a more complicated inheritance hierarchy.
+
+Where Do Singleton methods live?
+In the class object
+
+
+3. When would you use DuckTyping? How would you use it to improve your code?
+Probably always from now on because it sounds more fun than static typing.
+Specifically, it seems that it would make it easier for me to think about my
+methods and method usage based on what I know (or think) the arguments can 
+respond to instead of its defined type.
+
+
+4. What is the difference between a class method and an instance method? 
+Class methods are called from the class; instance methods are called from an
+instance of its class. 
+
+What is the difference between instance_eval and class_eval?
+Basically, class_eval creates instance methods for a class; instance_eval creates class methods for an EigenClass of the class.
+
 5. What is the difference between a singleton class and a singleton method?
+When defining singleton methods, singleton classes are automatically created
+to store the singleton method. This contrats normal methods which must be 
+defined within a class first if it is to be either a class or instance method
+(except for various metaprogramming methods). 
+
