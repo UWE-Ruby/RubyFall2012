@@ -3,7 +3,27 @@ Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
 1. What is method_missing and how can it be used?
-2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
+*It's the method that Ruby looks for after it can't find the method that's been called anywhere in the class heirarchy that it was called in.
+
+
+2. What is and Eigenclass and what is it used for? 
+*The singleton class, or Eigneclass, is an anonymous class that bursts into appearance when a singleton method is is defined. It holds the definition of the singleton method. It becomes the class of the object that the singleton method is attached to, pushing that object's original class up a level to become its superclass.
+
+2.5. Where Do Singleton methods live?
+*In yurts. 
+*Also, in their singleton class.
+
+
 3. When would you use DuckTypeing? How would you use it to improve your code?
-4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+*You pretty much always use DuckTypeing, in that it's not necessary to declare types for objects in Ruby. It makes code more flexible and easier to maintain. The focus is on testing the capabilities of an object instead of its type.
+
+4. What is the difference between a class method and an instance method? 
+*A class method is a method that's available to a class. It also doesn't exist or is identical to a singleton method that's called on the self object that is the class. 
+*Instance methods can be called from inside (or sometimes outside) their class. They have access to the object's instance variables and state.
+
+4.5. What is the difference between instance_eval and class_eval?
+*They both allow you to change the identity of 'self' for the duration of a block. class_eval sets things up as if you were in the body of a class definition. instance_eval acts as though you were wroking in side the singleton class of 'self'.
+
 5. What is the difference between a singleton class and a singleton method?
+*A singleton method is a method that is specific to a particular object (as opposed to a class).
+*(see question 2)The singleton class, or Eigneclass, is an anonymous class that bursts into appearance when a singleton method is is defined. It holds the definition of the singleton method. It becomes the class of the object that the singleton method is attached to, pushing that object's original class up a level to become its superclass.
