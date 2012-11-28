@@ -1,3 +1,4 @@
+
 Gangway /^I have a PirateTranslator$/ do
   @translator = PirateTranslator.new()
 end

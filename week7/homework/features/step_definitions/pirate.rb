@@ -1,5 +1,6 @@
 class PirateTranslator
 
+
 	@translator = PirateTranslator.new()
 
 	def translate(english)
@@ -11,3 +12,4 @@ class PirateTranslator
 	end	
 end
 end
+
