@@ -1,17 +1,19 @@
-class PirateTranslator
-	PIRATE_WORDS = {
-		"Hello Friend" => "Ahoy Matey"
-	}
-	def say(str)
-		@said = lookup_pirate(str).to_s
-	end
+class Pirate
+  def initialize(text='')
+    @text = text
+  end
 
-	def translate
-		@said + "\n Shiber Me Timbers You Scurvey Dogs!!"
-	end
+  # Sets the text
+  def text(text)
+    @text = text
+  end
 
-private
-	def lookup_pirate(str)
-		PIRATE_WORDS[str]
-	end
+  # Translates text into pirate speak
+  def translate(str=@text)
+    if str == 'Hello Friend'
+      'Ahoy Matey'
+    else
+      'Shiber Me Timbers You Scurvey Dogs!!'
+    end
+  end
 end
