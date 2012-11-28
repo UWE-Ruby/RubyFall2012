@@ -13,6 +13,10 @@ test/version_tmp
 tmp
 *.*~
 *~
+week4/timer_1.rb
+week4/worker_1.rb
+week4/my_output.rb
+week4/questions_1.txt
 
 # YARD artifacts
 .yardoc
