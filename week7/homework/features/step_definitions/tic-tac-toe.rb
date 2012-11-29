@@ -1,6 +1,7 @@
 class TicTacToe
   attr_reader :player
   attr_reader :current_player
+  attr_reader :SYMBOLS
   
   
   def player=player
