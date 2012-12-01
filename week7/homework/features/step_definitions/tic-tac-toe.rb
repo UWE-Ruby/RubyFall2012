@@ -25,6 +25,10 @@ class TicTacToe
     end
   end
 
+  def indicate_player_turn
+    puts "#{player}'s Move:"
+  end
+
   private
 
   def initialize_state_tracker(next_up)
