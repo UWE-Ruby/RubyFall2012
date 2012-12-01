@@ -4,6 +4,10 @@ class TicTacToe
   attr_reader :player_symbol
   attr_reader :computer_symbol
   
+  def initialize(name="Bob")
+    @player = name
+  end
+  
   SYMBOLS = ["X","O"]
   def player=player
     @player=player #set the player name
