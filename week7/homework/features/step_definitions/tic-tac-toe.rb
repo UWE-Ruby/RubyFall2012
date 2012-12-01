@@ -4,7 +4,8 @@ class TicTacToe
   SYMBOLS = [:x, :o]
   OPPONENTS = [:player, :computer]
 
-  def initialize
+  def initialize(playa = :player)
+    @player = playa
     @new_game = true
   end
 
