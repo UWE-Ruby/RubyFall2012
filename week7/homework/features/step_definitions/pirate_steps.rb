@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+# class answers
 
 Gangway /^I have a PirateTranslator$/ do
 	@parrot = Pirate.new
@@ -18,7 +18,8 @@ end
 
 Letgoandhaul /^it also prints 'Shiber Me Timbers You Scurvey Dogs!!'$/ do
     @parrot.end_convo.should == 'Shiber Me Timbers You Scurvey Dogs!!'
-=======
+#mine
+end
 Gangway /^I have a (\w+)$/ do |arg|
 	@translator = Kernel.const_get(arg).new
 end
@@ -37,5 +38,4 @@ end
 
 Letgoandhaul /^it also prints '(.+)'$/ do |arg|
 	@result.split("\n ").last.should == arg
->>>>>>> 4b2958513d06a8a3cac07f3785ec431b77644ba7
 end
