@@ -1,5 +1,8 @@
 require 'rspec/mocks/standalone'
 
+current_dir = File.expand_path(File.dirname(__FILE__))
+require "#{current_dir}/../../lib/tic_tac_toe.rb"
+
 Given /^I start a new Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new
 end
