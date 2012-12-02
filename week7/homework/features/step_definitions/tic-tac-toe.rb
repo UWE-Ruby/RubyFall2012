@@ -5,15 +5,12 @@ class TicTacToe
   attr_reader :computer_symbol
   SYMBOLS = ["X","O"]
   
-  def initialize(first_player = nil, first_players_symbol = nil)
+  def initialize(first_player = nil, player_symbol = nil)
     #expecting :player or :computer for first_player this is used to force the context for testing
-    @player_hash = {:computer => "Computer"}
+    @player_hash = {:player=>nil,:computer => "Computer"}
     first_player==nil ? randomize_first_player : @current_player = first_player
-    op = {0=>1,1=>0} #define a hash that treats 1 and zero as opposites
-    n = rand(2)
-    @player_symbol = SYMBOLS[n]
-    n = op[n]
-    @computer_symbol = SYMBOLS[n]
+    @symbol_hash = {:player=> nil, :computer=>nil}
+    assign_symbols(player_symbol)
     play_game
   end
   
@@ -28,6 +25,31 @@ class TicTacToe
   
   def current_player
     @player_hash[@current_player]
+  end
+  
+  def player_symbol
+    @symbol_hash[:player]
+  end
+  
+  def computer_symbol
+    @symbol_hash[:computer]
+  end
+  
+  def assign_symbols(player_symbol)
+    op = {0=>1,1=>0,:player=>:computer, :computer=>:player, :X=>:O, :O=>:X} #a hash that defines opposites
+    if player_symbol == nil
+      #randomize
+      n = rand(2)
+      @symbol_hash[:player] = SYMBOLS[n]
+      n = op[n]
+      @symbol_hash[:computer] = SYMBOLS[n]
+    else
+     @symbol_hash[:player]=player_symbol
+     @symbol_hash[:computer] = op[player_symbol]
+      #@symbol_hash[@current_player] = first_players_symbol.to_s
+      #@symbol_hash[op[@current_player]] = op[first_players_symbol].to_s
+      
+    end
   end
   
   def randomize_first_player
