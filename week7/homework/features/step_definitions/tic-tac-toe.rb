@@ -45,6 +45,10 @@ class TicTacToe
     move
   end
 
+  def current_state
+    @board.available_moves.values.compact.map {|v| v.to_s}
+  end
+
   #accessors
   def player
     @human.name
