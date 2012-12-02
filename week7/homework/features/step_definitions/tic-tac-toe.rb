@@ -3,9 +3,9 @@ class TicTacToe
   OPPONENTS = [:player, :computer]
   SYMBOLS = [:X, :O]
 
-  def initialize(first_player = nil, first_players_symbol = nil)
+  def initialize(first_player = nil, human_player_s_symbol = nil)
     create_opponents(first_player)
-    assign_x_and_o(symbol: first_players_symbol, first_player: first_player)
+    assign_x_and_o(human_player_s_symbol)
     create_board
   end
 
@@ -71,15 +71,10 @@ class TicTacToe
     @computer = Computer.new(first_player)
   end
 
-  def assign_x_and_o(ops = {})
-    if ops.is_a? Hash and ops[:first_players_symbol] and ops[:first_player]
-      if ops[:first_player] == :player
-        @human.my_symbol = ops[:first_players_symbol]
-        @computer.my_symbol = (SYMBOLS - ops[:first_players_symbol]).first
-      else
-        @computer.my_symbol = ops[:first_players_symbol]
-        @human.my_symbol = (SYMBOLS - ops[:first_players_symbol]).first
-      end
+  def assign_x_and_o(human_player_s_symbol)
+    if human_player_s_symbol
+      @human.my_symbol = human_player_s_symbol
+      @computer.my_symbol = (SYMBOLS - [human_player_s_symbol]).first
     else
       x_or_o = SYMBOLS.shuffle
       @human.my_symbol = x_or_o.pop
