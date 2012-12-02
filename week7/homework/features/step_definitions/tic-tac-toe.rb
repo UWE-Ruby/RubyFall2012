@@ -1,5 +1,4 @@
 class TicTacToe
-  attr_accessor :player
 
   OPPONENTS = [:player, :computer]
   SYMBOLS = [:X, :O]
@@ -89,10 +88,18 @@ class TicTacToe
   end
 
   class Player
-    attr_accessor :name, :up_next, :my_symbol, :moves
+    attr_accessor :name, :my_symbol, :moves
+
+    def up_next
+      @@up_next
+    end
+
+    def up_next=(value)
+      @@up_next = value
+    end
 
     def initialize(up_next)
-      @up_next = up_next
+      @@up_next = up_next
       @moves = []
     end
   end
@@ -102,8 +109,8 @@ class TicTacToe
 
   class Computer < Player
     def initialize(up_next_toggle)
-      name = "Computer"
       super
+      @name = "Computer"
     end
   end
 
