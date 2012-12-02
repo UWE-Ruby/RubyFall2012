@@ -21,6 +21,10 @@ class TicTacToe
     puts "#{player}'s Move:"
   end
 
+  def get_player_move(move)
+    @human.moves << move
+  end
+
   #accessors
   def player
     @human.name
@@ -65,7 +69,7 @@ class TicTacToe
   end
 
   class Player
-    attr_accessor :name, :up_next, :my_symbol
+    attr_accessor :name, :up_next, :my_symbol, :moves
 
     def initialize(up_next)
       @up_next = up_next
