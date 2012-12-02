@@ -2,7 +2,7 @@ class TicTacToe
   attr_accessor :player
 
   OPPONENTS = [:player, :computer]
-  SYMBOLS = [:x, :o]
+  SYMBOLS = [:X, :O]
 
   def initialize(first_player = nil)
     create_opponents(first_player)
