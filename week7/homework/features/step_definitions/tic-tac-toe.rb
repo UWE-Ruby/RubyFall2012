@@ -5,27 +5,16 @@ class TicTacToe
   SYMBOLS = [:x, :o]
 
   def initialize(first_player = nil)
-    @new_game = true
     create_opponents(first_player)
     assign_x_and_o
-    pick_first_player
   end
 
   def welcome_player
     "Welcome #{player}"
   end
 
-  def pick_first_player
-    next_up = [player, "Computer"].sample
-  end
-
   def current_player
-    if @new_game
-      @new_game = false
-      return player
-    else
-      @player_state_tracker.rotate!.first
-    end
+    @human.up_next == :player ? @human.name : @computer.name
   end
 
   def indicate_player_turn
@@ -33,6 +22,13 @@ class TicTacToe
   end
 
   #accessors
+  def player
+    @human.name
+  end
+
+  def player=(value)
+    @human.name = value
+  end
 
   def player_symbol=(value)
     @human.my_symbol = value
@@ -52,7 +48,12 @@ class TicTacToe
 
   private
 
+  def pick_first_player
+    OPPONENTS.sample
+  end
+
   def create_opponents(first_player)
+    first_player ||= pick_first_player
     @human = Human.new(first_player)
     @computer = Computer.new(first_player)
   end
@@ -66,8 +67,8 @@ class TicTacToe
   class Player
     attr_accessor :name, :up_next, :my_symbol
 
-    def initialize(up_next_toggle)
-      up_next = up_next_toggle
+    def initialize(up_next)
+      @up_next = up_next
     end
   end
 
