@@ -1,3 +1,0 @@
-class Dinner
-
-end
