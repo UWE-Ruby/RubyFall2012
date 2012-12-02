@@ -7,6 +7,7 @@ class TicTacToe
   def initialize(first_player = nil)
     create_opponents(first_player)
     assign_x_and_o
+    create_board
   end
 
   def welcome_player
@@ -23,6 +24,10 @@ class TicTacToe
 
   def get_player_move(move)
     @human.moves << move
+  end
+
+  def create_board
+    @board = Board.new
   end
 
   #accessors
@@ -83,6 +88,19 @@ class TicTacToe
     def initialize(up_next_toggle)
       name = "Computer"
       super
+    end
+  end
+
+  class Board
+    ROWS = ['A', 'B', 'C']
+    COLS = ["1", "2", "3"]
+
+    def initialize
+      @available_moves = ROWS.map do |r|
+        COLS.map do |c|
+          r + c
+        end
+      end.flatten
     end
   end
 end
