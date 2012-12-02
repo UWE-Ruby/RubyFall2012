@@ -3,6 +3,7 @@ class PirateTranslator
 		@phrase = value
 	end
 	def translate
-		return 'Ahoy Matey\nShiber Me Timbers You Scurvey Dogs!!'
+		translated = @phrase.gsub(/Hello/, 'Ahoy').gsub(/Friend/, 'Matey')
+		return "#{translated}\nShiber Me Timbers You Scurvey Dogs!!"
 	end
 end

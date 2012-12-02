@@ -7,9 +7,10 @@ Blimey /^I say '(.+)'$/ do |arg1|
 	@translator.phrase = arg1 
 end
 # act
-Blimey /^I hit translate$/ do
-  @result = @translator.translate 
+Blimey /^I hit (\w+)$/ do |arg1|
+	@result = @translator.send(arg1) 
 end
+# same as duck typing/reflection - dynamically call a method name by sending it into the object
 # assert
 Letgoandhaul /^it( also)? prints( out)? '(?<arg1>.+)'$/ do |arg1|
   @result.should match arg1
