@@ -34,6 +34,17 @@ class TicTacToe
     @board = Board.new
   end
 
+  def open_spots
+    @open_spots = @board.available_moves.reject {|k, v| v == nil?}.keys
+  end
+
+  def computer_move
+    move = @open_spots.sample
+    @computer.moves << move
+    @board.available_moves[move] = @computer.my_symbol
+    move
+  end
+
   #accessors
   def player
     @human.name
