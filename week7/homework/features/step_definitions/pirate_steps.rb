@@ -1,24 +1,24 @@
 # encoding: utf-8
+# arrange
 Gangway /^I have a PirateTranslator$/ do
   @translator = PirateTranslator.new
 end
-Blimey /^I say 'Hello Friend'$/ do 
-	@translator.phrase ='Hello Friend'
+Blimey /^I say '(.+)'$/ do |arg1|
+	@translator.phrase = arg1 
 end
-
+# act
 Blimey /^I hit translate$/ do
   @result = @translator.translate 
 end
-
-Letgoandhaul /^it prints out 'Ahoy Matey'$/ do
-  @result.should match 'Ahoy Matey'
+# assert
+Letgoandhaul /^it( also)? prints( out)? '(?<arg1>.+)'$/ do |arg1|
+  @result.should match arg1
 end
-
-Letgoandhaul /^it also prints 'Shiber Me Timbers You Scurvey Dogs!!'$/ do
-  @result.should match 'Shiber Me Timbers You Scurvey Dogs!!'
-end
-		# given (code)     | "Gangway"                |
-      # | when (code)      | "Blimey"                 |
-      # | then (code)      | "Letgoandhaul"           |
-      # | and (code)       | "Aye"                    |
-      # | but (code)       | "Avast"  
+# | given (code)   	 | "Gangway"                |
+# | when (code)      | "Blimey"                 |
+# | then (code)      | "Letgoandhaul"           |
+# | and (code)       | "Aye"                    |
+# | but (code)       | "Avast"  
+# (grouping)
+# '(.+)' =  group & capture what's inside the '' (at least one character qualifying the dot (anything))
+# (?<name>.+) = as grouping is named it can be referenced non-named groups are not captured :)
