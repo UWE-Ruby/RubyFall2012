@@ -1,20 +1,45 @@
+class Player
+
+  attr_accessor :name, :symbol
+
+end
+
+
+
 class TicTacToe
 
-  attr_accessor :player
+  SYMBOLS = ["X", "O"]
 
   def initialize
-    @players = ["Computer", @player]
-    @player_index = rand(2)
+    @computer_player = Player.new
+    @computer_player.name = "Computer"
+
+    @human_player = Player.new
+
+    @players = [@computer_player, @human_player].shuffle
+
+    @players.each_with_index do |player, index|
+      player.symbol = SYMBOLS[index]
+    end
+
+    @current_player_index = 0
   end
 
+  def player=(name)
+    @human_player.name = name
+  end
+
+  def player
+    @human_player.name
+  end
+
+
   def welcome_player 
-    "Welcome #{player}"
+    "Welcome #{@human_player.name}"
   end
 
   def current_player
-    @players[@player_index]
+    @players[@current_player_index]
   end
-
-
 
 end

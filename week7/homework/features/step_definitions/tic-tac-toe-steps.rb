@@ -16,7 +16,7 @@ Then /^the computer welcomes me to the game with "(.*?)"$/ do |arg1|
 end
 
 Then /^randomly chooses who goes first$/ do
-  [@game.player, "Computer"].should include @game.current_player
+  [@game.player, "Computer"].should include @game.current_player.name
 end
 
 Then /^who is X and who is O$/ do
