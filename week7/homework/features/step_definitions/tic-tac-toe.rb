@@ -22,8 +22,13 @@ class TicTacToe
     puts "#{player}'s Move:"
   end
 
-  def get_player_move(move)
-    @human.moves << move
+  def get_player_move
+    move = gets
+    if @board.available_moves.include? move
+      @human.moves << move
+    else
+      puts "#{move} is not a valid move. Available moves are:\n#{@board.available_moves.join}"
+    end
   end
 
   def create_board
@@ -78,6 +83,7 @@ class TicTacToe
 
     def initialize(up_next)
       @up_next = up_next
+      @moves = []
     end
   end
 
@@ -92,6 +98,8 @@ class TicTacToe
   end
 
   class Board
+    attr_reader :available_moves
+
     ROWS = ['A', 'B', 'C']
     COLS = ["1", "2", "3"]
 
