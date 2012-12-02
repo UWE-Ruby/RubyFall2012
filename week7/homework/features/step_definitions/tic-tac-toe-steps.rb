@@ -81,7 +81,7 @@ When /^"(.*?)" is not taken$/ do |arg1|
 end
 
 Then /^it is now the computer's turn$/ do
-  @game.current_player.should eq "Computer"
+  @game.current_player.name.should eq "Computer"
 end
 
 When /^there are three X's in a row$/ do

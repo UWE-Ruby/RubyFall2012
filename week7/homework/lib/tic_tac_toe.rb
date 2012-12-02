@@ -7,9 +7,9 @@ end
 
 class TicTacToe
 
-  SYMBOLS = ["X", "O"]
+  SYMBOLS = [:X, :O]
 
-  def initialize(first_player = nil, first_symbol = nil)
+  def initialize(first_player = nil, player_symbol = nil)
     @computer_player = Player.new
     @computer_player.name = "Computer"
 
@@ -30,8 +30,8 @@ class TicTacToe
 
     symbols = SYMBOLS.dup.shuffle
 
-    if first_symbol
-      @players[first_player].symbol = symbols.delete
+    if player_symbol
+      @players[:player].symbol = symbols.delete(player_symbol)
     end
 
     @players.values.select { |player| !player.symbol }.each_with_index do |player, index|
@@ -64,5 +64,13 @@ class TicTacToe
   def current_player
     key = @player_order[@current_player_index]
     @players[key]
+  end
+
+  def indicate_player_turn
+    puts "#{@human_player.name}'s Move:"
+  end
+
+  def get_player_move
+    gets.chomp
   end
 end
