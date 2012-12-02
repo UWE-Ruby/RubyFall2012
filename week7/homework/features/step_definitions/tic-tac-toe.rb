@@ -114,11 +114,12 @@ class TicTacToe
     COLS = ["1", "2", "3"]
 
     def initialize
-      @available_moves = ROWS.map do |r|
-        COLS.map do |c|
-          r + c
+      @available_moves = {}
+      ROWS.each do |r|
+        COLS.each do |c|
+          @available_moves[(r + c).to_s] = nil
         end
-      end.flatten
+      end
     end
   end
 end
