@@ -1,5 +1,8 @@
-class PirateTranslator
+class PirateTranslator 
+	def phrase=(value)
+		@phrase = value
+	end
 	def translate
-		self.send("'Hello Friend'")
+		return 'Ahoy Matey\nShiber Me Timbers You Scurvey Dogs!!'
 	end
 end
