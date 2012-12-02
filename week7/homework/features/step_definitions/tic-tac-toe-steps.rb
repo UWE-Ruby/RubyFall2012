@@ -29,7 +29,7 @@ Given /^I have a started Tic\-Tac\-Toe game$/ do
 end
 
 Given /^it is my turn$/ do
-  @game.current_player.should eq "Renee"
+  @game.current_player.name.should eq "Renee"
 end
 
 Given /^the computer knows my name is Renee$/ do
@@ -38,7 +38,7 @@ end
 
 Then /^the computer prints "(.*?)"$/ do |arg1|
   @game.should_receive(:puts).with(arg1)
-  @game.indicate_palyer_turn
+  @game.indicate_player_turn
 end
 
 Then /^waits for my input of "(.*?)"$/ do |arg1|
@@ -48,7 +48,7 @@ end
 
 Given /^it is the computer's turn$/ do
   @game = TicTacToe.new(:computer, :O)
-  @game.current_player.should eq "Computer"
+  @game.current_player.name.should eq "Computer"
 end
 
 Then /^the computer randomly chooses an open position for its move$/ do
