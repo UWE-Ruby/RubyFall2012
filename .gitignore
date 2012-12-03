@@ -11,18 +11,18 @@ spec/reports
 test/tmp
 test/version_tmp
 TESTING.txt
-book/
-irbs/
-homework/
-week2/exercises/book_cmd_log1.txt
-week8/exercises/books_cmd.txt
+/book
+/irbs
+/homework
+/week2/exercises/book_cmd_log1.txt
+/week8/exercises/books_cmd.txt
 tmp
 *.*~
 *~
-week4/timer_1.rb
-week4/worker_1.rb
-week4/my_output.rb
-week4/questions_1.txt
+/week4/timer_1.rb
+/week4/worker_1.rb
+/week4/my_output.rb
+/week4/questions_1.txt
 .idea/
 
 

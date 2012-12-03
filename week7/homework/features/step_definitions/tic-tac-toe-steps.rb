@@ -1,5 +1,5 @@
 require 'rspec/mocks/standalone'
-
+#arrange
 Given /^I start a new Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new
 end
@@ -19,7 +19,7 @@ end
 Then /^who is X and who is O$/ do
   TicTacToe::SYMBOLS.should include @game.player_symbol, @game.computer_symbol
 end
-
+#arrange
 Given /^I have a started Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new(:player)
   @game.player = "Renee"
@@ -35,7 +35,7 @@ end
 
 Then /^the computer prints "(.*?)"$/ do |arg1|
   @game.should_receive(:puts).with(arg1)
-  @game.indicate_palyer_turn
+  @game.indicate_player_turn
 end
 
 Then /^waits for my input of "(.*?)"$/ do |arg1|
