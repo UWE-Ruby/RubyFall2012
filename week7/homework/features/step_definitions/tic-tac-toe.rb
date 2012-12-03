@@ -89,6 +89,10 @@ class TicTacToe
     @board.board
   end
 
+  def board=(board)
+    @board.board = board
+  end
+
   private
 
   def pick_first_player
