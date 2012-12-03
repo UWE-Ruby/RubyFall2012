@@ -64,6 +64,17 @@ class TicTacToe
     !open_spots.empty?
   end
 
+  def determine_winner
+    @board.determine_winner
+    @over = true
+    winner = @register[@board.winner]
+    if winner
+      @winner = winner
+    else
+      @draw = true
+    end
+  end
+
   #accessors
   def player
     @human.name
@@ -148,7 +159,7 @@ class TicTacToe
   end
 
   class Board
-    attr_reader :available_moves
+    attr_reader :available_moves, :winner
     attr_accessor :board
 
     ROWS = ['A', 'B', 'C']
@@ -170,6 +181,49 @@ class TicTacToe
     def current_state
       # available_moves.compact.map {|v| v.to_s}
       @board.values.map { |v| v.to_s }.join
+    end
+
+    def determine_winner
+      column_winner = check_columns_for_winner
+      row_winner = check_rows_for_winner
+      diag_winner = check_diagonals_for_winner
+      # winners = [column_winner, row_winner, diag_winner]
+      # if winners.any? {|w| w }
+      # end
+    end
+
+    # private
+    def check_columns_for_winner
+      COLS.each do |c|
+        col = @board.select {|k, v| k =~ /[#{ROWS.join('')}]{1}#{c}/ }
+        if (vals = col.values.uniq) && vals.length == 1 && TicTacToe::SYMBOLS.include?(vals.first)
+          return @winner = vals.first
+        end
+      end
+      nil
+    end
+
+    def check_rows_for_winner
+      ROWS.each do |r|
+        regex = /#{r}[#{COLS.join('')}]{1}/
+        row = @board.select {|k, v| k =~ regex }
+        if (vals = row.values.uniq) && vals.length == 1 && TicTacToe::SYMBOLS.include?(vals.first)
+          return @winner = vals.first
+        end
+      end
+      nil
+    end
+
+    def check_diagonals_for_winner
+      slash = [:A1, :B2, :C3]
+      backslash = [:C1, :B2, :A3]
+      [slash, backslash].each do |points|
+        diag = @board.select {|k, v| points.include? k }
+        if (vals = diag.values.uniq) && vals.length == 1 && TicTacToe::SYMBOLS.include?(vals.first)
+          return @winner = vals.first
+        end
+      end
+      nil
     end
   end
 end
