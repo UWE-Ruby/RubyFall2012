@@ -70,11 +70,11 @@ class TicTacToe
   end
 
   def play_game #structure of the game
-    indicate_player_turn
+    indicate_palyer_turn
     get_player_move
   end
   
-  def indicate_player_turn
+  def indicate_palyer_turn
     puts "#{@player_hash[@current_player]}'s Move:"
   end
   
