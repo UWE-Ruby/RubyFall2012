@@ -60,6 +60,10 @@ class TicTacToe
     @board.current_state
   end
 
+  def spots_open?
+    !open_spots.empty?
+  end
+
   #accessors
   def player
     @human.name
