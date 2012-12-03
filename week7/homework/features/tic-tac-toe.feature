@@ -19,7 +19,7 @@ Scenario: My Turn
 
 Scenario: Computer's Turn
 	Given I have a started Tic-Tac-Toe game
-		And it is the computer's turn
+		And it is the computers turn
 		And the computer is playing X
 	Then the computer randomly chooses an open position for its move 
 		And the board should have an X on it
@@ -31,7 +31,7 @@ Scenario: Making Moves
 	When I enter a position "A1" on the board
 		And "A1" is not taken
 	Then the board should have an X on it
-		And it is now the computer's turn
+		And it is now the computers turn
 
 Scenario: Making Bad Moves
 	Given I have a started Tic-Tac-Toe game
@@ -40,12 +40,12 @@ Scenario: Making Bad Moves
 	When I enter a position "A1" on the board
 		And "A1" is taken
 	Then computer should ask me for another position "B2"
-		And it is now the computer's turn
+		And it is now the computers turn
 
 Scenario: Winning the Game
 	Given I have a started Tic-Tac-Toe game
 		And I am playing X
-	When there are three X's in a row
+	When there are three Xs in a row
 	Then I am declared the winner
 		And the game ends
 
