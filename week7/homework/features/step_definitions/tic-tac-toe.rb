@@ -14,7 +14,7 @@ class TicTacToe
     first_player==nil ? randomize_first_player : @current_player = first_player
     @symbol_hash = {:player=> nil, :computer=>nil}
     assign_symbols(player_symbol)
-    #define all the open spots
+    #define all the open spots. they're all open to begin with
     @open_spots = [:A1,:A2,:A3,:B1,:B2,:B3, :C1,:C2,:C3]
     @board = {}
     @open_spots.each {|spot| @board[spot]=" "} #set up the current state with all spots empty
@@ -25,7 +25,7 @@ class TicTacToe
     @player_hash[:player] = player
     puts @current_player #show the player name
   end
-  
+
   def player
     @player_hash[:player]
   end
@@ -34,12 +34,11 @@ class TicTacToe
     @player_hash[@current_player]
   end
   
-  def player_symbol
-    @symbol_hash[:player]
-  end
-  
-  def computer_symbol
-    @symbol_hash[:computer]
+	#practicing some meta programming
+  [:player, :computer].each do |s|
+    define_method("#{s}_symbol") do
+      @symbol_hash[s]
+    end
   end
   
   def assign_symbols(player_symbol)
