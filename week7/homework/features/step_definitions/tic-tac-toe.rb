@@ -34,7 +34,7 @@ class TicTacToe
   end
 
   def open_spots
-    @open_spots = @board.available_moves.reject {|k, v| v == nil?}.keys
+    @open_spots = @board.available_moves.reject {|k, v| v == " "}.keys
   end
 
   def computer_move
@@ -146,7 +146,7 @@ class TicTacToe
       @available_moves = {}
       ROWS.each do |r|
         COLS.each do |c|
-          @available_moves[(r + c).to_sym] = nil
+          @available_moves[(r + c).to_sym] = " "
         end
       end
     end
