@@ -80,12 +80,12 @@ end
 Then /^it is now the computer's turn$/ do
   @game.current_player.should eq "Computer"
 end
-
+ #act
 When /^there are three X's in a row$/ do
   @game = TicTacToe.new(:computer, :X)
   @game.board[:C1] = @game.board[:B2] = @game.board[:A3] = :X
 end
-
+#assert
 Then /^I am declared the winner$/ do
   @game.determine_winner
   @game.player_won?.should be_true

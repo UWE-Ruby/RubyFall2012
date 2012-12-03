@@ -1,6 +1,7 @@
 class TicTacToe
   # initialization
-  attr_reader :player, :player_symbol, :computer_symbol, :board #get in Java - don't have to correspond to the args!
+  attr_reader :player, :player_symbol, :computer_symbol  #get in Java - don't have to correspond to the args!
+  attr_accessor :board
   SYMBOLS = [:X, :O]
 
 
@@ -67,7 +68,13 @@ class TicTacToe
   def open_spots
     return @board.find_all { |m| m[1] == " " }.map { |f| f[0] }
   end
+  def spots_open?
+    return false
+  end
 
+  def draw?
+    return true
+  end
   def get_player_move
     return gets
   end
@@ -91,17 +98,16 @@ class TicTacToe
     return position
     # Use position as the index to the current_state.board array and change the " " to X
   end
-
+  def determine_winner
+  end
+  def player_won?
+    return true
+  end
+  def over?
+    return true
+  end
   def current_state
     #oreturn f the board
-    return @board.values.map do |f|
-      if (f == :X)
-        "X"
-      elsif (f == :O)
-        "O"
-      else
-        " "
-      end
-    end
+    return @board.values.map { |f| f.to_s }
   end
 end
