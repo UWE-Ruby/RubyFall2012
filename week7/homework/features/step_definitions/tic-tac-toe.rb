@@ -76,6 +76,22 @@ class TicTacToe
     end
   end
 
+  def player_won?
+    @winner == :player
+  end
+
+  def computer_won?
+    @winner == :computer
+  end
+
+  def draw?
+    @draw
+  end
+
+  def over?
+    @over
+  end
+
   #accessors
   def player
     @human.name
