@@ -1,4 +1,5 @@
 class PirateTranslator
+
   # def initialize(norm_words)
   #   @norm_words = norm_words
   # end
