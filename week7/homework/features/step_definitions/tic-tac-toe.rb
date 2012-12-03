@@ -7,6 +7,7 @@ class TicTacToe
     create_opponents(first_player)
     assign_x_and_o(human_player_s_symbol)
     create_board
+    create_register
   end
 
   def welcome_player
@@ -118,6 +119,13 @@ class TicTacToe
     first_player ||= pick_first_player
     @human = Human.new(first_player)
     @computer = Computer.new(first_player)
+  end
+
+  def create_register
+    @register = {
+      player: player_symbol,
+      computer: computer_symbol
+    }.invert
   end
 
   def assign_x_and_o(human_player_s_symbol)
