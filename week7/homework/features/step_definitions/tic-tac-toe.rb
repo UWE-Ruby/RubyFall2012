@@ -34,27 +34,28 @@ class TicTacToe
   end
 
   def open_spots
-    @open_spots = @board.available_moves.reject {|k, v| v == " "}.keys
+    @open_spots = @board.available_moves
   end
 
   def computer_move
     move = open_spots.sample
     @computer.moves << move
-    @board.available_moves[move] = @computer.my_symbol
+    @board.board[move] = @computer.my_symbol
     @computer.up_next = :player
     move
   end
 
   def player_move
     move = get_player_move.to_sym
-    @board.available_moves[@player_move] = @human.my_symbol
+    @board.board[move] = @human.my_symbol
     @human.moves << @player_move
     @human.up_next = :computer
     move
   end
 
   def current_state
-    @board.available_moves.values.compact.map {|v| v.to_s}
+    puts @board.current_state
+    @board.current_state
   end
 
   #accessors
@@ -83,7 +84,7 @@ class TicTacToe
   end
 
   def board
-    @board.available_moves
+    @board.board
   end
 
   private
@@ -138,17 +139,27 @@ class TicTacToe
 
   class Board
     attr_reader :available_moves
+    attr_accessor :board
 
     ROWS = ['A', 'B', 'C']
     COLS = ["1", "2", "3"]
 
     def initialize
-      @available_moves = {}
+      @board = {}
       ROWS.each do |r|
         COLS.each do |c|
-          @available_moves[(r + c).to_sym] = " "
+          @board[(r + c).to_sym] = " "
         end
       end
+    end
+
+    def available_moves
+      @board.reject {|k, v| v != " "}.keys
+    end
+
+    def current_state
+      # available_moves.compact.map {|v| v.to_s}
+      @board.values.map { |v| v.to_s }.join
     end
   end
 end
