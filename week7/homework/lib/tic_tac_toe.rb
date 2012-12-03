@@ -1,3 +1,5 @@
+require 'pry'
+
 class Player
 
   attr_accessor :name, :symbol
@@ -86,10 +88,36 @@ class TicTacToe
     @board.keys.select { |key| @board[key] == nil }
   end
 
+  def open?(position)
+    open_spots.include?(position)
+  end
+
+  def taken?(position)
+    !open?(position)
+  end
+
   def computer_move
     position = open_spots.shuffle.first # :A2
 
     @board[position] = computer_symbol
+
+    position
+  end
+
+  def player_move
+    position = nil
+    
+    begin
+      if position
+        puts "That spot is taken, please choose another:"
+      else
+        puts "It's your turn, please make a move:"
+      end
+
+      position = get_player_move.to_sym
+    end until open?(position)
+
+    @board[position] = player_symbol
 
     position
   end
