@@ -22,12 +22,11 @@ class TicTacToe
   end
 
   def get_player_move
-    move = gets
-    if @board.available_moves.include? move
-      @human.moves << move
-    else
-      puts "#{move} is not a valid move. Available moves are:\n#{@board.available_moves.join}"
-    end
+    # until board.has_key?(input = gets.chomp)
+    #   puts "please enter a valid move"
+    # end
+    # indicate_player_turn
+    return gets.chomp
   end
 
   def create_board
@@ -39,9 +38,18 @@ class TicTacToe
   end
 
   def computer_move
-    move = @open_spots.sample
+    move = open_spots.sample
     @computer.moves << move
     @board.available_moves[move] = @computer.my_symbol
+    @computer.up_next = :player
+    move
+  end
+
+  def player_move
+    move = get_player_move.to_sym
+    @board.available_moves[@player_move] = @human.my_symbol
+    @human.moves << @player_move
+    @human.up_next = :computer
     move
   end
 
@@ -72,6 +80,10 @@ class TicTacToe
 
   def computer_symbol
     @computer.my_symbol
+  end
+
+  def board
+    @board.available_moves
   end
 
   private
@@ -134,7 +146,7 @@ class TicTacToe
       @available_moves = {}
       ROWS.each do |r|
         COLS.each do |c|
-          @available_moves[(r + c).to_s] = nil
+          @available_moves[(r + c).to_sym] = nil
         end
       end
     end
