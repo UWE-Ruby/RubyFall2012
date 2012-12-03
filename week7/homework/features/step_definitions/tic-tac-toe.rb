@@ -46,7 +46,9 @@ class TicTacToe
   end
 
   def player_move
-    move = get_player_move.to_sym
+    until open_spots.include?(move = get_player_move.to_sym)
+      indicate_player_turn
+    end
     @board.board[move] = @human.my_symbol
     @human.moves << @player_move
     @human.up_next = :computer
