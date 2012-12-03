@@ -107,12 +107,12 @@ class TicTacToe
   def determine_winner
     winning_combinations = [[:A1,:A2,:A3],[:B1,:B2,:B3],[:C1,:C2,:C3],[:A1,:B1,:C1],[:A2,:B2,:C2],[:A3,:B3,:C3],[:A1,:B2,:C3],[:C1,:B2,:A3]]
     winning_combinations.each do |trio|
-      if trio[0]=trio[1]=trio[2] = @symbol_hash[:player]
+      if @board[trio[0]]==@symbol_hash[:player] && @board[trio[1]]==@symbol_hash[:player] && @board[trio[2]] == @symbol_hash[:player]
         #the player has won
           @player_won = true
           @game_over = true
           break
-      elsif trio[0]=trio[1]=trio[2] = @symbol_hash[:computer]
+      elsif @board[trio[0]]==@symbol_hash[:computer] && @board[trio[1]]==@symbol_hash[:computer] && @board[trio[2]] == @symbol_hash[:computer]
         #the computer has won
         @computer_won = true
         @game_over = true
@@ -120,9 +120,20 @@ class TicTacToe
       else
         @game_over = false
       end
+      #check for a draw
+      if !spots_open?
+        #no spots are open but there was no winner so it's a draw
+        @draw=true
+        @game_over = true
+      else
+        @draw=true
+        @game_over = true
+      end
     end
   end
-  
+  def spots_open?
+    @board.include?(' ')
+  end
   def player_won?
     @player_won
   end
@@ -131,6 +142,9 @@ class TicTacToe
   end
   def over?
     @game_over
+  end
+  def draw?
+    @draw
   end
 end
 
