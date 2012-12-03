@@ -5,6 +5,7 @@ class TicTacToe
   attr_reader :computer_symbol
   attr_reader :open_spots
   attr_accessor :board
+
   SYMBOLS = ["X","O"]
   
   def initialize(first_player = nil, player_symbol = nil)
@@ -103,7 +104,34 @@ class TicTacToe
   def current_state
     @board.values
   end
+  def determine_winner
+    winning_combinations = [[:A1,:A2,:A3],[:B1,:B2,:B3],[:C1,:C2,:C3],[:A1,:B1,:C1],[:A2,:B2,:C2],[:A3,:B3,:C3],[:A1,:B2,:C3],[:C1,:B2,:A3]]
+    winning_combinations.each do |trio|
+      if trio[0]=trio[1]=trio[2] = @symbol_hash[:player]
+        #the player has won
+          @player_won = true
+          @game_over = true
+          break
+      elsif trio[0]=trio[1]=trio[2] = @symbol_hash[:computer]
+        #the computer has won
+        @computer_won = true
+        @game_over = true
+        break
+      else
+        @game_over = false
+      end
+    end
+  end
   
+  def player_won?
+    @player_won
+  end
+  def computer_won?
+    @computer_won
+  end
+  def over?
+    @game_over
+  end
 end
 
 
