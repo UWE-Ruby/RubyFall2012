@@ -1,30 +1,22 @@
 class TicTacToe
   # initialization
-  attr_reader :player, :player_symbol, :computer_symbol #get in Java - don't have to correspond to the args!
+  attr_reader :player, :player_symbol, :computer_symbol, :board #get in Java - don't have to correspond to the args!
   SYMBOLS = [:X, :O]
-                                                        # initialize game board hash table ()with :EMPTY so you can easily find them again
-  $board = {
-      :A1 => :EMPTY, :A2 => :EMPTY, :A3 => :EMPTY,
-      :B1 => :EMPTY, :B2 => :EMPTY, :B3 => :EMPTY,
-      :C1 => :EMPTY, :C2 => :EMPTY, :C3 => :EMPTY
-  }
+
 
   def initialize(*args) # arg1 is the current player, arg2 is the human player's symbol
     # TicTacToe with no arg = randomly choose who to start & symbol but now its hardcoded
     # TicTacToe with 1 arg= whichever player is sent in is to start and use the symbol sent in
     if args.size == 0
       @current_player = :computer
-      @player_symbol=:O
-      @computer_symbol=:X
+      shuffled = SYMBOLS.shuffle()
+      @player_symbol=shuffled[0]
+      @computer_symbol=shuffled[1]
     elsif args.size == 1
       @current_player = args[0]
-      if @current_player == :computer
-        @player_symbol=:O
-        @computer_symbol=:X
-      else
-        @player_symbol=:O
-        @computer_symbol=:X
-      end
+      shuffled = SYMBOLS.shuffle()
+      @player_symbol=shuffled[0]
+      @computer_symbol=shuffled[1]
     else
        @current_player = args[0]
        if args[1] == :O
@@ -35,6 +27,12 @@ class TicTacToe
          @computer_symbol = :O
       end
     end
+    # initialize game board hash table ()with :EMPTY so you can easily find them again
+    @board = {
+        :A1 => " ", :A2 => " ", :A3 => " ",
+        :B1 => " ", :B2 => " ", :B3 => " ",
+        :C1 => " ", :C2 => " ", :C3 => " "
+    }
   end
 
   def player=(name) #set in Java
@@ -66,11 +64,22 @@ class TicTacToe
   def indicate_player_turn
   end
 
-  def get_player_move
+  def open_spots
+    return @board.find_all { |m| m[1] == " " }.map { |f| f[0] }
   end
 
-  def open_spots
-    return $board.find_all { |m| m[1] == :EMPTY }.map { |f| f[0] }
+  def get_player_move
+    return gets
+  end
+
+  def player_move
+    position = get_player_move.to_sym
+    # keep calling get_player_move if this slot is not empty call to get an empty slot
+    while @board[position] != " "
+       position = get_player_move.to_sym
+    end
+    @board[position] = @player_symbol
+    return position
   end
 
   def computer_move
@@ -78,20 +87,20 @@ class TicTacToe
     open_spots = open_spots()
     count = open_spots.count
     position = open_spots[random_move.rand(count)]
-    $board[position]= @computer_symbol
+    @board[position]= @computer_symbol
     return position
-    # Use position as the index to the current_state.board array and change the :EMPTY to X
+    # Use position as the index to the current_state.board array and change the " " to X
   end
 
   def current_state
     #oreturn f the board
-    return $board.values.map do |f|
+    return @board.values.map do |f|
       if (f == :X)
         "X"
       elsif (f == :O)
         "O"
       else
-        ""
+        " "
       end
     end
   end
