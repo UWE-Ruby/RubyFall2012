@@ -6,5 +6,11 @@ task :make_class_dir do
 	Dir.mkdir("class")
 end
 
-task :output
+task :output /(.*)$/ do |file|
+	f = File.new(file, "r")
+	puts f.gets
+end
+
+#task :make_name_dir do
+
 

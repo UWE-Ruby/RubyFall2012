@@ -1,3 +1,4 @@
+#encoding: utf-8
 require 'rspec/mocks/standalone'
 
 Given /^I start a new Tic\-Tac\-Toe game$/ do
