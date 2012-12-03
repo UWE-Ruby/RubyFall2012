@@ -4,7 +4,7 @@ class TicTacToe
   attr_reader :player_symbol
   attr_reader :computer_symbol
   attr_reader :open_spots
-  attr_reader :board
+  attr_accessor :board
   SYMBOLS = ["X","O"]
   
   def initialize(first_player = nil, player_symbol = nil)
@@ -85,6 +85,19 @@ class TicTacToe
     move = @open_spots.slice(rand(@open_spots.length))
     @board[move]=@symbol_hash[:computer].to_s
     return move
+  end
+  
+  def player_move
+    move = get_player_move.to_sym
+    if board[move] == ' '
+      #the space is available, put the player's symbol there
+      @board[move] = @symbol_hash[:player].to_s
+      return move
+    else
+      #the spot is not available, ask again for a move
+      new_move = player_move
+      return new_move
+    end
   end
   
   def current_state
