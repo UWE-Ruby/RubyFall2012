@@ -3,6 +3,8 @@ class TicTacToe
   attr_reader :current_player
   attr_reader :player_symbol
   attr_reader :computer_symbol
+  attr_reader :open_spots
+  attr_reader :board
   SYMBOLS = ["X","O"]
   
   def initialize(first_player = nil, player_symbol = nil)
@@ -11,6 +13,10 @@ class TicTacToe
     first_player==nil ? randomize_first_player : @current_player = first_player
     @symbol_hash = {:player=> nil, :computer=>nil}
     assign_symbols(player_symbol)
+    #define all the open spots
+    @open_spots = [:A1,:A2,:A3,:B1,:B2,:B3, :C1,:C2,:C3]
+    @board = {}
+    @open_spots.each {|spot| @board[spot]=" "} #set up the current state with all spots empty
     play_game
   end
   
@@ -74,5 +80,17 @@ class TicTacToe
   def get_player_move(move = ARGV)
     move
   end
+  
+  def computer_move
+    move = @open_spots.slice(rand(@open_spots.length))
+    @board[move]=@symbol_hash[:computer].to_s
+    return move
+  end
+  
+  def current_state
+    @board.values
+  end
+  
 end
+
 
