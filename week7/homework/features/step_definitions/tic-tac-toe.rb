@@ -57,7 +57,6 @@ class TicTacToe
   end
 
   def current_state
-    puts @board.current_state
     @board.current_state
   end
 
@@ -203,8 +202,9 @@ class TicTacToe
     end
 
     def current_state
-      # available_moves.compact.map {|v| v.to_s}
-      @board.values.map { |v| v.to_s }.join
+      output = []
+      @board.values.map { |v| v.to_s }.each_slice(3) { |vs| output << vs.join("|") }
+      output.join "\n"
     end
 
     def determine_winner
