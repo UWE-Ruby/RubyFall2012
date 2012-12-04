@@ -28,7 +28,6 @@ class TicTacToe
 
   def computer_move
     move = open_spots.sample
-    @computer.moves << move
     @board.board[move] = @computer.my_symbol
     @computer.up_next = :player
     move
@@ -39,7 +38,6 @@ class TicTacToe
       indicate_player_turn
     end
     @board.board[move] = @human.my_symbol
-    @human.moves << @player_move
     @human.up_next = :computer
     move
   end
@@ -152,7 +150,7 @@ class TicTacToe
   end
 
   class Player
-    attr_accessor :name, :my_symbol, :moves
+    attr_accessor :name, :my_symbol
 
     def up_next
       @@up_next
@@ -164,7 +162,6 @@ class TicTacToe
 
     def initialize(up_next)
       @@up_next = up_next
-      @moves = []
     end
   end
 
