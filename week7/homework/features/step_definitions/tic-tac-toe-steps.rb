@@ -124,7 +124,8 @@ Then /^computer should ask me for another position "(.*?)"$/ do |arg1|
 end
 
 Given /^it is the computers turn$/ do
-  pending # express the regexp above with the code you wish you had
+  @game = TicTacToe.new(:computer, :O)
+  @game.current_player.should eq "Computer"
 end
 
 Then /^it is now the computers turn$/ do
@@ -132,5 +133,5 @@ Then /^it is now the computers turn$/ do
 end
 
 When /^there are three Xs in a row$/ do
-  pending # express the regexp above with the code you wish you had
+  @game.board[:C1] = @game.board[:B2] = @game.board[:A3] = :X
 end
