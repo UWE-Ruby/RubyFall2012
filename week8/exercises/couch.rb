@@ -4,17 +4,26 @@ class Couch
 		@cushions = cushions
 	end
 
-	def pillow_colors
-		@pillows.join(", ")
-	end
+	[:pillow, :cushion].each do |s|
+    define_method("#{s}_colors") do
+      instance_variable_get("@#{s}s").join(', ')
+    end
+  end
 
-	def cushion_colors
-		@cushions.join(", ")
-	end
+  def to_str
+    "I am a Couch"
+  end
 
-	[:pillows, :cushions].each do |s|
-		define_method("how_many_#{s}") do
-			instance_variable_get("@#{s}").count
-		end
-	end
+  # not safe for production code
+  # def respond_to?(meth)
+  #   true
+  # end
+
+  def method_missing(meth, *args, &block)
+    puts "you called #{meth} with #{args.join(' ')}"
+    define_method("test") do
+      puts "hi"
+    end
+    super
+  end
 end

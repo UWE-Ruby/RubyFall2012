@@ -35,7 +35,7 @@ end
 
 Then /^the computer prints "(.*?)"$/ do |arg1|
   @game.should_receive(:puts).with(arg1)
-  @game.indicate_palyer_turn
+  @game.indicate_player_turn
 end
 
 Then /^waits for my input of "(.*?)"$/ do |arg1|
@@ -121,4 +121,49 @@ Then /^computer should ask me for another position "(.*?)"$/ do |arg1|
   @game.board[arg1.to_sym] = ' '
   @game.should_receive(:get_player_move).twice.and_return(@taken_spot, arg1)
   @game.player_move.should eq arg1.to_sym
+end
+
+And /^I am playing O$/ do
+  @game = TicTacToe.new(:computer, :O)
+  @game.player_symbol.should eq :O
+end
+
+When /^there are three O's in in last column$/ do
+  @game.board = {
+      :A1 => :X, :A2 => :O, :A3 => :O,
+      :B1 => :X, :B2 => :X, :B3 => :O,
+      :C1 => :O, :C2 => :X, :C3 => :O
+    }
+    @game.determine_winner
+end
+
+When /^there are three O's in in last row$/ do
+  @game.board = {
+      :A1 => :X, :A2 => :O, :A3 => :O,
+      :B1 => :X, :B2 => :X, :B3 => :O,
+      :C1 => :O, :C2 => :X, :C3 => :O
+    }
+    @game.determine_winner
+end
+
+When /^there are three X's in in middle$/ do
+  @game.board = {
+      :A1 => :X, :A2 => :X, :A3 => :O,
+      :B1 => :X, :B2 => :X, :B3 => :X,
+      :C1 => :O, :C2 => :X, :C3 => :O
+    }
+    @game.determine_winner
+end
+
+When /^there are three O's across$/ do
+  @game.board = {
+      :A1 => :O, :A2 => :X, :A3 => :O,
+      :B1 => :X, :B2 => :O, :B3 => :X,
+      :C1 => :O, :C2 => :X, :C3 => :O
+    }
+    @game.determine_winner
+end
+
+Then /^computer is declared the winner$/ do
+  @game.computer_won?.should be_true
 end

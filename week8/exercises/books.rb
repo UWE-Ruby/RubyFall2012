@@ -1,7 +1,6 @@
 class Printer
 	def print(book)
-		"This book is a book"
-		"This book is Fiction!" if book.is_a?(FictionBook)
+    book.print
 	end
 end
 
@@ -10,4 +9,7 @@ class Book
 end
 
 class FictionBook < Book
+  def print
+		"This book is Fiction!"
+  end
 end
