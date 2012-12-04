@@ -1,26 +1,37 @@
 class TicTacToe
   SYMBOLS = [:X, :O]
-  attr_accessor :player,:p_symbol, :comp, :comp_symbol,:whos_first,:board, :com_move
+  attr_accessor :player,:p_symbol, :comp, :comp_symbol,:board, :player_move, :current_player, :first_player
   
   def initialize (first_player=nil, first_symb=nil)
-    @player = pick_first_player(first_player).to_s.capitalize
+    @first_player = first_player
     pick_player_symbol(first_symb)
-    @board = {":A1"=>nil, ":A2"=>nil,":A3"=>nil,
-      ":B1"=>nil,":B2"=>nil,":B3"=>nil,
-      ":C1"=>nil,":C2"=>nil,":C3"=>nil}
+    @board = {:A1=>" ", :A2=>" ",:A3=>" ",
+      :B1=>" ",:B2=>" ",:B3=>" ",
+      :C1=>" ",:C2=>" ",:C3=>" "}
   end
   
-  def pick_first_player(first_player)
-    if first_player.nil?
+  def pick_first_player
+    if @first_player.nil?
       start = rand(0..1)
       if start == 0
-        @whos_first="Computer"
+        @current_player="Computer"
       else
-        @whos_first=@player
+        @current_player=@player
       end
     else
-      @whos_first = first_player
+      if @first_player==:player
+        @current_player = @player
+      else
+        @current_player = "Computer"
+      end
+   end
+  end
+  
+  def current_player
+    if @current_player.nil?
+      pick_first_player
     end
+    @current_player
   end
   
   def pick_player_symbol(first_symbol)
@@ -45,10 +56,6 @@ class TicTacToe
   def welcome_player
     "Welcome " + @player.to_s
   end
-  
-  def current_player
-    @player
-  end
 
   def player_symbol
     @p_symbol
@@ -62,23 +69,52 @@ class TicTacToe
     @player.to_s+"'s Move"
   end
   
-  def get_player_move
-    "And waits for my input of"
-  end
-  
   def open_spots
-    @open_spots = @board.find_all{|space,value| value.nil?}
+    @open_spots = @board.find_all{|space,value| value==" "}
   end
   
   def computer_move
     random_spot = rand(0..@open_spots.count)
     spot = @open_spots[random_spot]
     @board[spot[0]] = @comp_symbol
+    @current_player=@player
     spot
   end
   
   def current_state
     @board.values.map(&:to_s)
+  end
+  
+  def get_player_move
+    gets.chomp
+  end
+  
+  def player_move
+    while move=get_player_move.to_sym do
+      if @board[move]==" "  
+        @board[move]=@p_symbol
+        @current_player = "Computer"
+        break
+      end
+    end
+    move
+  end
+  
+  def determine_winner
+    winning = [
+      [:A1,:A2,:A3],
+      [:B1,:B2,:B3],
+      [:C1,:C2,:C3],
+      [:A1,:B1,:C1],
+      [:A2,:B2,:C2],
+      [:A3,:B3,:C3],
+      [:A1,:B2,:C3],
+      [:C1,:B2,:A3]]
+]
+  end
+  
+  def player_won?
+    
   end
   
 end
