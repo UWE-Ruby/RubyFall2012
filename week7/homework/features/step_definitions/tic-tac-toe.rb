@@ -6,6 +6,7 @@ class TicTacToe
   def initialize(first_player=nil, player_symbol=nil)
     @current_player = nil
     @players = [:player, :computer]
+    @player = "Anonymous"
     @board = {
       A1: " ", A2: " ", A3: " ",
       B1: " ", B2: " ", B3: " ",
@@ -83,6 +84,7 @@ class TicTacToe
     false
   end
   def next_player
+  	@current_player = (PLAYERS - [@current_player])[0]
   end
   def current_state
     output = ''
@@ -104,6 +106,7 @@ class TicTacToe
       output << " | "
     end
     output
+    # @board
   end
   def determine_winner
     victory = false

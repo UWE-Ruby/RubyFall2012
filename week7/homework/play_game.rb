@@ -4,10 +4,14 @@ require './features/step_definitions/tic-tac-toe.rb'
 puts @game.welcome_player
 
 until @game.over?
+	puts "Player is #{@game.player}"
+	puts @game.current_player
 	case @game.current_player
 	when "Computer"
+		puts "Computer is moving"
 		@game.computer_move
 	when @game.player
+		puts "player is moving"
 		@game.indicate_player_turn
 		@game.player_move
 	end
