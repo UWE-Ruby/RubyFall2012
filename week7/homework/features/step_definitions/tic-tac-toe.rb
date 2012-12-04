@@ -26,14 +26,6 @@ class TicTacToe
     return gets.chomp
   end
 
-  def create_board
-    @board = Board.new
-  end
-
-  def open_spots
-    @open_spots = @board.available_moves
-  end
-
   def computer_move
     move = open_spots.sample
     @computer.moves << move
@@ -54,6 +46,10 @@ class TicTacToe
 
   def current_state
     @board.current_state
+  end
+
+  def open_spots
+    @open_spots = @board.available_moves
   end
 
   def spots_open?
@@ -106,7 +102,7 @@ class TicTacToe
   end
 
   def computer_symbol=(value)
-    computer.my_symbol = value
+    @computer.my_symbol = value
   end
 
   def computer_symbol
@@ -122,6 +118,10 @@ class TicTacToe
   end
 
   private
+
+  def create_board
+    @board = Board.new
+  end
 
   def pick_first_player
     OPPONENTS.sample
