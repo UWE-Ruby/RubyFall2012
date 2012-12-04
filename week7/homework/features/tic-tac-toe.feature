@@ -1,7 +1,7 @@
 Feature: Tic-Tac-Toe Game
 	As a game player I like tic-tac-toe
 	In order to up my skills 
-	I would like to play agaist the computer
+	I would like to play against the computer
 
 Scenario: Begin Game
 	Given I start a new Tic-Tac-Toe game
