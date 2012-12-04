@@ -66,11 +66,12 @@ class TicTacToe
 
   def determine_winner
     @board.determine_winner
-    @over = true
     winner = @register[@board.winner]
     if winner
       @winner = winner
-    else
+      @over = true
+    elsif !spots_open?
+      @over = true
       @draw = true
     end
   end
