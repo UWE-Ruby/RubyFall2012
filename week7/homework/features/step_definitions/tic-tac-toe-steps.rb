@@ -35,7 +35,7 @@ end
 
 Then /^the computer prints "(.*?)"$/ do |arg1|
   @game.should_receive(:puts).with(arg1)
-  @game.indicate_palyer_turn
+  @game.indicate_player_turn
 end
 
 Then /^waits for my input of "(.*?)"$/ do |arg1|
@@ -43,7 +43,7 @@ Then /^waits for my input of "(.*?)"$/ do |arg1|
   @game.get_player_move
 end
 
-Given /^it is the computer's turn$/ do
+Given /^it is the computers turn$/ do
   @game = TicTacToe.new(:computer, :O)
   @game.current_player.should eq "Computer"
 end
@@ -70,6 +70,7 @@ end
 When /^I enter a position "(.*?)" on the board$/ do |arg1|
   @old_pos = @game.board[arg1.to_sym]
   @game.should_receive(:get_player_move).and_return(arg1)
+  
   @game.player_move.should eq arg1.to_sym
 end
 
