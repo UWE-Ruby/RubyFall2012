@@ -1,9 +1,7 @@
 require 'pry'
 
 class Player
-
-  attr_accessor :name, :symbol
-
+  attr_accessor :name, :symbol, :winner
 end
 
 
@@ -32,12 +30,14 @@ class TicTacToe
       @player_order = @players.keys.shuffle
     end
 
+    # Randomize the symbol order
     symbols = SYMBOLS.dup.shuffle
 
     if player_symbol
-      @players[:player].symbol = symbols.delete(player_symbol )
+      @players[:player].symbol = symbols.delete(player_symbol)
     end
 
+    # Iterate over all the players that don't yet have symbols, and assign them one
     @players.values.select { |player| !player.symbol }.each_with_index do |player, index|
       player.symbol = symbols[index]
     end
@@ -49,6 +49,10 @@ class TicTacToe
       :B1 => nil, :B2 => nil, :B3 => nil,
       :C1 => nil, :C2 => nil, :C3 => nil
     }
+  end
+
+  def player_for_symbol(symbol)
+    @players.values.find { |player| player.symbol == symbol }
   end
 
   def player=(name)
@@ -106,7 +110,7 @@ class TicTacToe
 
   def player_move
     position = nil
-    
+
     begin
       if position
         puts "That spot is taken, please choose another:"
@@ -120,6 +124,52 @@ class TicTacToe
     @board[position] = player_symbol
 
     position
+  end
+
+  def determine_winner
+    win_scenarios = [
+      %w[A1 A2 A3],
+      %w[B1 B2 B3],
+      %w[C1 C2 C3],
+      %w[A1 B1 C1],
+      %w[A2 B2 C2],
+      %w[A3 B3 C3],
+      %w[A3 B2 C1],
+      %w[A1 B2 C3]
+    ].map { |array| array.map(&:to_sym) }
+
+    # Find the winning scenenario
+    win = win_scenarios.find do |scenario|
+      board_state = scenario.map { |c| @board[c] }
+
+      board_state.all? { |i| i == :O } || board_state.all? { |i| i == :X }
+    end
+
+    # Figure out which player won
+    if win
+      # [:B1, :B2, :B3]
+      winning_symbol = @board[win.first]
+      winning_player = player_for_symbol(winning_symbol)
+      winning_player.winner = true
+      @winner = winning_player
+    end
+
+  end
+
+  def player_won?
+    @human_player.winner
+  end
+
+  def spots_open?
+    open_spots.any?
+  end
+
+  def over?
+    @winner || !spots_open? 
+  end
+
+  def draw?
+    over? && !@winner
   end
 
   def current_state

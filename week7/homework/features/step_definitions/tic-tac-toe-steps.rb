@@ -77,7 +77,7 @@ When /^I enter a position "(.*?)" on the board$/ do |arg1|
 end
 
 When /^"(.*?)" is not taken$/ do |arg1|
-  @old_pos.should eq " "
+  @old_pos.should eq nil
 end
 
 Then /^it is now the computer's turn$/ do
