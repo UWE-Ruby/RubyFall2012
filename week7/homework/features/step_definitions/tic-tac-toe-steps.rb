@@ -1,5 +1,8 @@
 require 'rspec/mocks/standalone'
 
+current_dir = File.expand_path(File.dirname(__FILE__))
+require "#{current_dir}/../../lib/tic_tac_toe.rb"
+
 Given /^I start a new Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new
 end
@@ -13,7 +16,7 @@ Then /^the computer welcomes me to the game with "(.*?)"$/ do |arg1|
 end
 
 Then /^randomly chooses who goes first$/ do
-  [@game.player, "Computer"].should include @game.current_player
+  [@game.player, "Computer"].should include @game.current_player.name
 end
 
 Then /^who is X and who is O$/ do
@@ -26,7 +29,7 @@ Given /^I have a started Tic\-Tac\-Toe game$/ do
 end
 
 Given /^it is my turn$/ do
-  @game.current_player.should eq "Renee"
+  @game.current_player.name.should eq "Renee"
 end
 
 Given /^the computer knows my name is Renee$/ do
@@ -35,7 +38,7 @@ end
 
 Then /^the computer prints "(.*?)"$/ do |arg1|
   @game.should_receive(:puts).with(arg1)
-  @game.indicate_palyer_turn
+  @game.indicate_player_turn
 end
 
 Then /^waits for my input of "(.*?)"$/ do |arg1|
@@ -45,7 +48,7 @@ end
 
 Given /^it is the computer's turn$/ do
   @game = TicTacToe.new(:computer, :O)
-  @game.current_player.should eq "Computer"
+  @game.current_player.name.should eq "Computer"
 end
 
 Then /^the computer randomly chooses an open position for its move$/ do
@@ -74,11 +77,11 @@ When /^I enter a position "(.*?)" on the board$/ do |arg1|
 end
 
 When /^"(.*?)" is not taken$/ do |arg1|
-  @old_pos.should eq " "
+  @old_pos.should eq nil
 end
 
 Then /^it is now the computer's turn$/ do
-  @game.current_player.should eq "Computer"
+  @game.current_player.name.should eq "Computer"
 end
 
 When /^there are three X's in a row$/ do
@@ -118,7 +121,7 @@ When /^"(.*?)" is taken$/ do |arg1|
 end
 
 Then /^computer should ask me for another position "(.*?)"$/ do |arg1|
-  @game.board[arg1.to_sym] = ' '
+  @game.board[arg1.to_sym] = nil
   @game.should_receive(:get_player_move).twice.and_return(@taken_spot, arg1)
   @game.player_move.should eq arg1.to_sym
 end
