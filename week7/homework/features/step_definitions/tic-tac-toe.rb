@@ -200,8 +200,8 @@ class TicTacToe
 
     def current_state
       output = []
-      @board.values.map { |v| v.to_s }.each_slice(3) { |vs| output << vs.join("|") }
-      "\n" + (output.join "\n- - -\n")
+      @board.values.map { |v| v.to_s }.each_slice(3) { |vs| output << " " + vs.join(" | ") }
+      "\n" + (output.join "\n-- + - + --\n")
     end
 
     def determine_winner
