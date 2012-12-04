@@ -10,6 +10,7 @@ until @game.over?
 	when "Computer"
 		@game.computer_move
 	when @game.player
+    puts
 		@game.indicate_player_turn
 		@game.player_move
 	end

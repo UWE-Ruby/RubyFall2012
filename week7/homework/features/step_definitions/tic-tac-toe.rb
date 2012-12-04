@@ -19,14 +19,10 @@ class TicTacToe
   end
 
   def indicate_player_turn
-    puts "\n#{player}'s Move:"
+    puts "#{player}'s Move:"
   end
 
   def get_player_move
-    # until board.has_key?(input = gets.chomp)
-    #   puts "please enter a valid move"
-    # end
-    # indicate_player_turn
     return gets.chomp
   end
 
@@ -209,15 +205,12 @@ class TicTacToe
     end
 
     def determine_winner
-      column_winner = check_columns_for_winner
-      row_winner = check_rows_for_winner
-      diag_winner = check_diagonals_for_winner
-      # winners = [column_winner, row_winner, diag_winner]
-      # if winners.any? {|w| w }
-      # end
+      check_columns_for_winner
+      check_rows_for_winner
+      check_diagonals_for_winner
     end
 
-    # private
+    private
     def check_columns_for_winner
       COLS.each do |c|
         col = @board.select {|k, v| k =~ /[#{ROWS.join('')}]{1}#{c}/ }
