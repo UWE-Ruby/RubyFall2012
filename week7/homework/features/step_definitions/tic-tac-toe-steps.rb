@@ -88,9 +88,6 @@ end
 
 Then /^I am declared the winner$/ do
   @game.determine_winner
-  # p @game.real_board.check_rows_for_winner
-  # p @game.real_board.check_diagonals_for_winner
-  # p @game.real_board.check_columns_for_winner
   @game.player_won?.should be_true
 end
 
