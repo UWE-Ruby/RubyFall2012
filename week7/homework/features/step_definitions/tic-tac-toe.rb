@@ -210,10 +210,9 @@ class TicTacToe
     private
     def check_columns_for_winner
       COLS.each do |c|
-        col = @board.select {|k, v| k =~ /[#{ROWS.join('')}]{1}#{c}/ }
-        if (vals = col.values.uniq) && vals.length == 1 && TicTacToe::SYMBOLS.include?(vals.first)
-          return @winner = vals.first
-        end
+        regex = /[#{ROWS.join('')}]{1}#{c}/
+        col = @board.select {|k, v| k =~ regex }
+        all_same_symbol(col)
       end
       nil
     end
@@ -222,9 +221,7 @@ class TicTacToe
       ROWS.each do |r|
         regex = /#{r}[#{COLS.join('')}]{1}/
         row = @board.select {|k, v| k =~ regex }
-        if (vals = row.values.uniq) && vals.length == 1 && TicTacToe::SYMBOLS.include?(vals.first)
-          return @winner = vals.first
-        end
+        all_same_symbol(row)
       end
       nil
     end
@@ -234,11 +231,15 @@ class TicTacToe
       backslash = [:C1, :B2, :A3]
       [slash, backslash].each do |points|
         diag = @board.select {|k, v| points.include? k }
-        if (vals = diag.values.uniq) && vals.length == 1 && TicTacToe::SYMBOLS.include?(vals.first)
-          return @winner = vals.first
-        end
+        all_same_symbol(diag)
       end
       nil
+    end
+
+    def all_same_symbol(three_points)
+      if (vals = three_points.values.uniq) && vals.length == 1 && TicTacToe::SYMBOLS.include?(vals.first)
+        return @winner = vals.first
+      end
     end
   end
 end
