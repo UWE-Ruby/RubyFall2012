@@ -1,0 +1,1083 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"core",
+				"core_stats"
+			],
+			[
+				"non",
+				"non_assign_stat_grid"
+			],
+			[
+				"female",
+				"female_first_names"
+			],
+			[
+				"male",
+				"male_first_names"
+			],
+			[
+				"AVAIL",
+				"AVAILABLE_RACES"
+			],
+			[
+				"get",
+				"get_with_array"
+			],
+			[
+				"list",
+				"list_characters"
+			],
+			[
+				"chara",
+				"characters"
+			],
+			[
+				"character",
+				"character_unique_traits"
+			],
+			[
+				"last",
+				"last_names"
+			],
+			[
+				"generate",
+				"generate_sex"
+			],
+			[
+				"select",
+				"select_race"
+			],
+			[
+				"err",
+				"error_check"
+			],
+			[
+				"en",
+				"element"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "week3/exercises/monster.rb",
+			"settings":
+			{
+				"buffer_size": 310,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "week3/exercises/named_thing.rb",
+			"settings":
+			{
+				"buffer_size": 167,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "week3/exercises/vampire.rb",
+			"settings":
+			{
+				"buffer_size": 186,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "week3/exercises/monsters.rb",
+			"settings":
+			{
+				"buffer_size": 830,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"beau",
+				"BeautifyRuby"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"project",
+				"Project: Close"
+			],
+			[
+				":u",
+				"Snippet: class .. < Test::Unit::TestCase .. end"
+			],
+			[
+				":W",
+				":w - Save"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instll",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ann",
+				"Git: Toggle Annotations"
+			],
+			[
+				"anno",
+				"Git: Toggle Annotations"
+			],
+			[
+				"bea",
+				"BeautifyRuby"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"tidy",
+				"Tidy HTML"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"hg",
+				"SublimeHg: Open Menu"
+			],
+			[
+				"nex",
+				"SublimeLint: Next Error"
+			],
+			[
+				"next",
+				"SublimeLint: Next Error"
+			],
+			[
+				"lint",
+				"SublimeLint: Next Error"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"tid",
+				"Tidy HTML"
+			],
+			[
+				"inten",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"tag",
+				"Tag: Auto-Format Tags on Document"
+			],
+			[
+				"zencoding",
+				"Zen Coding: Endcode/decode base64"
+			],
+			[
+				"zen coding",
+				"Set Syntax: ZenCoding"
+			],
+			[
+				"zen ",
+				"Zen Coding: Evaluate math expression"
+			],
+			[
+				"zen",
+				"Zen Coding: Zen as you type"
+			],
+			[
+				"html",
+				"Tidy HTML"
+			],
+			[
+				"sublime",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ident",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"hg ",
+				"SublimeHg: Open Menu"
+			],
+			[
+				"html ",
+				"Tidy HTML"
+			],
+			[
+				"intent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"open",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"install pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package re",
+				"Package Control: Remove Package"
+			],
+			[
+				"package  install",
+				"Package Control: Install Package"
+			],
+			[
+				"sftp",
+				"SFTP: Browse Server…"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 241.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/nikky/Repositories/github/RubyFall2012/week2/homework/simon_says_spec.rb",
+		"/home/nikky/Repositories/github/RubyFall2012/week2/homework/questions.txt",
+		"/home/nikky/Repositories/github/RubyFall2012/week2/homework/simon_says.rb",
+		"/home/nikky/Repositories/www/choosing_cms.html",
+		"/home/nikky/Repositories/www/start.html",
+		"/home/nikky/Repositories/www/index.html",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/nikky/Nikky_Sim_0.00.00/source/nikky.c",
+		"/home/nikky/Nikky_Sim_0.00.00/source/vocab.c",
+		"/home/nikky/Nikky_Sim_0.00.00/source/ui.c",
+		"/home/nikky/Nikky_Sim_0.00.00/license.txt",
+		"/home/nikky/Nikky_Sim_0.00.00/source/build.sh",
+		"/home/nikky/Repositories/github/UW-Wordpress-Theme/index.php",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/User/Automatic Backups.sublime-settings",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/BeautifyRuby/BeautifyRuby.sublime-settings",
+		"/home/nikky/Repositories/github/Mass-Email-o-nator/mailer3.rb",
+		"/home/nikky/Repositories/github/Mass-Email-o-nator/configuration.rb",
+		"/home/nikky/Repositories/github/Mass-Email-o-nator/configuration.sample.rb",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/nikky/Repositories/github/Mass-Email-o-nator/doop",
+		"/home/nikky/Repositories/github/staff-website/doop",
+		"/home/nikky/Repositories/www/access.html",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/User/SublimeLinter.sublime-settings",
+		"/home/nikky/Repositories/www/basic-group.html",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/SublimeLinter/README.md",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/SublimeLinter/Default (Linux).sublime-keymap",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/sublimelint/SublimeLint.sublime-settings",
+		"/home/nikky/Repositories/www/web-development-servers.html",
+		"/home/nikky/Repositories/www/mysql/mysql-admin.html",
+		"/home/nikky/Repositories/www/mysql/mysql-installed.html",
+		"/home/nikky/Repositories/www/www.sublime-project",
+		"/home/nikky/Repositories/www/mysql/index.html",
+		"/home/nikky/Repositories/www/using-servers.html",
+		"/home/nikky/Repositories/www/website-urls.html",
+		"/home/nikky/Repositories/www/mailing-lists.html",
+		"/home/nikky/Repositories/dnd-4e-character-generator/lessons_learned.md",
+		"/home/nikky/Repositories/dnd-4e-character-generator/class_test.rb",
+		"/home/nikky/Repositories/dnd-4e-character-generator/libGen.rb",
+		"/home/nikky/Repositories/dnd-4e-character-generator/array_object_test.rb",
+		"/home/nikky/Repositories/learn_c_hard_way/ex11.c",
+		"/home/nikky/Repositories/learn_c_hard_way/ex11",
+		"/home/nikky/Repositories/learn_c_hard_way/ex3.c",
+		"/home/nikky/Repositories/learning-ruby/mailer3/mailer3.rb",
+		"/home/nikky/Repositories/www/.wwwinstrc",
+		"/home/nikky/Repositories/www/publish.html",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/ZenCoding/Default.sublime-keymap",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/HtmlTidy/HtmlTidy.sublime-settings",
+		"/home/nikky/Repositories/www/ssh.html",
+		"/home/nikky/Repositories/www/mysql/phpmyadmin.html",
+		"/home/nikky/Repositories/www/mysql/phpmyadmin-upgrade.html",
+		"/home/nikky/Repositories/www/phpmyadmin.html",
+		"/home/nikky/Repositories/www/phpmyadmin-upgrade.html",
+		"/home/nikky/Repositories/www/snippets/ssh_web_dev.html",
+		"/home/nikky/Repositories/www/mysql/mysql-security.html",
+		"/home/nikky/Repositories/www/mysql/mysql-desktop.html",
+		"/home/nikky/Repositories/www/mysql/mysql-client.html",
+		"/home/nikky/Repositories/www/mysql/mysql_backup.sh",
+		"/home/nikky/Repositories/learning-ruby/mailer3/configuration.rb",
+		"/home/nikky/Repositories/learning-ruby/mailer3/libMailer3.rb",
+		"/home/nikky/Repositories/learning-ruby/mailer3/do_mail.rb",
+		"/home/nikky/Repositories/learning-ruby/mailer3/settings.yml",
+		"/home/nikky/Repositories/learning-ruby/mailer3/settings.yaml",
+		"/home/nikky/Repositories/www/mysql/mysql-script.html",
+		"/home/nikky/Repositories/www/mysql/mysql-lists.html",
+		"/home/nikky/Repositories/www/mysql/mysql-access-3.5.html",
+		"/home/nikky/Repositories/www/mysql/mysql-installed.old.html",
+		"/home/nikky/Dropbox/config/deploy.rb",
+		"/home/nikky/learning-ruby/mailer3/mailer3.rb",
+		"/tmp/sublime-sftp-browse-1344966977/nykida_net/home/nikky/.vimrc",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/User/sftp_servers/nikky_ovid",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/User/sftp_servers/nykida_net",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/nikky/Dropbox/config/sublime-text-2/Packages/User/Distraction Free.sublime-settings"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"cheese",
+			"mediawiki",
+			"nav-coll",
+			"dropdowns",
+			"Walker_Menu",
+			"uw_drop",
+			"menu",
+			"head",
+			"shared_netid",
+			"cc",
+			"message_parse_block",
+			"    @message_parse_block",
+			"@message_parse_block",
+			"ruler",
+			"width",
+			"@config",
+			"$debug",
+			" $debug",
+			"$debug",
+			"debug",
+			"$debug",
+			"log",
+			"log_event",
+			"html",
+			"map",
+			"ruby",
+			"backing up",
+			"for",
+			"home pages",
+			"Individual",
+			"ossible",
+			"gets",
+			"generate_stats",
+			".class",
+			"class",
+			"Elf",
+			"halfling",
+			"Elf",
+			"Tiefling",
+			"Dragonborn",
+			"Warrior",
+			"Scaffold_new_character",
+			"characters",
+			"male_names",
+			"unique_traits",
+			"load_class_stats",
+			"generate_stats",
+			"nil",
+			"btn-info",
+			"btn",
+			"large",
+			"primary",
+			"btn",
+			"fugu",
+			"Click for more information on development",
+			"strong",
+			"b>",
+			"Tutorial Introduction",
+			"Backing up your",
+			"@",
+			"div",
+			"<!",
+			"Log into",
+			"Log in",
+			"Log into",
+			"indent",
+			"ident",
+			"tab",
+			"^def",
+			"/*ject",
+			"Subject",
+			"subject",
+			"unless",
+			"hhhhhhhhhhhh",
+			"body",
+			"Body",
+			"body",
+			"Body",
+			"body",
+			"Body",
+			"body",
+			"Body",
+			"body",
+			"@via"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "week3/exercises/monster.rb",
+					"settings":
+					{
+						"buffer_size": 310,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"html": "tidy",
+								"perl": "perl",
+								"php": "php",
+								"ruby": "/home/nikky/.rvm/rubies/ruby-1.9.3-p194/bin/ruby"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "week3/exercises/named_thing.rb",
+					"settings":
+					{
+						"buffer_size": 167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"html": "tidy",
+								"perl": "perl",
+								"php": "php",
+								"ruby": "/home/nikky/.rvm/rubies/ruby-1.9.3-p194/bin/ruby"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "week3/exercises/vampire.rb",
+					"settings":
+					{
+						"buffer_size": 186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								186,
+								186
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"html": "tidy",
+								"perl": "perl",
+								"php": "php",
+								"ruby": "/home/nikky/.rvm/rubies/ruby-1.9.3-p194/bin/ruby"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "week3/exercises/monsters.rb",
+					"settings":
+					{
+						"buffer_size": 830,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"html": "tidy",
+								"perl": "perl",
+								"php": "php",
+								"ruby": "/home/nikky/.rvm/rubies/ruby-1.9.3-p194/bin/ruby"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 205.0
+	},
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"vam",
+				"week3/exercises/vampire.rb"
+			],
+			[
+				"am",
+				"week3/exercises/vampire.rb"
+			],
+			[
+				"s",
+				"week2/homework/simon_says_spec.rb"
+			],
+			[
+				"qu",
+				"week2/homework/questions.txt"
+			],
+			[
+				"www",
+				"www.sublime-project"
+			],
+			[
+				"11",
+				"ex11.c"
+			],
+			[
+				"devel",
+				"web-development-servers.html"
+			],
+			[
+				"web-deve",
+				"web-development-servers.html"
+			],
+			[
+				"backup",
+				"mysql/mysql_backup.sh"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/nikky/Repositories/projects/uwe-ruby-fall.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 295.0,
+	"status_bar_visible": true
+}

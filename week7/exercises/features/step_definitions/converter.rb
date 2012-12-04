@@ -12,6 +12,6 @@ class Converter
 	end
 
 	def Fahrenheit_convertion
-		(((@value - 32.0) /5.0) * 9.0).round(1)
+		(((@value - 32.0) /9.0) * 5.0).round(1)
 	end
 end

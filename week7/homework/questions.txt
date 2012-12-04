@@ -3,7 +3,32 @@ Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
 1. What is method_missing and how can it be used?
+
+method_missing is method that returns a boolean depending on weather an object will
+respond to a certain method. It can be used to detect if a specific object will work for
+whatever methods you want to run (for instance, instead of checking to see if something is an array, instead see if it responds to .each?, which means you can use a file object as well.)
+
+
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
+
+Eigenclass is synonymous to 'singleton class' in Ruby, and is an anonymous class. They contain singleton methods for a specific object. 
+
 3. When would you use DuckTypeing? How would you use it to improve your code?
+
+DuckTyping is good for cases where you don't need a specific object "class" but rather
+a supported method. For instance, instead of requiring an array object, you can instead check to see if it supports something like .each, and then you can support arrays, hashes, I/O, etc. etc. They're more flexible and refactoring/testing is easier.
+
+
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+
+A class method is acted upon a specific class without instantiating it first; such as File.open.
+
+Instance methods are ran against instantiated objects, like File.new (class method) and then File.each (instance method).
+
+`instance_eval` and `class_eval` both set `self` to whatever object you so choose, run the code inside the block, and then reset `self`.
+
+However, `class_eval` sets an instance method, whereas instance_eval will set a class_method.  So it's kind of backwards opposite day.
+
 5. What is the difference between a singleton class and a singleton method?
+
+A singleton method is a per-object method. A singleton class is the anonymous class that holds singleton methods for a particular object.

@@ -1,10 +1,35 @@
 task :test do
 	puts "Hello World!"
 end
+<<<<<<< HEAD
+task :list_names do
+	File.open("names","r") do |n|
+		n.each do |l|
+			puts l
+		end
+	end
+end
+task :create_directory do
+	Dir.mkdir("class") unless Dir.exists?("class")
+end
+task :populate_directory => [:create_directory] do
+	parse_name_file("names")
+
+end
+
+def parse_name_file(file)
+	f = File.open(file,"r")
+	Dir.cd("class")
+	f.readlines.each do |n|
+		Dir.mkdir(n)
+	end
+end
+=======
 
 task :make_class_dir do
 	Dir.mkdir("class")
 end
 
 task :output
+>>>>>>> 5a2c257e99f58173ae91aeee5ce8af92c39e2ab6
 
