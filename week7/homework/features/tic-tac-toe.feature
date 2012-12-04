@@ -10,10 +10,26 @@ Scenario: Begin Game
 	Then the computer welcomes me to the game with "Welcome Renee"
 		And randomly chooses who goes first
 		And who is X and who is O
-		
+
 Scenario: My Turn
 	Given I have a started Tic-Tac-Toe game
 		And it is my turn
 		And the computer knows my name is Renee
 	Then the computer prints "Renee's Move:"
 		And waits for my input of "B2"
+
+Scenario: Computer's Turn
+	Given I have a started Tic-Tac-Toe game
+		And it is the computer's turn
+		And the computer is playing X
+	Then the computer randomly chooses an open position for its move 
+		And the board should have an X on it
+
+Scenario: Making Moves
+	Given I have a started Tic-Tac-Toe game
+		And it is my turn
+		And I am playing X
+	When I enter a position "A1" on the board
+		And "A1" is not taken
+	Then the board should have an X on it
+		And it is now the computer's turn
