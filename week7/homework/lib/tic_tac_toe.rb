@@ -80,6 +80,10 @@ class TicTacToe
     @players[key]
   end
 
+  def advance_player
+    @current_player_index = (@current_player_index + 1) % 2
+  end
+
   def indicate_player_turn
     puts "#{@human_player.name}'s Move:"
   end
@@ -101,9 +105,16 @@ class TicTacToe
   end
 
   def computer_move
+
+    puts "Computer's Move:"
+
     position = open_spots.shuffle.first # :A2
 
+    puts position
+
     @board[position] = computer_symbol
+
+    advance_player
 
     position
   end
@@ -122,6 +133,8 @@ class TicTacToe
     end until open?(position)
 
     @board[position] = player_symbol
+
+    advance_player
 
     position
   end
@@ -160,6 +173,10 @@ class TicTacToe
     @human_player.winner
   end
 
+  def computer_won?
+    @computer_player.winner
+  end
+
   def spots_open?
     open_spots.any?
   end
@@ -176,13 +193,17 @@ class TicTacToe
 <<-BOARD
     A   B   C
   -------------
-1 | #{@board[:A1]}  | #{@board[:B1]}  | #{@board[:C1]} |
+1 | #{present_board_at(:A1)} | #{present_board_at(:B1)} | #{present_board_at(:C1)} |
   -------------
-2 | #{@board[:A2]}  | #{@board[:B2]}  | #{@board[:C2]} |
+2 | #{present_board_at(:A2)} | #{present_board_at(:B2)} | #{present_board_at(:C2)} |
   -------------
-3 | #{@board[:A3]}  | #{@board[:B3]}  | #{@board[:C3]} |
+3 | #{present_board_at(:A3)} | #{present_board_at(:B3)} | #{present_board_at(:C3)} |
   -------------
 
 BOARD
+  end
+
+  def present_board_at(slot)
+    @board[slot] || " "
   end
 end
