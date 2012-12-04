@@ -1,4 +1,5 @@
 require 'rspec/mocks/standalone'
+require './features/step_definitions/tic-tac-toe.rb'
 
 Given /^I start a new Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new
@@ -35,7 +36,7 @@ end
 
 Then /^the computer prints "(.*?)"$/ do |arg1|
   @game.should_receive(:puts).with(arg1)
-  @game.indicate_palyer_turn
+  @game.indicate_player_turn
 end
 
 Then /^waits for my input of "(.*?)"$/ do |arg1|
