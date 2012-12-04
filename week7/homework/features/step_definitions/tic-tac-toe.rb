@@ -159,7 +159,7 @@ class TicTacToe
     false
   end
   def over?
-    return true if player_won? || computer_won?
+    return true if player_won? || computer_won? || draw?
     false
   end
   def draw
