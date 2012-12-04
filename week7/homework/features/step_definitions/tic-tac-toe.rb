@@ -19,7 +19,7 @@ class TicTacToe
   end
 
   def indicate_player_turn
-    puts "#{player}'s Move:"
+    puts "\n#{player}'s Move:"
   end
 
   def get_player_move
@@ -205,7 +205,7 @@ class TicTacToe
     def current_state
       output = []
       @board.values.map { |v| v.to_s }.each_slice(3) { |vs| output << vs.join("|") }
-      output.join "\n"
+      "\n" + (output.join "\n- - -\n")
     end
 
     def determine_winner
