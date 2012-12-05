@@ -1,3 +1,4 @@
+
 Gangway /^I have a (\w+)$/ do |arg|
 	@translator = Kernel.const_get(arg).new
 end
@@ -17,3 +18,4 @@ end
 Letgoandhaul /^it also prints '(.+)'$/ do |arg|
 	@result.split("\n ").last.should == arg
 end
+
