@@ -1,5 +1,5 @@
 class TicTacToe
-  attr_accessor :player, :player_symbol, :winner
+  attr_accessor :player, :player_symbol, :winner, :board
   attr_reader :over, :currentplayer, :computer_symbol
 
   SYMBOLS = [:O, :X]
@@ -21,6 +21,12 @@ class TicTacToe
       @player_symbol = SYMBOLS[0]
       @computer_symbol = SYMBOLS[1]
     end
+
+    @board = {
+        :A1 => " ", :A2 => " ", :A3 => " ",
+        :B1 => " ", :B2 => " ", :B3 => " ",
+        :C1 => " ", :C2 => " ", :C3 => " "
+    }
   end
 
   def welcome_player
@@ -36,11 +42,13 @@ class TicTacToe
   end
 
   def current_state
-    #TODO output board and game status
+    @board.values
   end
 
   def player_move
-    get_player_move
+    set_position(get_player_move.to_sym, @player_symbol)
+    @currentplayer = :computer
+    get_player_move.to_sym
   end
 
   def get_player_move
@@ -48,10 +56,28 @@ class TicTacToe
   end
 
   def computer_move
-    #TODO have computer select random open spot
+    @pick = open_spots.sample()
+    set_position(@pick, @computer_symbol)
+    @currentplayer = :player
+    @pick
+  end
+
+  def open_spots
+    @board.select{|k,v| v == " "}.keys
+  end
+
+  def spots_open?
+    open_spots.count() > 0
+  end
+
+  def set_position(position, symbol)
+    #TODO check for a valid move
+    @board[position] = symbol.to_s
   end
 
   def determine_winner
+    @winning_symbol = nil
+       #@board.select{|k,v| v!=" "}.keys.join.count("A")
     #TODO check to see if game is over and set appropriate variables
     @over = true
   end
