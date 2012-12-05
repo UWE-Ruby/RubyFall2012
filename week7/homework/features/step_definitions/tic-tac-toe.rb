@@ -44,7 +44,7 @@ class TicTacToe
   end
 
   def current_turn
-    @current_player_move = @open_spots.sample
+    @current_player _move = @open_spots.sample
     @current_player_move
 
     # use .pop and .shuffle!
