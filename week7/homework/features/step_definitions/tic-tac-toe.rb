@@ -1,15 +1,26 @@
 class TicTacToe
   SYMBOLS = [:X, :O]
-  # SYMBOLS = [@player_symbol, @computer_symbol]
 
   attr_accessor :player, :player_symbol, :computer_symbol, :current_player, :current_turn
 
-  def initialize(first_player=nil, symbol=nil)
+  def initialize(first_player=nil, human_symbol=nil)
     @first_player = first_player
 
     if first_player
       @current_turn = @first_player
     end
+
+    if human_symbol == :O
+      @player_symbol = human_symbol
+      @computer_symbol = :X
+    elsif human_symbol == :X
+      @player_symbol = human_symbol
+      @computer_symbol = :O
+    elsif human_symbol.nil?
+      @player_symbol = SYMBOLS.sample
+      @computer_symbol = SYMBOLS[SYMBOLS.index(@player_symbol) - 1]
+    end
+
     # if player.nil?
     #   @current_player = ["Renee", "Computer"].sample   # had @player in array
     
@@ -19,12 +30,6 @@ class TicTacToe
     #   @current_player = "Renee" # had @player
     # end
   end
-
-  
-
-  # def player=(player)
-  #   @player = player
-  # end
 
   def welcome_player
     "Welcome #{@player}"
@@ -36,8 +41,13 @@ class TicTacToe
     else
       @current_player = {:computer => "Computer", :player => @player || "Player 1"}[@current_turn]
     end
-    # @a_player = [@player, "Computer"]
-    #return @current_player #= @a_player.sample
+  end
+
+  def current_turn
+    @current_player_move = @open_spots.sample
+    @current_player_move
+
+    # use .pop and .shuffle!
   end
 
   def player_symbol
@@ -48,12 +58,6 @@ class TicTacToe
     else
       @computer_symbol = :X
     end
-
-    # @player_symbol = SYMBOLS[0]
-    # @computer_symbol = SYMBOLS[1]
-
-    # @player_symbol = "O"
-    # @computer_symbol = "X"
   end
 
   def indicate_player_turn
@@ -64,10 +68,32 @@ class TicTacToe
     # @move = move
   end
 
+  def player_move(choose_move)
+    # move = get_player_move.to_sym
+    move = choose_move.to_sym
+    if @board[move] == ""
+      @board[move] = @player_symbol
+    else
+      puts "That spot is taken."  # Then what? get input? assign random spot?
+      # @board[move] = :B2
+    end
+  end
+
+  # def current_move
+
+
+  def board
+    @board = [
+      :A1 => "",:A2 => "",:A3 => "",
+      :B1 => "",:B2 => "",:B3 => "",
+      :C1 => "",:C2 => "",:C3 => ""
+    ]
+  end
+
+
+
+
+
 
 end
-
-
-
-
 # lines edited in steps file: 38, 46, 80, 84
