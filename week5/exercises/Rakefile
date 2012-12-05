@@ -2,9 +2,26 @@ task :test do
 	puts "Hello World!"
 end
 
-task :make_class_dir do
-	Dir.mkdir("class")
+task :names do
+  getNamesFromFile.each do |name|
+      puts name
+  end
 end
 
-task :output
+task :createclassdir do
+  Dir.mkdir(:RubyClass) unless Dir.exists?(:RubyClass)
+end
 
+task :createnamedir => [:createclassdir] do
+
+end
+
+def getNamesFromFile(file="names")
+  store_names = []
+  f = File.open("names", "r")
+  f.each do |name|
+    store_names << name
+  end
+  f.close
+  return store_names
+end
