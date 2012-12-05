@@ -75,6 +75,7 @@ class TicTacToe
   
   def player_move
     if open_spots.include?(get_player_move.to_sym)
+      @board[get_player_move.to_sym] = @player_symbol
       get_player_move.to_sym
     else
       get_player_move.to_sym
