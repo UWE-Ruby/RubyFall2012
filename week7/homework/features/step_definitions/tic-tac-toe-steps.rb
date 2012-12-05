@@ -34,12 +34,12 @@ Given /^the computer knows my name is Renee$/ do
 end
 
 Then /^the computer prints "(.*?)"$/ do |arg1|
-  @game.should_receive(:puts).with(arg1)
+  @game.should_receive(:puts).with(arg1)   # big hint about how you should implement indicate_player_turn. it'll need to call puts
   @game.indicate_player_turn
 end
 
 Then /^waits for my input of "(.*?)"$/ do |arg1|
-  @game.should_receive(:gets).and_return(arg1)
+  @game.should_receive(:gets).and_return(arg1) # get_player_move should call gets.  and for this test, shes saying when gets is called, return arg1. She's mocking what gets returns/its calling a fake gets method.
   @game.get_player_move
 end
 

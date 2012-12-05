@@ -44,21 +44,21 @@ class TicTacToe
   end
 
   def current_turn
-    @current_player _move = @open_spots.sample
+    # @current_player _move = @open_spots.sample
     @current_player_move
-
-    # use .pop and .shuffle!
+    ##########################
+    move = @open_spots.shuffle!.pop    
   end
 
-  def player_symbol
-    @player_symbol = SYMBOLS.sample
+  # def player_symbol
+  #   @player_symbol = SYMBOLS.sample
 
-    if @player_symbol == :X
-      @computer_symbol = :O
-    else
-      @computer_symbol = :X
-    end
-  end
+  #   if @player_symbol == :X
+  #     @computer_symbol = :O
+  #   else
+  #     @computer_symbol = :X
+  #   end
+  # end
 
   def indicate_player_turn
     "#{@current_player}'s Move:"
@@ -81,13 +81,18 @@ class TicTacToe
 
   # def current_move
 
+  @open_spots = [
+    :A1, :A2, :A3,
+    :B1, :B2, :B3,
+    :C1, :C2, :C3
+  ]
 
   def board
-    @board = [
+    @board = {
       :A1 => "",:A2 => "",:A3 => "",
       :B1 => "",:B2 => "",:B3 => "",
       :C1 => "",:C2 => "",:C3 => ""
-    ]
+    }
   end
 
 
