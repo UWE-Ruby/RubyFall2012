@@ -3,13 +3,13 @@ Feature: Converting metric
 	As a traveler in London
 	I want to convert a Fahrenheit temperature to Celsius
 
-Scenario:
+Scenario: Fahrenheit to Celsius
 	Given I have entered 32 into the converter
 	And I set the type to Fahrenheit
 	When I press convert
 	Then the result returned should be 0.0
 	
-Scenario:
+Scenario: Convert Fahrenheit to Celsius
 	Given I have entered 75 into the converter
 	And I set the type to Fahrenheit
 	When I press convert

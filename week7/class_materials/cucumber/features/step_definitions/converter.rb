@@ -16,3 +16,7 @@ class Converter
 	    (@unit *  (9.0/5.0) + 32.0).round(1)	
 	end
 end
+
+c = Converter.new(34)
+c.type=("Celsius")
+puts c.convert

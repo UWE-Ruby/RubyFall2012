@@ -13,3 +13,4 @@ end
 Then /^the result returned should be (\d+)\.(\d+)$/ do |arg1, arg2|
 	@result.should == "#{arg1}.#{arg2}".to_f
 end
+
