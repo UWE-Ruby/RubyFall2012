@@ -1,17 +1,15 @@
-class PirateTranslator
-	PIRATE_WORDS = {
-		"Hello Friend" => "Ahoy Matey"
-	}
-	def say(str)
-		@said = lookup_pirate(str).to_s
+class Pirate
+	attr_accessor :phrase
+	
+	def initialize()
+		@phrase = ""
 	end
-
+	
 	def translate
-		@said + "\n Shiber Me Timbers You Scurvey Dogs!!"
+		"Ahoy matey"
 	end
-
-private
-	def lookup_pirate(str)
-		PIRATE_WORDS[str]
+	
+	def insult
+		"Shiber Me Timbers You Scurvey Dogs!!"
 	end
 end

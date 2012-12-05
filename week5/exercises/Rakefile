@@ -1,5 +1,15 @@
-task :test do
-	puts "Hello World!"
+config = {:basedirectory => "class"}
+
+task :makeclassdirectory do
+	Dir.mkdir(config[:basedirectory]) unless File.exists?(config[:basedirectory])
+end
+
+task :classmaker => ["makeclassdirectory"] do
+	File.open("names", "r") do |file|
+	    file.each do |line|
+	      Dir.mkdir(config[:basedirectory].to_s + "/" + line.chomp!) unless File.exists?(config[:basedirectory].to_s + "/" + line.chomp!)
+	    end  
+	end
 end
 
 task :make_class_dir do

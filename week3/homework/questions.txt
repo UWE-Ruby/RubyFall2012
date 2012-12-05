@@ -5,6 +5,27 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
+<<<<<<< HEAD
+     A symbol is superficially similar to a string, but in reality is a constant and immutable
+     object.  They are useful as names and identifiers, and commonly serve as hash keys.
+2. What is the difference between a symbol and a string?
+     Strings can be modified, and multiple string objects can have the same contents and still be
+     different objects. Symbols, however, cannot be modified ( like a frozen string in this regard), and
+     the same symbol always refers to the same object.  :test and :test have the same object ID, while
+     "test" and "test" would not.
+3. What is a block and how do I call a block?
+     A block is an arbitrary chunk of Ruby code that can be supplied to an existing method call. It is called
+     by using a do-end following a method call(or curly brackets if the block is only one line)
+4. How do I pass a block to a method? What is the method signature?
+     The method itself must be written to account for blocks - either by testing for the presence of a
+     supplied block and changing its flow based upon the result, or by being written to always expect
+     a block.  At the point of method execution where the block should be started, it can be called
+     with the Yield signature and the appropriate number of arguments.
+5. Where would you use regular expressions?
+     Regular expressions are useful for input parsing (e.g., ensuring a supplied email address is a valid
+     one).  They can be used to strip undesirable characters from a string, or search a block of text
+     to find any instances of a search term.
+=======
 A symbol is a static name or identifier.
 
 2. What is the difference between a symbol and a string?
@@ -15,6 +36,7 @@ A block is an anonymous function, or some code snipt that you can define and the
 
 4. How do I pass a block to a method? What is the method signature?
 To pass a block to a method you define the block after the method call with either the curly bracket enclosure {} or the do/end syntax. An example of passing a block to the each method of an array:
+>>>>>>> 217a9fddb9c3593e5125cdc0b20bbd32afab6597
 
 my_array.each {|a| puts a}
 
