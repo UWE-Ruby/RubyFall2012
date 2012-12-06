@@ -8,9 +8,38 @@ Instructions for Mid-Term submission and Git Review (10pts):
  - Add a remote to your git repository: git@nird.us:RubyFall2012/YOURREPOSITORYNAME.git
  - Push your changes to the remote
  - After 6pm Tuesday November 13th you will not be able to push to your remote repository (or clone).
+
+#this  is a test
  
  Questions (20pts):
  - What are the three uses of the curly brackets {} in Ruby?
+<<<<<<< HEAD
+	Three cases when curly brackets are used are for making hashes, when denoting blocks instead of do...end, 
+	
+ - What is a regular expression and what is a common use for them?
+	Regular expressions are a set of constants and operator symbols that operate over sets of strings. They are commonly used for matching patterns within a String. This can include seeing if the pattern exists in a String, extracting all or partial matched portions of a pattern from a string, and changing the string by replacing the parts that match the pattern.
+	
+ - What is the difference between how a String, a symbol, a FixNum, and a Float are stored in Ruby?
+	
+ - Are these two statements equivalent? Why or Why Not?
+   1. x, y = "hello", "hello"
+   2. x = y = "hello"
+
+	These two statements are equivalent in that statement 1. stores 
+	
+- What is the difference between a Range and an Array?
+	A range is a interval of a set of values from start to end (1,2,3...a,b,c,d) where an Array could be any set of values and not necessarily in an particular order (d,v,e,d....3,4,2,5,1). 
+	
+- Why would I use a Hash instead of an Array?
+	A Hash would be used over an Array when you need to find items based of key-value pairs. Arrays are good when you need to iterate over a set that is in particular order.
+	
+- What is your favorite thing about Ruby so far?
+	
+	
+- What is your least favorite thing about Ruby so far?
+	My least favorite thing in Ruby so far is Blocks. This is probably do to the fact that I don't fully understand it yet and have not capitalized on its use case.
+ 
+=======
  1. String interpolation: "#{1+1}"
  2. Hash instantiation: {:key => "value"}
  3. Block/lambda notation: {puts "hello"}
@@ -38,6 +67,7 @@ If I had data which I wanted to reference by meta-data instead of by order I wou
 - What is your least favorite thing about Ruby so far?
 nil.object_id => 4
 
+>>>>>>> ce96056b4f7001234ac8db7a81cbeecd94192f6c
  Programming Problems (10pts each):
  - Write a passing rspec file called even_number_spec.rb that tests a class called EvenNumber.
     - The EvenNumber class should:

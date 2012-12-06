@@ -3,6 +3,22 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
+<<<<<<< HEAD
+	An object is an instance of a class that can be uniquely identified in which can be given it's own properties and actions.
+2. What is a variable?
+	Variables are references to objects in memory.
+	 blocks of memory used to store data of different types. Depending the variables location in the code it can be seen by classes, objects, methods, and/or globally.
+3. What is the difference between an object and a class?
+	Objects are instances of classes
+4. What is a String?
+	In Ruby, Strings are objects of the class String that hold sequences of characters.
+5. What are three messages that I can send to a string object? Hint: think methods
+	myString.split()
+	myString.casecmp("someString")
+	myString.chomp
+6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
+	Two ways of defining a String literal are to use %q for delimited single quote Strings and %Q for double-quoted Strings.
+=======
 An object is a representation in memory of a specific concept or thing that the Ruby interpreter knows about. 
 
 2. What is a variable?
@@ -22,3 +38,8 @@ split  - returns an array of strings made up of the original string separated on
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
 Single quotes ex: '' and Double quotes ex: "". The single qoutes allow for 2 escape characters: \' and \\ . The double qouted string literal allows for many different escaped special characters (like \n is a line break) and allows for string interpolation, or the injection of evaluated Ruby code into the string ex: "Hello #{my_name}". The single qouted string takes up much less memory than a doulbe qouted string with interpolation. Without interpolation, both are about the same.
 
+<<<<<<< HEAD
+>>>>>>> 4d8ccdb3a54249f560991eda7f157ec66c3516d3
+=======
+>>>>>>> 217a9fddb9c3593e5125cdc0b20bbd32afab6597
+>>>>>>> master
