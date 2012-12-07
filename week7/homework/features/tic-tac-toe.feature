@@ -55,3 +55,31 @@ Scenario: Game is a draw
 	When there are no open spaces left on the board
 	Then the game is declared a draw 
 		And the game ends
+
+Scenario: Win the Game Via Last Column
+	Given I have a started Tic-Tac-Toe game
+		And I am playing O
+	When there are three O's in in last column
+	Then I am declared the winner
+		And the game ends
+
+Scenario: Win the Game Via Last Row
+	Given I have a started Tic-Tac-Toe game
+		And I am playing O
+	When there are three O's in in last row
+	Then I am declared the winner
+		And the game ends
+
+Scenario: Win the Game Via Middle Column
+	Given I have a started Tic-Tac-Toe game
+		And I am playing X
+	When there are three X's in in middle
+	Then I am declared the winner
+		And the game ends
+
+Scenario: Computer wins the Game Via Diagonal
+	Given I have a started Tic-Tac-Toe game
+		And I am playing X
+	When there are three O's across
+	Then computer is declared the winner
+		And the game ends
