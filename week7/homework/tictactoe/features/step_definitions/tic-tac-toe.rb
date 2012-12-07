@@ -76,10 +76,45 @@ class TicTacToe
   end
 
   def determine_winner
-    @winning_symbol = nil
-       #@board.select{|k,v| v!=" "}.keys.join.count("A")
-    #TODO check to see if game is over and set appropriate variables
-    @over = true
+    ["A","B","C","1","2","3"].each do |v|
+      if check_row(@player_symbol, v) then
+        @winner = :player
+      end
+    end
+    if check_diagonal(@player_symbol) then
+      @winner = :player
+    end
+
+
+      #TODO Check diagnol for player
+    ["A","B","C","1","2","3"].each do |v|
+      if check_row(@computer_symbol, v) then
+        @winner = :computer
+        @over = true
+      end
+    end
+    if check_diagonal(@computer_symbol) then
+      @winner = :computer
+    end
+    if @winner != :none then
+      @over = true
+    end
+
+      #TODO Consolidate copied code
+    if not over? and not spots_open? then
+      puts("Draw")
+        @winner = :draw
+        @over = true
+    end
+  end
+
+  def check_row(symbol, row)
+    @board.select{|k,v| v==symbol}.keys.join.count(row) == 3
+  end
+
+  def check_diagonal(symbol)
+    (@board[:A1].to_s + @board[:B2].to_s + @board[:C3].to_s).count(symbol.to_s) == 3 ||
+        (@board[:A3].to_s + @board[:B2].to_s + @board[:C1].to_s).count(symbol.to_s) == 3
   end
 
   def over?
@@ -87,14 +122,14 @@ class TicTacToe
   end
 
   def player_won?
-    :winner == "#{player}"
+    @winner == :player
   end
 
   def computer_won?
-    :winner == "Computer"
+    @winner == :computer
   end
 
   def draw?
-    :winner == "Draw"
+    @winner == :draw
   end
 end
