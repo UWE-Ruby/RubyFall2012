@@ -7,6 +7,7 @@ class TicTacToe
   def initialize(currentplayer = nil, symbol = nil)
     @over = false
     @winner = :none
+    @player = "Player"
 
     if currentplayer != nil then
       @currentplayer = currentplayer
@@ -30,11 +31,12 @@ class TicTacToe
   end
 
   def welcome_player
+    puts("Welcome #{@player}")
     "Welcome #{@player}"
   end
 
   def indicate_palyer_turn
-    "It is Your Turn to Move"
+    puts("#{@player}'s Move:")
   end
 
   def current_player
@@ -42,6 +44,7 @@ class TicTacToe
   end
 
   def current_state
+    puts("Board = #{@board}")
     @board.values
   end
 
@@ -52,11 +55,12 @@ class TicTacToe
   end
 
   def get_player_move
-    @player_move = gets()
+    @player_move = gets().chomp
   end
 
   def computer_move
     @pick = open_spots.sample()
+    puts("Computer chose: #{@pick}")
     set_position(@pick, @computer_symbol)
     @currentplayer = :player
     @pick
@@ -71,8 +75,13 @@ class TicTacToe
   end
 
   def set_position(position, symbol)
-    #TODO check for a valid move
-    @board[position] = symbol.to_s
+    if(@board[position] != " ") then
+      @random_move = open_spots.sample()
+      puts("Spot taken, choosing random spot: #{@random_move}")
+      @board[@random_move] = symbol.to_s
+    else
+      @board[position] = symbol.to_s
+    end
   end
 
   def determine_winner
@@ -85,8 +94,6 @@ class TicTacToe
       @winner = :player
     end
 
-
-      #TODO Check diagnol for player
     ["A","B","C","1","2","3"].each do |v|
       if check_row(@computer_symbol, v) then
         @winner = :computer
@@ -100,7 +107,6 @@ class TicTacToe
       @over = true
     end
 
-      #TODO Consolidate copied code
     if not over? and not spots_open? then
       puts("Draw")
         @winner = :draw
@@ -109,7 +115,7 @@ class TicTacToe
   end
 
   def check_row(symbol, row)
-    @board.select{|k,v| v==symbol}.keys.join.count(row) == 3
+    @board.select{|k,v| v==symbol.to_s}.keys.join.count(row) == 3
   end
 
   def check_diagonal(symbol)
