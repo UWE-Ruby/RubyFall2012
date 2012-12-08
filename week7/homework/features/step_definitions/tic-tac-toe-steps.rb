@@ -1,12 +1,13 @@
 
 require 'rspec/mocks/standalone'
+#require 'rspec/exceptions'
 
 Given /^I start a new Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new
 end
 
-When /^I enter my name (\w+)$/ do |name|
-  @game.player = name
+When /^I enter my name (\w+)$/ do |arg1|
+  @game.player = arg1
 end
 
 Then /^the computer welcomes me to the game with "(.*?)"$/ do |arg1|
@@ -14,7 +15,7 @@ Then /^the computer welcomes me to the game with "(.*?)"$/ do |arg1|
 end
 
 Then /^randomly chooses who goes first$/ do
-  [@game.player, "Computer"].should include @game.current_player
+  [@game.player, :computer].should include @game.current_player
 end
 
 Then /^who is X and who is O$/ do
@@ -36,7 +37,7 @@ end
 
 Then /^the computer prints "(.*?)"$/ do |arg1|
   @game.should_receive(:puts).with(arg1)
-  @game.indicate_palyer_turn
+  @game.indicate_player_turn
 end
 
 Then /^waits for my input of "(.*?)"$/ do |arg1|
