@@ -1,12 +1,8 @@
 class TicTacToe
-  attr_reader :player
-  attr_reader :current_player
-  attr_reader :player_symbol
-  attr_reader :computer_symbol
   attr_reader :open_spots
   attr_accessor :board
 
-  SYMBOLS = ["X","O"]
+  SYMBOLS = [:X,:O]
   
   def initialize(first_player = nil, player_symbol = nil)
     #expecting :player or :computer for first_player this is used to force the context for testing
@@ -41,21 +37,11 @@ class TicTacToe
     end
   end
   
-  def assign_symbols(player_symbol)
+  def assign_symbols(player_symbol = nil)
     op = {0=>1,1=>0,:player=>:computer, :computer=>:player, :X=>:O, :O=>:X} #a hash that defines opposites
-    if player_symbol == nil
-      #randomize
-      n = rand(2)
-      @symbol_hash[:player] = SYMBOLS[n]
-      n = op[n]
-      @symbol_hash[:computer] = SYMBOLS[n]
-    else
-     @symbol_hash[:player]=player_symbol
-     @symbol_hash[:computer] = op[player_symbol]
-      #@symbol_hash[@current_player] = first_players_symbol.to_s
-      #@symbol_hash[op[@current_player]] = op[first_players_symbol].to_s
-      
-    end
+    @symbol_hash[:player] = player_symbol
+    @symbol_hash[:player] ||= SYMBOLS[rand(2)].to_sym
+    @symbol_hash[:computer] = op[@symbol_hash[:player]]# op[@symbol_hash[:player]]
   end
   
   def randomize_first_player
@@ -64,7 +50,6 @@ class TicTacToe
   
   def welcome_player
     #welcome the player
-    #{}"Welcome #{@player}"
     "Welcome #{@player_hash[:player]}"
   end
 
@@ -103,15 +88,22 @@ class TicTacToe
   def current_state
     @board.values
   end
+  
+  def winner?(side, trio)
+    #take a symbol(player or computer) and a trio of contiguous board positions as input and determine whether that side has one on
+    #those three positions
+    trio.all? {|y| @board[y]==@symbol_hash[side]} #check to see if all three symbols match symbol
+  end
+  
   def determine_winner
     winning_combinations = [[:A1,:A2,:A3],[:B1,:B2,:B3],[:C1,:C2,:C3],[:A1,:B1,:C1],[:A2,:B2,:C2],[:A3,:B3,:C3],[:A1,:B2,:C3],[:C1,:B2,:A3]]
     winning_combinations.each do |trio|
-      if @board[trio[0]]==@symbol_hash[:player] && @board[trio[1]]==@symbol_hash[:player] && @board[trio[2]] == @symbol_hash[:player]
+      if winner?(:player,trio)  
         #the player has won
           @player_won = true
           @game_over = true
           break
-      elsif @board[trio[0]]==@symbol_hash[:computer] && @board[trio[1]]==@symbol_hash[:computer] && @board[trio[2]] == @symbol_hash[:computer]
+      elsif winner?(:computer,trio)
         #the computer has won
         @computer_won = true
         @game_over = true
@@ -125,23 +117,28 @@ class TicTacToe
         @draw=true
         @game_over = true
       else
-        @draw=true
-        @game_over = true
+        @draw=false
+        @game_over = false
       end
     end
   end
+  
   def spots_open?
     @board.include?(' ')
   end
+  
   def player_won?
     @player_won
   end
+  
   def computer_won?
     @computer_won
   end
+  
   def over?
     @game_over
   end
+  
   def draw?
     @draw
   end
