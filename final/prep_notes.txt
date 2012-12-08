@@ -1,0 +1,48 @@
+this month's calendar
+http://www.seattle.gov/UTIL/WARP/home/alp?openApp=CC&address=6408%2044TH%20AVE%20S
+
+Print next year's calendar
+www.seattle.gov/UTIL/WARP/PrintCollectionCalendar/Index?Account=&WhichYear=Next&Address=6408~~44TH~AVE~S~~~100~6408%2044TH%20AVE%20S
+
+Recycling Icon <img src="/UTIL/WARP/images/FYIcon32.gif" width="30px" height="35px">
+Garbage Icon <img src="/UTIL/WARP/images/GarbageIcon32.gif" width="30px" height="35px">
+Recycle Icon <img src="/UTIL/WARP/images/RecycleIcon32.gif" width="30px" height="35px">
+
+require 'rubygems'
+require 'crack'
+require 'open-uri'
+require 'rest-client'
+
+url='http://en.wikipedia.org/w/api.php?action=opensearch&search=At&namespace=0'
+
+puts Crack::JSON.parse(RestClient.get(url))
+
+I don't really want to publish that gem on the web, and it's a little too ambitious. I'm going to practice my web scraping with something similar.
+
+http://www.thestranger.com/seattle/Music
+
+pull all the recommended events and push them to your google calendar. 
+
+sudo gem install googlecalendar
+Usage
+Adding an Event
+require 'googlecalendar'
+g = GData.new
+g.login('REPLACE_WITH_YOUR_MAIL@gmail.com', 'REPLACE_WITH_YOUR_PASSWORD')
+event = { :title     => 'title',
+          :content   => 'content',
+          :author    => 'pub.cog',
+          :email     => 'pub.cog@gmail.com',
+          :where     => 'Toulouse,France',
+          :startTime => '2007-06-06T15:00:00.000Z',
+          :endTime   => '2007-06-06T17:00:00.000Z'}
+g.new_event(event)
+
+require 'rubygems'
+require 'crack'
+require 'open-uri'
+require 'rest-client'
+
+url='http://en.wikipedia.org/w/api.php?action=opensearch&search=At&namespace=0'
+
+puts Crack::JSON.parse(RestClient.get(url))
