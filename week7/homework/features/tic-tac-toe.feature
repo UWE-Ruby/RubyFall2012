@@ -33,3 +33,26 @@ Scenario: Making Moves
 		And "A1" is not taken
 	Then the board should have an X on it
 		And it is now the computer's turn
+
+Scenario: Making Bad Moves
+	Given I have a started Tic-Tac-Toe game
+		And it is my turn
+		And I am playing X
+	When I enter a position "A1" on the board
+		And "A1" is taken
+	Then computer should ask me for another position "B2"
+		And it is now the computer's turn
+
+Scenario: Winning the Game
+	Given I have a started Tic-Tac-Toe game
+		And I am playing X
+	When there are three X's in a row
+	Then I am declared the winner
+		And the game ends
+
+Scenario: Game is a draw
+	Given I have a started Tic-Tac-Toe game
+		And there are not three symbols in a row
+	When there are no open spaces left on the board
+	Then the game is declared a draw 
+		And the game ends

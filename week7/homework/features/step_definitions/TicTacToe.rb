@@ -18,11 +18,22 @@ class TicTacToe
 		@board = { 	:A1 => " ", :A2 => " ", :A3 => " ", 
 					:B1 => " ", :B2 => " ", :B3 => " ", 
 					:C1 => " ", :C2 => " ", :C3 => " " }
-		@player_move = nil
+		@player_move = :A1 ##test
 	end
-	def get_player_move(x)
-		#@player_move = @board[x.to_sym]
-		@player_move = x
+	def determine_winner
+		letters = ['A', 'B', 'C']
+		nums = [1, 2, 3]
+
+		letters.each do |letter|
+			if @board[(letter+1).to_sym] == @board[(letter+2).to_sym] && @board[(letter+2).to_sym] == @board[(letter+3).to_sym] 
+				win = @board[letter+1]
+		end
+
+		if win == nil
+			nums.each do |nums|
+				
+			end
+		end
 	end
 	def computer_move
 		temp = @open_spots.sample
@@ -38,7 +49,12 @@ class TicTacToe
 		@player 
 	end
 	def get_player_move
-		@gets
+		@player_move = @gets
+		@player_move #necessary?
+	end
+	def player_move
+		@current_state << @player_symbol.to_s
+		@player_move
 	end
 	def welcome_player
 		"Welcome #{@player}"
@@ -47,7 +63,3 @@ class TicTacToe
 		@player_turn
 	end
 end
-
-t = TicTacToe.new
-puts t.player.to_s
-puts t.indicate_player_turn
