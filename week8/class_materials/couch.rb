@@ -1,18 +1,11 @@
 class Couch
-	def initialize(pillows, cushions)
+	def initialize(pillows, cushions, dogs)
 		@pillows = pillows
 		@cushions = cushions
+		@dogs = dogs
 	end
 
-	def how_many_pillows
-		@pillows.count
-	end
-
-	def how_many_cushions
-		@cushions.count
-	end
-
-	[:pillows, :cushions].each do |s|
+	[:pillows, :cushions, :dogs].each do |s|
 		define_method("how_many_#{s}") do
 			instance_variable_get("@#{s}").count
 		end
