@@ -1,17 +1,23 @@
 class TicTacToe
 
-	attr_accessor :player, :computer, :player_symbol, :computer_symbol, :get_player_move, :X, :O
-	TicTacToe = [:X,:O]
+	attr_accessor :player, :computer, :player_symbol, :computer_symbol, :X, :O
+	#TicTacToe = [:X,:O]
 
 	def initialize(starter=nil, symbol=nil)
 		@starter = starter
 		@symbol = symbol
 
-		if @starter == "Computer"
-			@computer_symbol = @symbol
-		else
-			@player_symbol = @symbol
+		unless @symbol.nil?
+			if @starter == "Computer"
+				@computer_symbol = @symbol
+				@computer = "Computer"
+			else
+				@player_symbol = @symbol
+				@player = @starter
+			end
 		end
+
+		current_player
 
 		@board = {
 				:A1 => " ", :A2 => " ", :A3 => " ",
@@ -28,7 +34,7 @@ class TicTacToe
 		if @symbol.nil?
 			@player_symbol = :X
 			@computer_symbol = :O
-			@current_player = [@player, @computer].sample
+			@current_player = [@player, "Computer"].sample
 		else
 			@current_player = @starter
 			if @player_symbol == :X then @computer_symbol = :Y else @computer_symbol = :X end
@@ -37,8 +43,10 @@ class TicTacToe
 		@current_player
 	end
 
-	def change_turn(current_player)
-		@current_player = (@current_player == TicTacToe::X) ? TicTacToe::O : TicTacToe::X
+	def get_player_move()
+		
+		#@current_player = (@current_player == TicTacToe::X) ? TicTacToe::O : TicTacToe::X
+		@get_player_move = gets.chomp
 	end
 
 	def indicate_player_turn
@@ -86,6 +94,7 @@ class TicTacToe
 	end
 
 	def open_spots
+		@open_spots = board.delete_if{|k,v| {} == v.delete_if{|a,b| b==""}}
 		if @board.inject.include(" ") then true else false end
 	end
 
