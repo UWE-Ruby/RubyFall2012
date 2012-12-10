@@ -1,8 +1,9 @@
 class TicTacToe
 	attr_accessor :board, :draw
-	attr_reader :player_symbol, :computer_symbol, :open_spots, :player
-	attr_reader :current_state, :over, :player_won, :current_player
-	attr_writer :player_move
+	attr_reader :player, :player_symbol, :player_won
+	attr_reader :computer_symbol
+	attr_reader :current_player, :open_spots, :over
+	attr_writer :computer_move
 	SYMBOLS = [:X, :O]
 
 	def initialize(p=:Renee, sym=SYMBOLS.sample)
@@ -15,12 +16,10 @@ class TicTacToe
 		end
 
 		@open_spots = [:A1, :A2, :A3, :B1, :B2, :B3, :C1, :C2, :C3]
-		#@current_state = @open_spots
-		@current_state = []
 		@board = { 	:A1 => ' ', :A2 => ' ', :A3 => ' ', 
 					:B1 => ' ', :B2 => ' ', :B3 => ' ', 
 					:C1 => ' ', :C2 => ' ', :C3 => ' ' }
-		@player_move = nil ##test
+		@player_move = nil
 		@over = false
 	end
 	def method_missing(method, *args, &block)
@@ -29,6 +28,9 @@ class TicTacToe
 		else
 			super
 		end
+	end
+	def current_state
+		@board.values
 	end
 	def spots_open?
 		@board.include?(' ')
@@ -76,42 +78,71 @@ class TicTacToe
 	def computer_move
 		@current_player = @player
 		temp = @open_spots.sample
-		#index = @current_state.index(temp)
-		#@current_state[index] = @computer_symbol.to_s
-		@current_state += [@computer_symbol.to_s]
-		@open_spots -= [@temp] #this needs fixed
+		@board[temp] = @computer_symbol.to_s
+		@open_spots -= [@temp] 
 		temp
 	end
 	def player_turn####
 		@current_player == @player 
 	end
 	def get_player_move
-		@current_player = 'computer'
-		@player_move = gets #bad input??
-		unless @open_spots.include? @player_move
-			@player_move = gets
-		end
-		#index = @current_state.index(@player_move)
-		#@current_state[index] = @player_symbol.to_s
-		@current_state += [@player_symbol.to_s]
-		@open_spots -= [@player_move.to_sym]
+		# begin 
+		# 	@player_move = gets.chomp
+		# end while @board[@player_move.to_sym] != ' '
+		@player_move = gets.chomp
 		@player_move
+
+		# if @open_spots.include? @player_move
+		# 	@player_move
+		# else
+		# 	#@player_move = self.get_player_move
+		# end
+
+		# while (@open_spots.include?(@player_move.to_sym) == false)	
+		# 	begin
+		# 		@player_move = gets.chomp #bad input??
+		# 		unless @open_spots.include? @player_move
+		# 			raise ArgumentError.new
+		# 		end
+		# 	rescue ArgumentError
+		# 		next
+		# 	else
+		# 		@open_spots -= [@player_move.to_sym]
+		# 		@current_state += [@player_symbol.to_s]
+		# 		#@player_move.to_sym
+		# 		@player_move #necessary?
+		# 	end
+		# end
 	end
 	def player_move
+		@current_player = 'Computer'
+		
 		if @player_move == nil
+		 	@player_move = self.get_player_move
+		end
+		if @board[@player_move.to_sym] != ' '
 			@player_move = self.get_player_move
 		end
-		#@current_state << @player_symbol.to_s ##what does this do again?
-		@player_move.to_sym
+
+		# begin 
+		# 	unless @open_spots.include? @player_move.to_sym
+		# 		@player_move = self.get_player_move
+		# 	end
+		# end while ((@open_spots.include? @player_move) == false)
+
+		@open_spots -= [@player_move.to_sym]
+		@board[@player_move.to_sym] = @player_symbol.to_s
+		@player_move = @player_move.to_sym
 	end
 	def welcome_player
 		"Welcome #{@player}"
 	end
 	def indicate_player_turn
-		@player_turn
+		@player_turn#########
 	end
 end
 
-g = TicTacToe.new
-g.player_move=('A1')
-puts g.current_state
+# g = TicTacToe.new
+# g.computer_move=('A1')
+# puts g.get_player_move
+# #g.player_move=('A1')
