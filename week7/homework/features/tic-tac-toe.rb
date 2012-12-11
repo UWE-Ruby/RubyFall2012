@@ -47,15 +47,13 @@ class TicTacToe
 
 	def get_player_move
 		
-		#@current_player = (@current_player == TicTacToe::X) ? TicTacToe::O : TicTacToe::X
+		#@current_player = (@current_player == SYMBOL::X) ? SYMBOL::O : SYMBOL::X
 		@get_player_move = gets.chomp
-		#@get_player_move.to_sym
 	end
 
 	def indicate_player_turn
 		puts "#{@current_player}'s Move:"
 		@indicate_player_turn = @current_player
-		@current_player = "Computer"
 	end
 
 	def indicate_player_move
@@ -70,7 +68,6 @@ class TicTacToe
 	def player_move
 		board[get_player_move] = @player_symbol
 		@player_move = get_player_move.to_sym
-
 	end
 
 	def current_state
@@ -88,11 +85,6 @@ class TicTacToe
 			[:A1,:B2,:C3],
 			[:C1,:B2,:A3]
 		]
-
-		#if winning_combos[:]
-		
-
-
 	end
 
 	def open_spots

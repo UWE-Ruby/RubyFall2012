@@ -125,11 +125,10 @@ end
 
 Given /^it is the computers turn$/ do
   @game = TicTacToe.new(:computer, :O)
-  @game.current_player.should eq "Computer"
 end
 
 Then /^it is now the computers turn$/ do
-  pending # express the regexp above with the code you wish you had
+  @game.current_player.should eq "Computer"
 end
 
 When /^there are three Xs in a row$/ do
