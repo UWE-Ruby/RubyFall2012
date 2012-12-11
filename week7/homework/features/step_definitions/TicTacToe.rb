@@ -86,33 +86,10 @@ class TicTacToe
 		@current_player == @player 
 	end
 	def get_player_move
-		# begin 
-		# 	@player_move = gets.chomp
-		# end while @board[@player_move.to_sym] != ' '
 		@player_move = gets.chomp
-		@player_move
-
-		# if @open_spots.include? @player_move
-		# 	@player_move
-		# else
-		# 	#@player_move = self.get_player_move
-		# end
-
-		# while (@open_spots.include?(@player_move.to_sym) == false)	
-		# 	begin
-		# 		@player_move = gets.chomp #bad input??
-		# 		unless @open_spots.include? @player_move
-		# 			raise ArgumentError.new
-		# 		end
-		# 	rescue ArgumentError
-		# 		next
-		# 	else
-		# 		@open_spots -= [@player_move.to_sym]
-		# 		@current_state += [@player_symbol.to_s]
-		# 		#@player_move.to_sym
-		# 		@player_move #necessary?
-		# 	end
-		# end
+		until @open_spots.include?(@player_move.to_sym)
+			@player_move = gets.chomp
+		end
 	end
 	def player_move
 		@current_player = 'Computer'
@@ -123,12 +100,6 @@ class TicTacToe
 		if @board[@player_move.to_sym] != ' '
 			@player_move = self.get_player_move
 		end
-
-		# begin 
-		# 	unless @open_spots.include? @player_move.to_sym
-		# 		@player_move = self.get_player_move
-		# 	end
-		# end while ((@open_spots.include? @player_move) == false)
 
 		@open_spots -= [@player_move.to_sym]
 		@board[@player_move.to_sym] = @player_symbol.to_s
@@ -141,8 +112,3 @@ class TicTacToe
 		@player_turn#########
 	end
 end
-
-# g = TicTacToe.new
-# g.computer_move=('A1')
-# puts g.get_player_move
-# #g.player_move=('A1')
