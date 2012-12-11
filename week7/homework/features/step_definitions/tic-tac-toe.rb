@@ -131,8 +131,8 @@ board
 				end
 			end
 
-			#if there are no open spots (spots_open? is false), then the game is over and a draw is declared
-			if spots_open? == false
+			#if there are no open spots (spots_open? is false) and that game isn't over, then declare the game over and a draw
+			if spots_open? == false && @over==false
 				@over = true
 				@draw = true
 			end
