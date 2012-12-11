@@ -127,10 +127,10 @@ Given /^it is the computers turn$/ do
   @game = TicTacToe.new(:computer, :O)
 end
 
-Then /^it is now the computers turn$/ do
-  @game.current_player.should eq "Computer"
-end
-
 When /^there are three Xs in a row$/ do
   @game.board[:C1] = @game.board[:B2] = @game.board[:A3] = :X
+end
+
+Then /^it is now the computers turn$/ do
+  @game.current_player.should eq "Computer"
 end
