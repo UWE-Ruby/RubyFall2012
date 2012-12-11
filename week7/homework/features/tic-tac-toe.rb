@@ -1,19 +1,19 @@
 class TicTacToe
 
-	attr_accessor :player, :computer, :player_symbol, :computer_symbol, :X, :O
+	attr_accessor :player, :computer, :player_symbol, :computer_symbol, :board
 	SYMBOLS = [:X,:O]
 
 	def initialize(starter=nil, symbol=nil)
 		@starter = starter
 		@symbol = symbol
 
-		unless @starter.nil?
+		unless @symbol.nil?
 			if @starter == "Computer"
-				@computer_symbol = :X
+				@computer_symbol = @symbol
 				@player_symbol = :O
 				@computer = "Computer"
 			else
-				@player_symbol = :X
+				@player_symbol = @symbol
 				@computer_symbol = :O
 				@player = @starter
 			end
@@ -49,6 +49,7 @@ class TicTacToe
 		
 		#@current_player = (@current_player == TicTacToe::X) ? TicTacToe::O : TicTacToe::X
 		@get_player_move = gets.chomp
+		#@get_player_move.to_sym
 	end
 
 	def indicate_player_turn
@@ -66,15 +67,13 @@ class TicTacToe
 	end
 
 	def player_move
-		@player_move
+		board[get_player_move.to_sym] = @player_symbol
+		@player_move = get_player_move.to_sym
+
 	end
 
 	def current_state
 		@current_state = @board.values
-	end
-	
-	def board(board)
-		@board = [board]
 	end
 
 	def determine_winner
@@ -95,8 +94,8 @@ class TicTacToe
 
 	end
 
-	def open_spots
-		@open_spots = board.delete_if{|k,v| {} == v.delete_if{|a,b| b==""}}
+	def spots_open
+		@spots_open = board.delete_if{|k,v| {} == v.delete_if{|a,b| b==""}}
 		if @board.inject.include(" ") then true else false end
 	end
 
@@ -104,7 +103,7 @@ class TicTacToe
 		
 		@draw = false
 		
-		unless @open_spots == false
+		unless @spots_open == false
 			@draw = true
 		end
 	end
