@@ -18,7 +18,6 @@ class TicTacToe
 
     randomly_assign_symbol unless (@player_symbol && @computer_symbol)
     initialize_board
-
   end
 
   def welcome_player
@@ -45,6 +44,7 @@ class TicTacToe
     else
       return :B2 #need to change
     end
+
     return move
   end
 
@@ -58,27 +58,49 @@ class TicTacToe
               :C1 => " ", :C2 => " ", :C3 => " "}
   end
 
+  def winning_cases
+    @cases = [
+    ['A1','B2','C3'],
+    ['B1','B2','B3'],
+    ['C1','C2','C3'],
+    ['A1','B1','C1'],
+    ['A2','B2','C2'],
+    ['A3','B3','C3'],
+    ['A1','B2','C3'],
+    ['C1','B2','A3']
+    ]
+  end
+
   def randomly_assign_symbol
     @computer_symbol = SYMBOLS.sample
-    @player_symbol = SYMBOLS[SYMBOLS.index(@computer_symbol) - 1]
+    @player_symbol = @computer_symbol == :X ? :O : :X
   end
+
+  #@cpu = rand() > 0.5 ? 'X' : 'O'
+  #@user = @cpu == 'X' ? 'O' : 'X'
+
+  #@computer_symbol = SYMBOLS.sample
+  #@player_symbol = SYMBOLS[SYMBOLS.index(@computer_symbol) - 1]
 
   def current_state
     @player_symbol.to_s
   end
 
   def determine_winner
-    
+    return "#{player_won?}"
   end
 
   def player_won?
-  end
-
-  def spots_open?
+    return @board.values
   end
 
   def draw?
   end
 
+  def spots_open?
+  end
+
+  def over?
+  end
 
 end
