@@ -64,16 +64,17 @@ class TicTacToe
 
 	def computer_move
 		@computer_move =@open_spots.sample
+
 	end
 
 	def player_move
-		board[get_player_move.to_sym] = @player_symbol
+		board[get_player_move] = @player_symbol
 		@player_move = get_player_move.to_sym
 
 	end
 
 	def current_state
-		@current_state = @board.values
+		@current_state = @board.values.to_s
 	end
 
 	def determine_winner
@@ -94,12 +95,15 @@ class TicTacToe
 
 	end
 
-	def spots_open
-		@spots_open = board.delete_if{|k,v| {} == v.delete_if{|a,b| b==""}}
-		if @board.inject.include(" ") then true else false end
+	def open_spots
+		@open_spots = board.delete_if{|k,v| {} == v.delete_if{|a,b| b==""}}	
 	end
 
-	def draw
+	def spots_open?
+		if @board.values.include?(" ") then true else false end
+	end
+
+	def draw?
 		
 		@draw = false
 		
@@ -108,15 +112,15 @@ class TicTacToe
 		end
 	end
 
-	def player_won
+	def player_won?
 		@player_won == true
 	end
 
-	def computer_won
+	def computer_won?
 		@computer_won == true
 	end
 
-	def over
+	def over?
 		if @computer_won == true
 			@over = true
 		elsif @player_won == true
