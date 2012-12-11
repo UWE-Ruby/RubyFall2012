@@ -1,23 +1,25 @@
 class TicTacToe
 
 	attr_accessor :player, :computer, :player_symbol, :computer_symbol, :X, :O
-	#TicTacToe = [:X,:O]
+	SYMBOLS = [:X,:O]
 
 	def initialize(starter=nil, symbol=nil)
 		@starter = starter
 		@symbol = symbol
 
-		unless @symbol.nil?
+		unless @starter.nil?
 			if @starter == "Computer"
-				@computer_symbol = @symbol
+				@computer_symbol = :X
+				@player_symbol = :O
 				@computer = "Computer"
 			else
-				@player_symbol = @symbol
+				@player_symbol = :X
+				@computer_symbol = :O
 				@player = @starter
 			end
 		end
 
-		current_player
+		#current_player
 
 		@board = {
 				:A1 => " ", :A2 => " ", :A3 => " ",
@@ -43,7 +45,7 @@ class TicTacToe
 		@current_player
 	end
 
-	def get_player_move()
+	def get_player_move
 		
 		#@current_player = (@current_player == TicTacToe::X) ? TicTacToe::O : TicTacToe::X
 		@get_player_move = gets.chomp
@@ -52,6 +54,7 @@ class TicTacToe
 	def indicate_player_turn
 		puts "#{@current_player}'s Move:"
 		@indicate_player_turn = @current_player
+		@current_player = "Computer"
 	end
 
 	def indicate_player_move
@@ -59,7 +62,7 @@ class TicTacToe
 	end
 
 	def computer_move
-		@computer_move
+		@computer_move =@open_spots.sample
 	end
 
 	def player_move
@@ -70,10 +73,8 @@ class TicTacToe
 		@current_state = @board.values
 	end
 	
-	def board(player_move)
-		@player_move = player_move
-
-		@board = [player_move]
+	def board(board)
+		@board = [board]
 	end
 
 	def determine_winner
@@ -88,6 +89,7 @@ class TicTacToe
 			[:C1,:B2,:A3]
 		]
 
+		#if winning_combos[:]
 		
 
 
@@ -99,14 +101,31 @@ class TicTacToe
 	end
 
 	def draw
+		
+		@draw = false
+		
+		unless @open_spots == false
+			@draw = true
+		end
 	end
 
 	def player_won
+		@player_won == true
 	end
 
 	def computer_won
+		@computer_won == true
 	end
 
 	def over
+		if @computer_won == true
+			@over = true
+		elsif @player_won == true
+			@over = true
+		elsif @draw == true
+			@over = true
+		else
+			@over = false 
+		end
 	end
 end
