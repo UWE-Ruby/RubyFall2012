@@ -46,7 +46,6 @@ class TicTacToe
 	end
 
 	def get_player_move
-		
 		#@current_player = (@current_player == SYMBOL::X) ? SYMBOL::O : SYMBOL::X
 		@get_player_move = gets.chomp
 	end
@@ -75,6 +74,8 @@ class TicTacToe
 	end
 
 	def determine_winner
+		i = 0
+		winning_combos = []
 		@winning_combos = [
   			[:A1,:A2,:A3],
 			[:B1,:B2,:B3],
@@ -85,6 +86,31 @@ class TicTacToe
 			[:A1,:B2,:C3],
 			[:C1,:B2,:A3]
 		]
+
+		while i < 8 do
+			unless winning_combos[i].unique.length != 1
+				if winning_combos[i].includes "X" && player_symbol = "X"
+					player_won?
+				elsif winning_combos[i].includes "Y" && player_symbol = "Y"
+					player_won?
+				elsif winning_combos[i].includes "X" && computer_symbol = "X"	
+					computer_won?
+				elsif winning_combos[i].includes "Y" && computer_symbol = "Y"	
+					computer_won?
+				else
+				end		
+			end
+
+			if spots_open? == false
+				draw?
+			else
+				if @current_player == "Computer"
+					@current_player = @player
+				else
+					current_player = "Computer"
+				end
+			end
+		end
 	end
 
 	def open_spots
