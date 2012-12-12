@@ -1,25 +1,8 @@
 class TicTacToe
 
-	attr_reader :player, :welcome_player, :current_player, :player_symbol, :computer_symbol, :board, :player_won, :computer_won
+	attr_accessor :player, :board
 
-#@game = TicTacToe.new
-#puts @game.welcome_player
-
-#until @game.over?
-#	case @game.current_player
-#	when "Computer"
-#		@game.computer_move
-#	when @game.player
-#		@game.indicate_player_turn
-#		@game.player_move
-#	end
-#	puts @game.current_state
-#	@game.determine_winner
-#end
-
-#puts "You Won!" if @game.player_won?
-#puts "I Won!" if @game.computer_won?
-#puts "DRAW!" if @game.draw?
+	attr_reader :welcome_player, :current_player, :player_symbol, :computer_symbol
 
 	def initialize(*args)
 
@@ -75,30 +58,19 @@ class TicTacToe
 			@computer_symbol = :O
 		end
 
-		# Set initial state
+		# Create empty board
 		@board = {
-			:A1 => "", :A2 => "", :A3 => "",
-			:B1 => "", :B2 => "", :B3 => "",
-			:C1 => "", :C2 => "", :C3 => ""
+			:A1 => "_", :A2 => "_", :A3 => "_",
+			:B1 => "_", :B2 => "_", :B3 => "_",
+			:C1 => "_", :C2 => "_", :C3 => "_"
 		}
-		@player_won = false
-		@computer_won = false
 
-	end
-
-
-	def current_state
-		puts @board.to_s
-	end
-
-
-	def spots_open?
-		
 	end
 
 
 	def over?
-    	if @player_won || @computer_won || @draw
+		# The game is over if someone has won or it is a draw
+    	if self.player_won? || self.computer_won? || self.draw?
     		true
     	else
     		false
@@ -106,33 +78,53 @@ class TicTacToe
   	end
 
 
-	def draw?
-	
+	def current_state
+		# Show board
+		"A1#{@board[:A1]} A2#{@board[:A2]} A3#{@board[:A3]}\nB1#{@board[:B1]} B2#{@board[:B2]} B3#{@board[:B3]}\nC1#{@board[:C1]} C2#{@board[:C2]} C3#{@board[:C3]}"
+	end
+
+
+	def spots_open?
+		# If the board has any underscores, there are spots open
+		@board.value?("_")
 	end
 
 
 	def open_spots
+		# Return an array containing symbols of open spots
+		@board.select {|key, value| value == "_"}.keys
+	end
+
+
+	def indicate_player_turn
+		# Alert user and show board
+		puts "It is your turn. Here is the board:"
+		puts self.current_state
+	end
+
+
+	def get_player_move
+		# Prompt user for move
+		puts "Please enter your move:"
+		gets	
+	end
+
+
+	def player_move
+		# Get player move
+		move = self.get_player_move
+		# Validate player move
+
+		# Update board
 
 	end
 
 
 	def computer_move
-	
-	end
+		# Choose random open spot (the computer isn't very good)
+		move = self.open_spots.sample
+		# Update board
 
-
-	def player_move
-	
-	end
-
-
-	def get_player_move
-	
-	end
-
-
-	def indicate_player_turn
-	
 	end
 
 
@@ -141,20 +133,18 @@ class TicTacToe
 	end
 
 
-#When /^I enter my name (\w+)$/ do |name|
-#  @game.player = name
-#end
+	def player_won?
+	
+	end
 
-#Then /^the computer welcomes me to the game with "(.*?)"$/ do |arg1|
-#  @game.welcome_player.should eq arg1
-#end
 
-#Then /^randomly chooses who goes first$/ do
-#  [@game.player, "Computer"].should include @game.current_player
-#end
+	def computer_won?
+	
+	end
 
-#Then /^who is X and who is O$/ do
-#  TicTacToe::SYMBOLS.should include @game.player_symbol, @game.computer_symbol
-#end
+
+	def draw?
+	
+	end
 
 end
