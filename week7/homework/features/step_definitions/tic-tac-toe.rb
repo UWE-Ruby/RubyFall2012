@@ -14,7 +14,7 @@ class TicTacToe
 	      :B1 => " ", :B2 => " ", :B3 => " ",
 	      :C1 => " ", :C2 => " ", :C3 => " "
 	      }
-
+	  # The only winning move is not to play. How about a nice game of chess?
 		@winning_moves = {
 	    1 => [:A1,:A2,:A3],
 	    2 => [:B1,:B2,:B3],
@@ -25,12 +25,16 @@ class TicTacToe
 	    7 => [:A1,:B2,:C3],
 	    8 => [:A3,:B2,:C1]
 	  }
+	  @board_layout # Display the board for the first time graphically
 	end
 
+  # HEY BUDDY!
 	def welcome_player
 		"Welcome #{@player}"
 	end
 
+	# Called on initialization.
+	# If there is no user set, it randomly choo-choo-chooses one
 	def set_first player
 		if player.nil?
 			randomize
@@ -41,6 +45,8 @@ class TicTacToe
 		end
 	end
 
+	# Sets the players symbol.
+	# If none given, give one!
   def set_player symbol
   	if symbol.nil?
   		@player_symbol = SYMBOLS.sample
@@ -51,6 +57,7 @@ class TicTacToe
   	end
   end
 
+  # depends on who's on first
 	def current_player
 		@current_player == "Computer" ? "Computer" : @player
 	end
@@ -60,38 +67,49 @@ class TicTacToe
 		@current_player = [@player, "Computer"].sample
 	end
 
+  # Last picked for teams :(
 	def computer_symbol
 		@player_symbol == :X ? :O : :X
 	end
 
+	# Get some player input!
 	def get_player_move
+		puts "Your turn:"
 		gets.chomp
 	end
 
+	# Return everything that's got nothin' on it
 	def open_spots
 		@board.select { |k,v| v == " " }.keys
 	end
 
+	# Can I go anywhere?
 	def spots_open?
 		open_spots.count > 0
 	end
 
+	# dirty
 	def over?
 		@over
 	end
 
+	# still dirty
 	def player_won?
 		@player_won
 	end
 
+	# dirtier
 	def computer_won?
 		@computer_won
 	end
 
+	# yep
 	def draw?
 		@draw
 	end
 
+	# grab from above, set the next player
+	# if the spots not available, GO AGAIN CHAMP
 	def player_move
 		move = get_player_move.capitalize.to_sym
 		if open_spots.include? move
@@ -99,21 +117,26 @@ class TicTacToe
 			@current_player = "Computer"
 			move
 		else
+			puts "Seats taken"
 			player_move
 		end
 	end
 
+	# randomly choose some open spot on the board. SUPER AI BELOW
 	def computer_move
 		rand = open_spots.sample
 		@board[rand] = computer_symbol.to_s
 		@current_player = @player
+		puts "Computer turn: #{rand}"
 		rand
 	end
 
+	# hash of board values
 	def current_state
 		@board.values.to_s
 	end
 
+	# SUPER GUI BELOW
 	def board_layout
 		puts "#{@board[:A1]}|#{@board[:A2]}|#{@board[:A3]}"
 		puts "-+-+-"
@@ -123,10 +146,12 @@ class TicTacToe
 		puts "======"
 	end
 
+	# dirrrrrrty
 	def indicate_player_turn
 		@current_player
 	end
 
+	# I hate everything about this method
 	def determine_winner
 		@winning_moves.each_value do |v|
 			player_moves.size >= 3 ? pset = check_board(player_moves,v) : pset = ["false"]
@@ -147,6 +172,13 @@ class TicTacToe
 		board_layout
 	end
 
+	# you would think that:
+	# ["a", "b", "c"].include? ["a", "b"]
+	# OR
+	# ["a", "b", "c"] === ["a", "b"]
+	# would work for above. NOPE.
+	# This queries EVERY value and if it finds it there,
+	# pushes a true to an array that's checked above
 	def check_board(moves,set)
 		truth = []
 		moves.each do |m|
@@ -159,10 +191,12 @@ class TicTacToe
 		truth
 	end
 
+	# show me your moves!
 	def player_moves
 		@board.select { |k,v| v == player_symbol }.keys.sort
 	end
 
+	# computers got moves too!
 	def computer_moves
 		@board.select { |k,v| v == computer_symbol }.keys.sort
 	end
