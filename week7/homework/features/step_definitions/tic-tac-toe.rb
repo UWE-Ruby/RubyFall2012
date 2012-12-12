@@ -60,6 +60,7 @@ class TicTacToe
   end
   def computer_move
     move = open_spots.keys.sample
+    next_player(:player)
     process_move(:computer, move)
   end
   def player_move
@@ -67,6 +68,7 @@ class TicTacToe
     until validate_move?(move.to_sym)
       move = get_player_move.to_sym
     end
+    next_player(:computer)
     process_move(:player,move)
   end
 
@@ -75,7 +77,6 @@ class TicTacToe
     return 1 unless validate_move?(move)
     @board[move] = @computer_symbol if player == :computer
     @board[move] = @player_symbol if player == :player
-    next_player
     move
   end
   # This checks to see if the move falls upon an open spot
@@ -83,8 +84,9 @@ class TicTacToe
     return true if open_spots.include?(move)
     false
   end
-  def next_player
-  	@current_player = (PLAYERS - [@current_player])[0]
+  def next_player(player)
+    @current_player = player
+  	# @current_player = (PLAYERS - [@current_player])[0]
   end
   def current_state
     output = ''
@@ -113,6 +115,7 @@ class TicTacToe
     @player_won = false
     @computer_won = false
     if @board[:A1] == @board[:A2] && @board[:A2] == @board[:A3] && @board[:A1] != " "
+      victory = true
       winner_symbol = @board[:A1]
     elsif @board[:B1] == @board[:B2] && @board[:B2] == @board[:B3] && @board[:B1] != " "
       victory = true
