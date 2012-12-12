@@ -7,6 +7,7 @@ class TicTacToe
   def initialize(player=nil,symbol=nil)
   	set_first player
   	set_player symbol
+  	@over = false
 
 		@board = {
 	      :A1 => " ", :A2 => " ", :A3 => " ",
@@ -33,8 +34,10 @@ class TicTacToe
 	def set_first player
 		if player.nil?
 			randomize
+		elsif player == :computer
+			@current_player = "Computer"
 		else
-			@player = player
+			@player = player.to_s.capitalize
 		end
 	end
 
@@ -49,11 +52,12 @@ class TicTacToe
   end
 
 	def current_player
-		@player.to_s.capitalize
+		@current_player == "Computer" ? "Computer" : @player
 	end
 
 	def randomize
-		[@player, "Computer"].sample
+		@player = " "
+		@current_player = [@player, "Computer"].sample
 	end
 
 	def computer_symbol
@@ -89,13 +93,13 @@ class TicTacToe
 	end
 
 	def player_move
-		move = get_player_move.to_sym
+		move = get_player_move.capitalize.to_sym
 		if open_spots.include? move
-			@board[move] = player_symbol.to_s
+			@board[move] = player_symbol
 			@current_player = "Computer"
 			move
 		else
-			get_player_move.to_sym
+			player_move
 		end
 	end
 
@@ -107,7 +111,16 @@ class TicTacToe
 	end
 
 	def current_state
-		@board.values
+		@board.values.to_s
+	end
+
+	def board_layout
+		puts "#{@board[:A1]}|#{@board[:A2]}|#{@board[:A3]}"
+		puts "-+-+-"
+		puts "#{@board[:B1]}|#{@board[:B2]}|#{@board[:B3]}"
+		puts "-+-+-"
+		puts "#{@board[:C1]}|#{@board[:C2]}|#{@board[:C3]}"
+		puts "======"
 	end
 
 	def indicate_player_turn
@@ -116,17 +129,34 @@ class TicTacToe
 
 	def determine_winner
 		@winning_moves.each_value do |v|
-			if v === player_moves
+			player_moves.size >= 3 ? pset = check_board(player_moves,v) : pset = ["false"]
+			computer_moves.size >= 3 ? cset = check_board(computer_moves,v) : cset = ["false"]
+			if not pset.include? "false"
 				@player_won = true
 				@over = true
-			elsif v === computer_moves
+			elsif not cset.include? "false"
 				@computer_won = true
 				@over = true
 			else
-				@draw = true
-				@over = true
 			end
 		end
+		if !spots_open?
+			@draw = true
+			@over = true
+		end
+		board_layout
+	end
+
+	def check_board(moves,set)
+		truth = []
+		moves.each do |m|
+			if set.include? m
+				truth << "true"
+			else
+				truth << "false"
+			end
+		end
+		truth
 	end
 
 	def player_moves
