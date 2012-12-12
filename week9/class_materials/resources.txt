@@ -1,0 +1,15 @@
+http://ruby.activeventure.com/programmingruby/book/tut_exceptions.html
+
+http://rubylearning.com/satishtalim/ruby_exceptions.html
+
+http://rdoc.rubyforge.org/RDoc/Markup.html
+
+http://rdoc.sourceforge.net/doc/index.html
+
+http://exceptionalruby.com/
+
+http://stackoverflow.com/questions/1426826/difference-between-and-and-in-ruby
+
+http://rubydoc.info/gems/rspec-mocks/frames
+
+http://c2.com/cgi/wiki?SwitchStatementsSmell
