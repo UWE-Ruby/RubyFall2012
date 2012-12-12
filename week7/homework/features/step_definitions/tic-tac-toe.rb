@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 module Symbols
 	SYMBOLS = [:X , :O] 
 end
@@ -115,4 +115,4 @@ class TicTacToe
 
 
 end
-=======
+
