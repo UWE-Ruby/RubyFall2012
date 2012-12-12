@@ -1,3 +1,5 @@
+Slides: http://www.slideshare.net/reneedv/week8
+
 Metaprogramming:
 http://ruby-metaprogramming.rubylearning.com/
 http://ruby-metaprogramming.rubylearning.com/html/seeingMetaclassesClearly.html

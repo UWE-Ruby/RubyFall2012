@@ -1,4 +1,4 @@
-Slides:
+Slides: http://www.slideshare.net/reneedv/week10
 
 Sinatra: http://www.sinatrarb.com/intro
 Struct: http://www.ruby-doc.org/core-1.8.7/Struct.html

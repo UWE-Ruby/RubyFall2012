@@ -1,3 +1,6 @@
+
+Slides: http://www.slideshare.net/reneedv/week9
+
 http://ruby.activeventure.com/programmingruby/book/tut_exceptions.html
 
 http://rubylearning.com/satishtalim/ruby_exceptions.html
