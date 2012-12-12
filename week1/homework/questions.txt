@@ -3,7 +3,7 @@ Chapter 3 Classes, Objects, and Variables
 p.90-94 Strings
 
 1. What is an object?
-<<<<<<< HEAD
+
 A is something created from a class constructor code.   myObj = object.new 
 
 2. What is a variable?
@@ -31,7 +31,7 @@ line 3 of my string
 <<END_OF_STRING
 
 Bonus: What is the difference between the two? 
-=======
+
 An object is a representation in memory of a specific concept or thing that the Ruby interpreter knows about. 
 
 2. What is a variable?
@@ -51,4 +51,4 @@ split  - returns an array of strings made up of the original string separated on
 6. What are two ways of defining a String literal? Bonus: What is the difference between the two?
 Single quotes ex: '' and Double quotes ex: "". The single qoutes allow for 2 escape characters: \' and \\ . The double qouted string literal allows for many different escaped special characters (like \n is a line break) and allows for string interpolation, or the injection of evaluated Ruby code into the string ex: "Hello #{my_name}". The single qouted string takes up much less memory than a doulbe qouted string with interpolation. Without interpolation, both are about the same.
 
->>>>>>> 50fca00725afd58af94f0abedbf74f2fe77632df
+
