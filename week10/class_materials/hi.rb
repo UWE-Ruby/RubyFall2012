@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'thin'
 
 get '/hi' do
 	"<font color='pink'>Hello World!</font>"+
