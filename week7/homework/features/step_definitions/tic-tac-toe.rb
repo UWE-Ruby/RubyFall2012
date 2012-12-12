@@ -14,6 +14,7 @@ class TicTacToe
       :B1 => "", :B2 => "", :B3 => :X,
       :C1 => "", :C2 => "", :C3 => ""
     }
+    
  	@player = {:computer =>"Computer",:player => ""}
 
  	puts "What is your name"
@@ -31,7 +32,7 @@ class TicTacToe
  end 
 
  def welcome_player
- 	puts "Welcome #{@player[:player]}"
+ 	"Welcome #{@player[:player]}"
  end
 
 
