@@ -1,3 +1,5 @@
+
+
 class Couch
 	def initialize(pillows, cushions, cats)
 		@pillows = pillows
