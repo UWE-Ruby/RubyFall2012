@@ -1,6 +1,6 @@
 class TicTacToe
   SYMBOLS = [:X, :O]
-  attr_accessor :player,:p_symbol, :comp, :comp_symbol,:board, :player_move, :current_player, :first_player
+  attr_accessor :player,:p_symbol, :comp, :comp_symbol,:board, :player_move, :current_player, :first_player, :winner
   
   def initialize (first_player=nil, first_symb=nil)
     @first_player = first_player
@@ -101,7 +101,7 @@ class TicTacToe
   end
   
   def determine_winner
-    winning = [
+    win_scenarios = [
       [:A1,:A2,:A3],
       [:B1,:B2,:B3],
       [:C1,:C2,:C3],
@@ -110,8 +110,11 @@ class TicTacToe
       [:A3,:B3,:C3],
       [:A1,:B2,:C3],
       [:C1,:B2,:A3]]
-]
+    
+    x_space = @board.map
+
   end
+    
   
   def player_won?
     
