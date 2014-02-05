@@ -3,7 +3,14 @@ Chapter 10 Basic Input and Output
 The Rake Gem: http://rake.rubyforge.org/
 
 1. How does Ruby read files?
+  It reads files using the objects in the IO class. Specifically the File subclass. (File.open(...))
 2. How would you output "Hello World!" to a file called my_output.txt?
+  file = File.new("my_output.txt", "w")
+  file.puts("Hello World!")
+  file.close
 3. What is the Directory class and what is it used for?
+  The Directory class is used for handling file system directories. creating, deleting, etc...
 4. What is an IO object?
+  An IO object is an object that encompasses all input and output related tasks such as reading from the command line and outputting to a file to name a couple examples.
 5. What is rake and what is it used for? What is a rake task?
+  Rake stands for Ruby Make which is used to do build and deployment tasks.

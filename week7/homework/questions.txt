@@ -1,9 +1,18 @@
-
 Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
 1. What is method_missing and how can it be used?
+method_missing is an hook triggered when an object is sent a message that it can handle. It can be used to dynamically create and handle method calls that aren’t implicitly defined.
+
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
+An Eigenclass is another name for a singleton class. Singleton methods live with the anonymous class it’s associated with.
+
 3. When would you use DuckTypeing? How would you use it to improve your code?
+You use ducktyping when you think of objects based on what they can do instead of their explicit type. You can use it to improve your code by not checking the object types all of the time and make more generalized methods that can handle any object that behave a certain way.
+
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+Class methods are methods that are called on a class and instance methods are methods that are called on an instance of a class.
+Class_eval sets things up as if you were in the body of a class definition whereas instance_eval sets things up as if you were inside the singleton class of self.
+
 5. What is the difference between a singleton class and a singleton method?
+A singleton class is a class which defines a single object whereas a singleton method is a method that belongs to a single object.
